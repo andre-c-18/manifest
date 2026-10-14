@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Manifest Karyawan On-Site (Python Enterprise)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #0f4c81 100%);
+      --accent-color: #0284c7;
+    }
+    body {
+      background-color: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: #1e293b;
+      font-size: small;
+    }
+    .top-header {
+      background: var(--primary-gradient);
+      color: #ffffff;
+    }
+    .badge-onsite {
+      background-color: #10b981;
+      color: white;
+      font-weight: 500;
+    }
+    .nav-tabs .nav-link {
+      font-weight: 600;
+      color: #64748b;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 12px 20px;
+    }
+    .nav-tabs .nav-link.active {
+      color: var(--accent-color);
+      border-bottom: 3px solid var(--accent-color);
+      background: transparent;
+    }
+    .cost-center-header {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--accent-color);
+    }
+    .table-hover tbody tr:hover {
+      background-color: #f8fafc;
+    }
+
+    @media print {
+      /* 1. Sembunyikan elemen UI yang tidak relevan di kertas */
+      .top-header, 
+      .nav-tabs, 
+      .input-group, 
+      #target_date, 
+      #costCenterFilter,
+      #btnRefresh, 
+      #btnDownloadDirect, 
+      #btnPrintDirect, 
+      #actionToast,
+      .card-header:not(.cost-center-header),
+      .col-md-3 > .card /* Sembunyikan card statistik atas */ {
+        display: none !important;
+      }
+
+      /* 2. Format ulang body agar hemat tinta dan bersih */
+      body {
+        background-color: #ffffff !important;
+        font-size: 11pt !important;
+      }
+      .container-fluid {
+        padding: 0 !important;
+      }
+
+      /* 3. Mencegah tabel terpotong di tengah halaman (Page Break Protection) */
+      .card {
+        border: none !important;
+        box-shadow: none !important;
+        margin-bottom: 2rem !important;
+        page-break-inside: avoid !important;
+      }
+
+      /* 4. Paksa browser mencetak warna background (badge, header tabel) */
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      /* 5. Tambahkan Header Kustom khusus cetak */
+      #table-view::before {
+        content: "LIVE MANIFEST KARYAWAN ON-SITE";
+        display: block;
+        text-align: center;
+        font-size: 18pt;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #000;
+        border-bottom: 2px solid #000;
+        padding-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-header py-3 px-4 shadow-sm mb-4">
+    <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+        <i class="bi bi-clock-history fs-2 text-warning"></i>
+        <div>
+          <h1 class="h4 mb-0 fw-bold">Manifest Karyawan</h1>
+          <small class="opacity-75">Sistem Monitoring Karyawan On-Site</small>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-2 mt-2 mt-md-0">
+        <span class="text-white-50 small ms-2" id="currentClock"></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid px-4 pb-5">
+    <div class="row g-3 mb-4">
+      <div class="col-md-3">
+        <div class="card border-0 shadow-sm rounded-3">
+          <div class="card-body d-flex justify-content-between align-items-center">
+            <div>
+              <p class="text-muted text-uppercase mb-1 small fw-semibold">Total Karyawan On-Site</p>
+              <h3 class="fw-bold mb-0 text-primary" id="statTotalEmployees">0</h3>
+            </div>
+            <div class="p-3 bg-primary-subtle text-primary rounded-circle">
+              <i class="bi bi-people-fill fs-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card border-0 shadow-sm rounded-3">
+          <div class="card-body d-flex justify-content-between align-items-center">
+            <div>
+              <p class="text-muted text-uppercase mb-1 small fw-semibold">Jumlah Cost Center</p>
+              <h3 class="fw-bold mb-0 text-info" id="statCostCenters">{{ result.data|length }}</h3>
+            </div>
+            <div class="p-3 bg-info-subtle text-info rounded-circle">
+              <i class="bi bi-building fs-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card border-0 shadow-sm rounded-3">
+          <div class="card-body d-flex justify-content-between align-items-center">
+            <div>
+              <p class="text-muted text-uppercase mb-1 small fw-semibold">Manifest Hari Ini</p>
+              <h6 class="fw-bold mb-0 text-secondary">manifest_karyawan_{{ current_date }}.txt</h6>
+            </div>
+            <div class="p-3 bg-light rounded-circle">
+              <i class="bi bi-file-earmark-text fs-4 text-secondary"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card border-0 shadow-sm rounded-3">
+      <div class="card-header bg-white border-bottom pt-2 pb-0 px-4">
+        <ul class="nav nav-tabs border-0" id="mainTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="table-tab" data-bs-toggle="tab" data-bs-target="#table-view" type="button" role="tab">
+              <i class="bi bi-table me-2"></i>Tabel
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="manifest-tab" data-bs-toggle="tab" data-bs-target="#manifest-view" type="button" role="tab">
+              <i class="bi bi-folder2-open me-2"></i>Arsip File
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-body p-4">
+        <div class="tab-content" id="mainTabContent">
+
+          <!-- TAB 1: INTERACTIVE TABLE VIEW -->
+          <div class="tab-pane fade show active" id="table-view" role="tabpanel">
+            <div class="row g-3 mb-4 align-items-center">
+              <div class="col-md-3">
+                <div class="input-group">
+                  <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+                  <input type="text" id="searchInput" class="form-control border-start-0 ps-0" placeholder="Cari Nama atau NRP...">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <input type="date" id="target_date" class="form-control">
+              </div>
+              <div class="col-md-3">
+                <select id="costCenterFilter" class="form-select">
+                  <option value="">Semua Cost Center</option>
+                </select>
+              </div>
+              <div class="col-md-3 d-flex gap-2 justify-content-md-end">
+                <button class="btn btn-outline-secondary d-flex align-items-center gap-2" id="btnRefresh">
+                  <i class="bi bi-arrow-clockwise"></i> Refresh (AJAX)
+                </button>
+                <button class="btn btn-success d-flex align-items-center gap-2 shadow-sm" id="btnPrintDirect">
+                  <i class="bi bi-printer"></i> Print Table
+                </button>
+              </div>
+            </div>
+
+            <div id="costCenterGroupsContainer"></div>
+          </div>
+
+          <!-- TAB 2: INDEX OF /MANIFEST -->
+          <div class="tab-pane fade" id="manifest-view" role="tabpanel"> 
+            <div class="table-responsive">
+              <table class="table table-hover align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col" style="width: 50%;">Nama File</th>
+                    <th scope="col">Last Modified</th>
+                    <th scope="col" class="text-end">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="fileIndexTableBody">
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-file-earmark-text fs-4 text-primary"></i>
+                        <div>
+                          <a href="/download_txt" class="fw-bold text-decoration-none">
+                            manifest_karyawan_{{ current_date }}.txt
+                          </a>
+                          <span class="badge bg-primary-subtle text-primary ms-2">Live / Aktif</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="font-monospace text-muted small">{{ now_formatted }}</td>
+                    <td class="text-end">
+                      <a href="/download_txt" class="btn btn-outline-primary btn-sm">
+                        <i class="bi bi-download"></i> Unduh
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
+    <div id="actionToast" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="toastMessage">Pesan notifikasi</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    let currentManifestData = JSON.parse('{{ result.data | tojson | safe }}');
+
+    function showNotification(msg) {
+      $('#toastMessage').text(msg);
+      const toast = new bootstrap.Toast(document.getElementById('actionToast'));
+      toast.show();
+    }
+
+    function updateLiveClock() {
+      const now = new Date();
+      const opts = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      $('#currentClock').text(now.toLocaleDateString('id-ID', opts));
+    }
+    setInterval(updateLiveClock, 1000);
+    updateLiveClock();
+
+    function renderTableGroups(filterKeyword = "", selectedCostCenter = "") {
+      const $container = $("#costCenterGroupsContainer");
+      $container.empty();
+
+      let totalEmployeesCount = 0;
+      let visibleGroups = 0;
+
+      currentManifestData.forEach(group => {
+        if (selectedCostCenter && group.cost_center_id !== selectedCostCenter) {
+          return;
+        }
+
+        const filtered = group.employees.filter(emp => {
+          const q = filterKeyword.toLowerCase();
+          return (
+            emp.name.toLowerCase().includes(q) ||
+            emp.id.includes(q) ||
+            emp.department.toLowerCase().includes(q)
+          );
+        });
+
+        if (filtered.length === 0 && filterKeyword !== "") {
+          return;
+        }
+
+        visibleGroups++;
+        totalEmployeesCount += filtered.length;
+
+        let rowsHtml = "";
+        filtered.forEach(emp => {
+          rowsHtml += `
+            <tr>
+              <td class="fw-medium text-dark">${emp.department}</td>
+              <td><span class="badge bg-light text-dark font-monospace border">${emp.id}</span></td>
+              <td class="fw-semibold">${emp.name}</td>
+              <td><span class="text-success fw-semibold"><i class="bi bi-box-arrow-in-right me-1"></i>${emp.clock_in}</span></td>
+              <td class="text-end"><span class="badge badge-onsite px-2 py-1"><i class="bi bi-geo-alt-fill me-1"></i>On-Site</span></td>
+            </tr>
+          `;
+        });
+
+        const groupCard = `
+          <div class="card border mb-4 shadow-sm rounded-3 overflow-hidden">
+            <div class="card-header cost-center-header py-3 d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-diagram-3-fill text-primary"></i>
+                <span class="fw-bold text-dark">Cost Center : ${group.cost_center_id} - ${group.cost_center_name}</span>
+              </div>
+              <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 fw-bold">${filtered.length} Karyawan</span>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="table-light small text-uppercase text-secondary">
+                  <tr>
+                    <th style="width: 25%;">DEPARTMENT</th>
+                    <th style="width: 15%;">EMPLOYEE ID</th>
+                    <th style="width: 30%;">NAMA KARYAWAN</th>
+                    <th style="width: 20%;">CLOCKING IN</th>
+                    <th style="width: 10%;" class="text-end">STATUS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${rowsHtml.length > 0 ? rowsHtml : '<tr><td colspan="5" class="text-center text-muted py-3">Tidak ada data</td></tr>'}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+        $container.append(groupCard);
+      });
+
+      if (filterKeyword === "" && !selectedCostCenter) {
+        $("#statTotalEmployees").text(totalEmployeesCount);
+      }
+
+      if (visibleGroups === 0) {
+        $container.html(`
+          <div class="text-center py-5">
+            <i class="bi bi-person-x fs-1 text-muted"></i>
+            <h5 class="text-muted mt-2">Tidak ada data karyawan yang cocok dengan kriteria.</h5>
+          </div>
+        `);
+      }
+    }
+
+    function populateCostCenterDropdown() {
+      const $select = $("#costCenterFilter");
+      $select.find('option:not(:first)').remove();
+      currentManifestData.forEach(g => {
+        $select.append(`<option value="${g.cost_center_id}">${g.cost_center_name}</option>`);
+      });
+    }
+
+    function fetchApiData() {
+      const $btn = $("#btnRefresh");
+      const selectedDate = $("#target_date").val(); // Mengambil nilai dari input date
+      
+      $btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Loading...');
+
+      let apiUrl = "/api/data?tag=manifest";
+      if (selectedDate) {
+          apiUrl += `&date=${selectedDate}`;
+      }
+
+      $.getJSON(apiUrl)
+        .done(function(res) {
+          if (res.status === 200 || res.status === 206) {
+            currentManifestData = res.data;
+            
+            $("#dataSourceBadge").text(res.source);
+            $("#statCostCenters").text(currentManifestData.length);
+            
+            populateCostCenterDropdown();
+            renderTableGroups();
+            updateDownloadLink();            
+
+            showNotification(`Data manifest ${selectedDate ? 'tanggal ' + selectedDate : ''} berhasil dimuat.`);
+          }
+        })
+        .fail(function() {
+          showNotification("Gagal menghubungi endpoint API.");
+        })
+        .always(function() {
+          $btn.prop("disabled", false).html('<i class="bi bi-arrow-clockwise"></i> Refresh (AJAX)');
+        });
+    }
+
+    function buildFilterParams() {
+      const date = $("#target_date").val();
+      const search = $("#searchInput").val();
+      const cc_id = $("#costCenterFilter").val();
+      
+      let params = `tag=manifest`;
+      if (date) params += `&date=${date}`;
+      if (search) params += `&search=${encodeURIComponent(search)}`;
+      if (cc_id) params += `&cc_id=${encodeURIComponent(cc_id)}`;
+      
+      return params;
+    }
+
+    // Update link download setiap kali filter UI berubah
+    function updateDownloadLink() {
+      $("#btnDownloadDirect").attr("href", `/download_txt?${buildFilterParams()}`);
+    }
+
+    // =======================================================================
+    // INITIALIZATION & EVENT LISTENERS
+    // =======================================================================
+    $(document).ready(function() {
+      
+      if (!$("#target_date").val()) {
+          const today = new Date().toISOString().split('T')[0];
+          $("#target_date").val(today);
+      }
+
+      populateCostCenterDropdown();
+      renderTableGroups();
+      
+      updateDownloadLink(); 
+
+      $("#searchInput").on("keyup", function() {
+        renderTableGroups($(this).val(), $("#costCenterFilter").val());
+        updateDownloadLink();
+      });
+
+      $("#costCenterFilter").on("change", function() {
+        renderTableGroups($("#searchInput").val(), $(this).val());
+        updateDownloadLink();
+      });
+
+      $("#target_date").on("change", function() {
+        $("#searchInput").val("");
+        $("#costCenterFilter").val("");
+        fetchApiData();
+      });
+
+      $("#btnRefresh").on("click", function() {
+        $("#searchInput").val("");
+        $("#costCenterFilter").val("");
+        fetchApiData();
+      });
+
+      $("#btnPrintDirect").on("click", function() {
+      if ($("#costCenterGroupsContainer").children().length === 0) {
+         showNotification("Tidak ada data manifest yang bisa dicetak berdasarkan filter saat ini.");
+         return;
+      }
+
+      const $btn =$(this);
+      const originalHtml = $btn.html();
+      const printUrl = `/raw_txt?${buildFilterParams()}`; // <-- URL sudah mencakup filter!
+
+      $btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Menyiapkan Dokumen...');
+
+      $.get(printUrl)
+        .done(function(rawText) {
+          const iframe = document.createElement('iframe');
+          iframe.style.visibility = 'hidden';
+          iframe.style.position = 'absolute';
+          iframe.style.width = '0';
+          iframe.style.height = '0';
+          iframe.style.border = 'none';
+          document.body.appendChild(iframe);
+
+          const iframeDoc = iframe.contentWindow.document;
+          iframeDoc.open();
+          iframeDoc.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <title>Print Manifest</title>
+              <style>
+                @media print {
+                  @page { margin: 1cm; size: A4 portrait; }
+                  body { 
+                    font-family: "Courier New", Courier, monospace !important; 
+                    font-size: 10pt; 
+                    color: #000;
+                    margin: 0;
+                  }
+                  pre {
+                    white-space: pre-wrap; 
+                    word-wrap: break-word;
+                    margin: 0;
+                  }
+                }
+              </style>
+            </head>
+            <body>
+              <pre>${rawText}</pre>
+            </body>
+            </html>
+          `);
+          iframeDoc.close();
+
+          setTimeout(function() {
+            iframe.contentWindow.focus();
+            iframe.contentWindow.print();
+            
+            setTimeout(function() {
+              document.body.removeChild(iframe);
+              $btn.prop("disabled", false).html(originalHtml);
+            }, 1000);
+          }, 250);
+
+        })
+        .fail(function() {
+          showNotification("Gagal mengambil teks manifest dari server.");
+          $btn.prop("disabled", false).html(originalHtml);
+        });
+    });
+
+    });
+  </script>
+</body>
+</html>
