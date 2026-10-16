@@ -27,7 +27,7 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                     card_id,
                     MIN(CASE WHEN direction = 0 THEN clocking_time END) AS clock_in_time,
                     MAX(CASE WHEN direction = 1 THEN clocking_time END) AS clock_out_time
-                FROM `db-it-andreas`.vw_manifest
+                FROM `db-it-andreas`.VW_TACTIVITIES_STAGING_VALID
                 WHERE clocking_date = :target_date
                 GROUP BY card_id, clocking_date
                 HAVING clock_in_time IS NOT NULL 

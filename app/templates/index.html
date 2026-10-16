@@ -151,7 +151,7 @@
           <div class="card-body d-flex justify-content-between align-items-center">
             <div>
               <p class="text-muted text-uppercase mb-1 small fw-semibold">Manifest Hari Ini</p>
-              <h6 class="fw-bold mb-0 text-secondary">manifest_karyawan_{{ current_date }}.txt</h6>
+              <h6 class="fw-bold mb-0 text-secondary" id="uiFileName">manifest_karyawan_{{ current_date }}.txt</h6>
             </div>
             <div class="p-3 bg-light rounded-circle">
               <i class="bi bi-file-earmark-text fs-4 text-secondary"></i>
@@ -395,7 +395,10 @@
             
             populateCostCenterDropdown();
             renderTableGroups();
-            updateDownloadLink();            
+            updateDownloadLink();
+
+            const safeDate = selectedDate ? selectedDate.replace(/-/g, '') : new Date().toISOString().split('T')[0].replace(/-/g, '');
+            $("#uiFileName").text(`manifest_karyawan_${safeDate}.txt`);
 
             showNotification(`Data manifest ${selectedDate ? 'tanggal ' + selectedDate : ''} berhasil dimuat.`);
           }
@@ -464,74 +467,183 @@
       });
 
       $("#btnPrintDirect").on("click", function() {
-      if ($("#costCenterGroupsContainer").children().length === 0) {
-         showNotification("Tidak ada data manifest yang bisa dicetak berdasarkan filter saat ini.");
-         return;
-      }
+        const filterKeyword = $("#searchInput").val().toLowerCase();
+        const selectedCostCenter = $("#costCenterFilter").val();
 
-      const $btn =$(this);
-      const originalHtml = $btn.html();
-      const printUrl = `/raw_txt?${buildFilterParams()}`; // <-- URL sudah mencakup filter!
+        let filteredGroups = [];
+        let grandTotal = 0;
 
-      $btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Menyiapkan Dokumen...');
+        // 1. In-Memory Filtering
+        currentManifestData.forEach(group => {
+          if (selectedCostCenter && group.cost_center_id !== selectedCostCenter) return;
 
-      $.get(printUrl)
-        .done(function(rawText) {
-          const iframe = document.createElement('iframe');
-          iframe.style.visibility = 'hidden';
-          iframe.style.position = 'absolute';
-          iframe.style.width = '0';
-          iframe.style.height = '0';
-          iframe.style.border = 'none';
-          document.body.appendChild(iframe);
+          const filteredEmps = group.employees.filter(emp => {
+            return (
+              emp.name.toLowerCase().includes(filterKeyword) ||
+              emp.id.includes(filterKeyword) ||
+              emp.department.toLowerCase().includes(filterKeyword)
+            );
+          });
 
-          const iframeDoc = iframe.contentWindow.document;
-          iframeDoc.open();
-          iframeDoc.write(`
-            <!DOCTYPE html>
-            <html>
-            <head>
-              <title>Print Manifest</title>
-              <style>
-                @media print {
-                  @page { margin: 1cm; size: A4 portrait; }
-                  body { 
-                    font-family: "Courier New", Courier, monospace !important; 
-                    font-size: 10pt; 
-                    color: #000;
-                    margin: 0;
-                  }
-                  pre {
-                    white-space: pre-wrap; 
-                    word-wrap: break-word;
-                    margin: 0;
-                  }
-                }
-              </style>
-            </head>
-            <body>
-              <pre>${rawText}</pre>
-            </body>
-            </html>
-          `);
-          iframeDoc.close();
-
-          setTimeout(function() {
-            iframe.contentWindow.focus();
-            iframe.contentWindow.print();
-            
-            setTimeout(function() {
-              document.body.removeChild(iframe);
-              $btn.prop("disabled", false).html(originalHtml);
-            }, 1000);
-          }, 250);
-
-        })
-        .fail(function() {
-          showNotification("Gagal mengambil teks manifest dari server.");
-          $btn.prop("disabled", false).html(originalHtml);
+          if (filteredEmps.length > 0) {
+            filteredGroups.push({
+              cost_center_id: group.cost_center_id,
+              cost_center_name: group.cost_center_name,
+              employees: filteredEmps
+            });
+            grandTotal += filteredEmps.length;
+          }
         });
-    });
+
+        if (filteredGroups.length === 0) {
+           showNotification("Tidak ada data manifest yang bisa dicetak berdasarkan filter saat ini.");
+           return;
+        }
+
+        const $btn =$(this);
+        const originalHtml = $btn.html();$btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Menyiapkan...');
+
+        // 2. LOGIKA CHUNKING (Pemotongan Halaman Manual)
+        const MAX_ROWS_PER_PAGE = 45; // Maksimal karyawan per halaman A4
+        let pages = [];
+
+        filteredGroups.forEach(group => {
+          let emps = group.employees;
+          let totalEmps = emps.length;
+          let currentIndex = 0;
+
+          // Jika 1 Cost Center punya lebih dari 45 orang, akan otomatis dipecah ke halaman berikutnya
+          while (currentIndex < totalEmps) {
+            pages.push({
+              cost_center_id: group.cost_center_id,
+              cost_center_name: group.cost_center_name,
+              sub_total: totalEmps,
+              employees: emps.slice(currentIndex, currentIndex + MAX_ROWS_PER_PAGE)
+            });
+            currentIndex += MAX_ROWS_PER_PAGE;
+          }
+        });
+
+        const totalPages = pages.length;
+        const printDate = new Date().toLocaleString('id-ID');
+
+        // 3. Bangun Struktur HTML
+        let htmlContent = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Print Manifest</title>
+          <style>
+            @media print {
+              @page { margin: 1cm; size: A4 portrait; }
+              body { 
+                font-family: "Courier New", Courier, monospace !important; 
+                font-size: 10pt; 
+                color: #000;
+                margin: 0;
+              }
+              .print-page {
+                page-break-after: always; 
+                display: flex;
+                flex-direction: column;
+                min-height: 27cm; /* Mengisi penuh 1 halaman A4 */
+              }
+              .print-page:last-child {
+                page-break-after: auto; 
+              }
+              .print-header {
+                text-align: center; 
+                margin-bottom: 20px; 
+                border-bottom: 2px dashed #000; 
+                padding-bottom: 10px;
+              }
+              .print-content {
+                flex-grow: 1; /* Mendorong footer ke paling bawah kertas */
+              }
+              pre {
+                white-space: pre-wrap; 
+                margin: 0;
+                line-height: 1.2;
+              }
+              .print-footer {
+                text-align: right;
+                font-size: 9pt;
+                border-top: 1px dashed #000;
+                padding-top: 5px;
+                margin-top: 10px;
+              }
+            }
+          </style>
+        </head>
+        <body>
+        `;
+
+        // 4. Render Data per Halaman (Bukan per Cost Center lagi, agar rapi jika kepanjangan)
+        pages.forEach((pageData, index) => {
+          const currentPageNum = index + 1;
+          
+          htmlContent += `
+          <div class="print-page">
+            <div class="print-header">
+              <h3 style="margin: 0;">MANIFEST KARYAWAN ON-SITE</h3>
+              <span>Tanggal Cetak: ${printDate} | Total Keseluruhan: <strong>${grandTotal} Orang</strong></span>
+            </div>
+            
+            <div class="print-content">
+              <pre>`;
+          htmlContent += `Cost Center : ${pageData.cost_center_id} - ${pageData.cost_center_name}\n`;
+          htmlContent += `Sub-Total   : ${pageData.sub_total} Orang\n`;
+          htmlContent += `======================================================================\n`;
+          htmlContent += `NRP       | NAMA KARYAWAN                  | CLOCK IN\n`;
+          htmlContent += `----------------------------------------------------------------------\n`;
+
+          pageData.employees.forEach(emp => {
+            let idPad = String(emp.id).padEnd(9, ' ');
+            let namePad = String(emp.name).padEnd(30, ' ').substring(0, 30);
+            htmlContent += `${idPad} | ${namePad} | ${emp.clock_in}\n`;
+          });
+
+          htmlContent += `======================================================================\n`;
+          htmlContent += `</pre>
+            </div>
+            
+            <!-- NOMOR HALAMAN HARDCODED (DIJAMIN MUNCUL 100% DI SEMUA BROWSER) -->
+            <div class="print-footer">
+              Halaman ${currentPageNum} dari ${totalPages}
+            </div>
+          </div>
+          `;
+        });
+
+        htmlContent += `
+        </body>
+        </html>
+        `;
+
+        // 5. Eksekusi Iframe Print
+        const iframe = document.createElement('iframe');
+        iframe.style.visibility = 'hidden';
+        iframe.style.position = 'absolute';
+        iframe.style.width = '0';
+        iframe.style.height = '0';
+        iframe.style.border = 'none';
+        document.body.appendChild(iframe);
+
+        const iframeDoc = iframe.contentWindow.document;
+        iframeDoc.open();
+        iframeDoc.write(htmlContent);
+        iframeDoc.close();
+
+        setTimeout(function() {
+          iframe.contentWindow.focus();
+          iframe.contentWindow.print();
+          
+          setTimeout(function() {
+            document.body.removeChild(iframe);
+            $btn.prop("disabled", false).html(originalHtml);
+          }, 1000);
+        }, 300);
+      });
 
     });
   </script>
