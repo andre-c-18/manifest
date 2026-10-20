@@ -1,7 +1,7 @@
 from sqlalchemy import text
 from typing import Dict, Any
 from app.config import engine
-from datetime import datetime
+from datetime import datetime, timedelta
 import logging
 
 logger = logging.getLogger("ManifestAPI.Database")
@@ -9,6 +9,10 @@ logger = logging.getLogger("ManifestAPI.Database")
 def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -> Dict[str, Any]:
     if not target_date:
         target_date = datetime.now().strftime("%Y-%m-%d")
+
+    target_date_obj = datetime.strptime(target_date, "%Y-%m-%d")
+    start_time = target_date_obj.strftime("%Y-%m-%d 00:00:00")
+    end_time = (target_date_obj + timedelta(days=1)).strftime("%Y-%m-%d 00:00:00")
 
     try:
         # =========================================================
@@ -18,8 +22,7 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
         with engine.connect() as conn:
             
             # =========================================================
-            # STEP 1: FETCH KARYAWAN UNMATCHED / ACTIVE
-            # Menggunakan vw_manifest (sudah terfilter terminal khusus manifest di DB)
+            # STEP 1: FETCH KARYAWAN UNMATCHED / ACTIVE            
             # Agregasi log vertikal: 0 = In, 1 = Out
             # =========================================================
             q_trans = text("""
@@ -28,13 +31,17 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                     MIN(CASE WHEN direction = 0 THEN clocking_time END) AS clock_in_time,
                     MAX(CASE WHEN direction = 1 THEN clocking_time END) AS clock_out_time
                 FROM `db-it-andreas`.VW_TACTIVITIES_STAGING_VALID
-                WHERE clocking_date = :target_date
-                GROUP BY card_id, clocking_date
+                WHERE clocking_time >= :start_time 
+                    AND clocking_time < :end_time
+                GROUP BY card_id
                 HAVING clock_in_time IS NOT NULL 
                    AND clock_out_time IS NULL
             """)
             
-            trans_data = conn.execute(q_trans, {"target_date": target_date}).fetchall()
+            trans_data = conn.execute(q_trans, {
+                "start_time": start_time,
+                "end_time": end_time
+            }).fetchall()
             
             if not trans_data:
                 return {'data': [], 'source': 'database', 'error': None, 'date': target_date}
