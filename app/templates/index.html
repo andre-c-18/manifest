@@ -327,7 +327,7 @@
             <div class="card-header cost-center-header py-3 d-flex justify-content-between align-items-center">
               <div class="d-flex align-items-center gap-2">
                 <i class="bi bi-diagram-3-fill text-primary"></i>
-                <span class="fw-bold text-dark">Cost Center : ${group.cost_center_id} - ${group.cost_center_name}</span>
+                <span class="fw-bold text-dark">Cost Center : ${group.cost_center_name}</span>
               </div>
               <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 fw-bold">${filtered.length} Karyawan</span>
             </div>
@@ -370,7 +370,8 @@
       const $select = $("#costCenterFilter");
       $select.find('option:not(:first)').remove();
       currentManifestData.forEach(g => {
-        $select.append(`<option value="${g.cost_center_id}">${g.cost_center_name}</option>`);
+        const label = g.cost_center_name || g.cost_center_id;
+        $select.append(`<option value="${g.cost_center_id}">${label}</option>`);
       });
     }
 

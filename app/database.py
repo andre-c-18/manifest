@@ -88,29 +88,54 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
             # =========================================================================
             # TAHAP 3: AMBIL MASTER KARYAWAN (GABUNGAN TETAP & OS)
             # =========================================================================
-            # 1. Karyawan Tetap
+            # 1. Ambil Master org_cost_center (Di-cache ke memori)
+            q_occ = text("""
+                SELECT id, cost_center, org_name 
+                FROM `db-hr`.`org_cost_center`
+                ORDER BY id ASC
+            """)
+            occ_rows = conn.execute(q_occ).mappings().fetchall()
+
+            # Mapping O(1) di Python
+            cc_by_id = {}    # Prioritas untuk OS (menggunakan org_cc_id / id)
+            cc_by_code = {}  # Prioritas untuk Tetap (mengambil nilai pertama jika cost_center kembar)
+
+            for r in occ_rows:
+                r_id = str(r['id']).strip() if r.get('id') is not None else ""
+                r_code = str(r['cost_center']).strip() if r.get('cost_center') is not None else ""
+                r_name = str(r['org_name']).strip() if r.get('org_name') else ""
+
+                if r_id and r_name:
+                    cc_by_id[r_id] = r_name
+
+                # Hanya ambil nilai pertama jika ada kode cost_center yang kembar
+                if r_code and r_code not in cc_by_code and r_name:
+                    cc_by_code[r_code] = r_name
+
+            # 2. Ambil Master Karyawan Tetap
             q_tetap = text(f"""
                 SELECT 
                     card_no, 
                     employee_id, 
                     employee_name, 
                     cost_center, 
-                    dept_name,
-                    'CRS' AS sub_company_name
+                    'CRS' AS sub_company_name,
+                    'TETAP' AS worker_category
                 FROM `vw_master_karyawan`
                 WHERE card_no IN ({card_in_clause})
             """)
             tetap_rows = conn.execute(q_tetap).mappings().fetchall()
 
-            # 2. Karyawan OS
+            # 3. Ambil Master Karyawan OS (Ambil org_cc_id dan cost_center_id)
             q_os = text(f"""
                 SELECT 
                     card_number AS card_no, 
                     CAST(employee_code AS CHAR) AS employee_id, 
                     employee_name, 
+                    org_cc_id,
                     cost_center_id AS cost_center, 
-                    cc_name AS dept_name,
-                    sub_company_name
+                    sub_company_name,
+                    'OS' AS worker_category
                 FROM `db-hr`.`vw_master_os_active`
                 WHERE card_number IN ({card_in_clause})
             """)
@@ -126,15 +151,14 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                     emp_map[str(r['card_no']).strip()] = dict(r)
 
             # =========================================================================
-            # TAHAP 4: IN-MEMORY MERGE & GROUPING FORMAT API
+            # TAHAP 4: FILTER ON-SITE (IN > OUT), RESOLUSI CC, & GROUPING
             # =========================================================================
+            # 1. Kumpulkan histori tap per karyawan
             emp_taps: Dict[str, Dict[str, Any]] = {}
 
             for tap in valid_taps:
                 c_id = tap['card_id']
                 emp_data = emp_map.get(c_id)
-                
-                # Syarat 1: Wajib ada di master data
                 if not emp_data:
                     continue
                 
@@ -145,70 +169,83 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                 if emp_id not in emp_taps:
                     emp_taps[emp_id] = {
                         'emp_data': emp_data,
+                        'min_in': None,
                         'max_in': None,
                         'max_out': None
                     }
 
-                # Catat waktu tap IN dan OUT terbesar (terbaru)
                 if direction == 'IN':
+                    if emp_taps[emp_id]['min_in'] is None or tap_time < emp_taps[emp_id]['min_in']:
+                        emp_taps[emp_id]['min_in'] = tap_time
+                    
                     if emp_taps[emp_id]['max_in'] is None or tap_time > emp_taps[emp_id]['max_in']:
                         emp_taps[emp_id]['max_in'] = tap_time
+
                 elif direction == 'OUT':
                     if emp_taps[emp_id]['max_out'] is None or tap_time > emp_taps[emp_id]['max_out']:
                         emp_taps[emp_id]['max_out'] = tap_time
 
-            # 2. Filter: Hanya karyawan yang punya IN dan belum OUT (atau IN > OUT)
             emp_active_on_site: Dict[str, Dict[str, Any]] = {}
 
             for emp_id, data in emp_taps.items():
+                min_in = data['min_in']
                 latest_in = data['max_in']
                 latest_out = data['max_out']
 
-                # Syarat utama: Punya IN, dan (tidak pernah OUT atau tap IN terakhir lebih baru dari OUT terakhir)
                 if latest_in is not None:
                     if latest_out is None or latest_in > latest_out:
                         emp_active_on_site[emp_id] = {
                             'emp_data': data['emp_data'],
-                            'clock_in_time': latest_in
+                            'clock_in_time': min_in
                         }
 
-            # 3. Format struktur grouping departemen / cost center untuk UI
+            # 3. Format struktur grouping dengan nama dari org_cost_center
             grouped: Dict[str, Dict[str, Any]] = {}
 
             for emp_id, data in emp_active_on_site.items():
                 emp_data = data['emp_data']
                 tap_time = data['clock_in_time']
+                worker_type = emp_data.get('worker_category', 'TETAP')
                 
-                raw_cc = emp_data.get('cost_center')
-                raw_dept = emp_data.get('dept_name')
-                sub_company = emp_data.get('sub_company_name')
+                raw_cc = str(emp_data.get('cost_center') or '').strip()
+                raw_org_cc_id = str(emp_data.get('org_cc_id') or '').strip()
+                sub_company = str(emp_data.get('sub_company_name') or '').strip()
 
-                # Logika Fallback Cost Center / Department
-                cc_valid = raw_cc and str(raw_cc).strip().lower() not in ('', 'none', 'null', 'nan', '-')
-                dept_valid = raw_dept and str(raw_dept).strip().lower() not in ('', 'none', 'null', 'nan', '-')
-                sub_valid = sub_company and str(sub_company).strip().lower() not in ('', 'none', 'null', 'nan', '-')
+                matched_name = ""
 
-                if dept_valid:
-                    final_dept_name = str(raw_dept).strip()
-                    final_cc_id = str(raw_cc).strip() if cc_valid else final_dept_name
-                elif sub_valid:
-                    final_dept_name = str(sub_company).strip()
-                    final_cc_id = final_dept_name
+                if worker_type == 'OS':
+                    if raw_org_cc_id and raw_org_cc_id in cc_by_id:
+                        matched_name = cc_by_id[raw_org_cc_id]
+                    elif raw_cc and raw_cc in cc_by_code:
+                        matched_name = cc_by_code[raw_cc]
                 else:
-                    final_dept_name = "UNASSIGNED"
-                    final_cc_id = "UNASSIGNED"
+                    if raw_cc and raw_cc in cc_by_code:
+                        matched_name = cc_by_code[raw_cc]
+
+                if matched_name:
+                    clean_name = matched_name
+                elif sub_company and sub_company.lower() not in ('none', 'null', '', '-'):
+                    clean_name = sub_company
+                elif raw_cc:
+                    clean_name = raw_cc
+                else:
+                    clean_name = "UNASSIGNED"
+
+                group_key = clean_name
+                final_id = raw_cc if raw_cc and raw_cc != clean_name else ""
+                final_name = clean_name
 
                 c_in_str = tap_time.strftime('%d-%b-%Y %H:%M') if isinstance(tap_time, datetime) else str(tap_time)
 
-                if final_cc_id not in grouped:
-                    grouped[final_cc_id] = {
-                        'cost_center_id': final_cc_id, 
-                        'cost_center_name': final_dept_name, 
+                if group_key not in grouped:
+                    grouped[group_key] = {
+                        'cost_center_id': final_id, 
+                        'cost_center_name': final_name, 
                         'employees': []
                     }
                 
-                grouped[final_cc_id]['employees'].append({
-                    'department': final_dept_name,
+                grouped[group_key]['employees'].append({
+                    'department': final_name,
                     'id': emp_id,
                     'name': str(emp_data.get('employee_name') or "UNKNOWN"),
                     'clock_in': c_in_str
