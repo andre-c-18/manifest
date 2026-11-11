@@ -97,8 +97,8 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
             occ_rows = conn.execute(q_occ).mappings().fetchall()
 
             # Mapping O(1) di Python
-            cc_by_id = {}    # Prioritas untuk OS (menggunakan org_cc_id / id)
-            cc_by_code = {}  # Prioritas untuk Tetap (mengambil nilai pertama jika cost_center kembar)
+            cc_by_id = {}
+            cc_by_code = {}
 
             for r in occ_rows:
                 r_id = str(r['id']).strip() if r.get('id') is not None else ""

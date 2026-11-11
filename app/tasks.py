@@ -18,7 +18,6 @@ def generate_and_save_manifest_job():
     logger.info("Memulai eksekusi background job: Generate Manifest TXT...")
     try:
         # 1. Gunakan fungsi yang sudah sangat teroptimasi (Hybrid Filtering)
-        # Fungsi ini otomatis membuka & menutup koneksi DB dengan Context Manager
         result = fetch_active_clocking_data(tag="manifest")
         
         if result.get("error"):
@@ -29,7 +28,6 @@ def generate_and_save_manifest_job():
         txt_content = build_txt_manifest_content(result["data"])
         
         # 3. Tentukan nama file (Timestamps harian)
-        # Format: manifest_karyawan_YYYYMMDD.txt (akan menimpa file di hari yang sama)
         safe_date_file = result['date'].replace('-', '')
         filename = f"manifest_karyawan_{safe_date_file}.txt"
         filepath = os.path.join(STORAGE_DIR, filename)

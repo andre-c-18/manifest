@@ -30,7 +30,6 @@ def build_txt_manifest_content(data_list: list) -> str:
         
         lines.append("=" * 70)
         
-        # 🌟 Karakter \f (Form Feed): Memaksa Notepad / Printer fisik ganti halaman 🌟
         lines.append("\f")
         
     return "\n".join(lines)
