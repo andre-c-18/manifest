@@ -18,6 +18,8 @@ APP_PORT = int(os.getenv("APP_PORT", "8000"))
 APP_DEBUG = os.getenv("APP_DEBUG", "True").lower() == "true"
 DEFAULT_TAG = os.getenv("DEFAULT_TAG", "manifest")
 
+ADMIN_USER_HASH = os.getenv("ADMIN_USER_HASH")
+
 DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
 engine = create_engine(

@@ -3,16 +3,17 @@ from fastapi.responses import HTMLResponse, PlainTextResponse, Response, JSONRes
 from fastapi.templating import Jinja2Templates
 from contextlib import asynccontextmanager
 from apscheduler.schedulers.background import BackgroundScheduler
-from starlette.middleware.sessions import SessionMiddleware # 🌟 IMPORT MIDDLEWARE SESSION
+from starlette.middleware.sessions import SessionMiddleware
 from datetime import datetime
 import uvicorn
 import logging
 import os
 
-from app.config import APP_HOST, APP_PORT
+from app.config import APP_HOST, APP_PORT, ADMIN_USER_HASH
 from app.database import fetch_active_clocking_data
 from app.generator import build_txt_manifest_content
 from app.tasks import generate_and_save_manifest_job, STORAGE_DIR 
+from app.security import verify_password
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("ManifestAPI")
@@ -82,9 +83,9 @@ def login_page(request: Request):
 
 @app.post("/login")
 def login_submit(request: Request, username: str = Form(...), password: str = Form(...)):
-    """Validasi Login (Hardcoded untuk contoh, idealnya cek ke DB Master User)"""
-    # GANTI KREDENSIAL INI DENGAN LOGIK DATABASE ANDA JIKA PERLU
-    if username == "admin" and password == "admin123":
+    
+    if username == "admin" and ADMIN_USER_HASH and verify_password(password, ADMIN_USER_HASH):        
+        request.session.clear()         
         request.session["authenticated"] = True
         request.session["username"] = username
         return RedirectResponse(url="/", status_code=status.HTTP_303_SEE_OTHER)
@@ -96,13 +97,11 @@ def login_submit(request: Request, username: str = Form(...), password: str = Fo
 
 @app.get("/logout")
 def logout(request: Request):
-    """Menghapus sesi dan keluar"""
     request.session.clear()
     return RedirectResponse(url="/login", status_code=status.HTTP_302_FOUND)
 
 @app.get("/", response_class=HTMLResponse)
 def index(request: Request, tag: str = Query("manifest"), date: str = Query(None)):
-    """Halaman Dashboard Utama (Terlindungi)"""
     # 🌟 PROTEKSI HALAMAN
     if not check_html_auth(request):
         return RedirectResponse(url="/login", status_code=status.HTTP_302_FOUND)
