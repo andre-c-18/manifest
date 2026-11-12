@@ -9,7 +9,7 @@ import uvicorn
 import logging
 import os
 
-from app.config import APP_HOST, APP_PORT, ADMIN_USER_HASH
+from app.config import (APP_HOST, APP_PORT, SECRET_KEY, ADMIN_USER, ADMIN_USER_HASH,UPDATE_INTERVAL_MINUTES)
 from app.database import fetch_active_clocking_data
 from app.generator import build_txt_manifest_content
 from app.tasks import generate_and_save_manifest_job, STORAGE_DIR 
@@ -22,19 +22,31 @@ scheduler = BackgroundScheduler()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("Menyalakan Enterprise Task Scheduler...")
+    logger.info("Menyalakan Scheduler...")
+    scheduler.add_job(
+        generate_and_save_manifest_job,
+        trigger="interval",
+        minutes=UPDATE_INTERVAL_MINUTES,
+        id="auto_manifest_job",
+        replace_existing=True
+    )
     scheduler.start()
     yield
-    logger.info("Mematikan Task Scheduler dengan aman...")
+    logger.info("Mematikan Scheduler...")
     scheduler.shutdown()
 
-app = FastAPI(title="Enterprise Live Clocking Manifest", lifespan=lifespan)
+app = FastAPI(title="Live Clocking Manifest", lifespan=lifespan)
 templates = Jinja2Templates(directory="app/templates")
 
 # ============================================================================
 # ENTERPRISE SECURITY LAYER (SESSION MIDDLEWARE)
 # ============================================================================
-app.add_middleware(SessionMiddleware, secret_key="super-secret-enterprise-key-manifest-2026")
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=SECRET_KEY,
+    session_cookie="manifest_session",
+    max_age=7200  # 4 jam sesi aktif
+)
 
 def check_html_auth(request: Request):
     """Helper untuk proteksi halaman HTML (Redirect jika belum login)"""
@@ -84,7 +96,7 @@ def login_page(request: Request):
 @app.post("/login")
 def login_submit(request: Request, username: str = Form(...), password: str = Form(...)):
     
-    if username == "admin" and ADMIN_USER_HASH and verify_password(password, ADMIN_USER_HASH):        
+    if username == ADMIN_USER and ADMIN_USER_HASH and verify_password(password, ADMIN_USER_HASH):        
         request.session.clear()         
         request.session["authenticated"] = True
         request.session["username"] = username
@@ -117,7 +129,8 @@ def index(request: Request, tag: str = Query("manifest"), date: str = Query(None
         "display_date": safe_date_display,
         "current_date": datetime.now().strftime("%Y%m%d"),
         "now_formatted": datetime.now().strftime("%Y-%m-%d %H:%M"),
-        "username": request.session.get("username", "Admin")
+        "username": request.session.get("username", "Admin"),
+        "refresh_interval_seconds": UPDATE_INTERVAL_MINUTES
     })
 
 # ============================================================================

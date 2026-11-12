@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Manifest Karyawan On-Site (Python Enterprise)</title>
+  <title>Live Manifest Karyawan On-Site</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
@@ -48,7 +48,6 @@
     }
 
     @media print {
-      /* 1. Sembunyikan elemen UI yang tidak relevan di kertas */
       .top-header, 
       .nav-tabs, 
       .input-group, 
@@ -59,11 +58,10 @@
       #btnPrintDirect, 
       #actionToast,
       .card-header:not(.cost-center-header),
-      .col-md-3 > .card /* Sembunyikan card statistik atas */ {
+      .col-md-3 > .card {
         display: none !important;
       }
 
-      /* 2. Format ulang body agar hemat tinta dan bersih */
       body {
         background-color: #ffffff !important;
         font-size: 11pt !important;
@@ -72,7 +70,6 @@
         padding: 0 !important;
       }
 
-      /* 3. Mencegah tabel terpotong di tengah halaman (Page Break Protection) */
       .card {
         border: none !important;
         box-shadow: none !important;
@@ -80,13 +77,11 @@
         page-break-inside: avoid !important;
       }
 
-      /* 4. Paksa browser mencetak warna background (badge, header tabel) */
       * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
       }
 
-      /* 5. Tambahkan Header Kustom khusus cetak */
       #table-view::before {
         content: "LIVE MANIFEST KARYAWAN ON-SITE";
         display: block;
@@ -97,6 +92,76 @@
         color: #000;
         border-bottom: 2px solid #000;
         padding-bottom: 10px;
+      }
+    }
+
+    #btnJumpToTop {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 1050;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--primary-gradient);
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 10px rgba(15, 76, 129, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    #btnJumpToTop.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #btnJumpToTop:hover {
+      background: var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    /* Penyesuaian Responsif untuk Mobile */
+    @media (max-width: 768px) {
+      body {
+        font-size: 12px;
+      }
+
+      .top-header h1 {
+        font-size: 1.25rem;
+      }
+
+      .card-body {
+        padding: 1rem;
+      }
+
+      .card-body h3 {
+        font-size: 1.5rem;
+      }
+
+      .tab-pane .row.g-3 {
+        margin-bottom: 1rem !important;
+      }
+
+      .table-responsive {
+        border: 0;
+      }
+
+      .table th:nth-child(1), .table td:nth-child(1) {
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .dropdown-toggle, .btn {
+        padding: 8px 12px;
       }
     }
   </style>
@@ -210,7 +275,7 @@
               </div>
               <div class="col-md-3 d-flex gap-2 justify-content-md-end">
                 <button class="btn btn-outline-secondary d-flex align-items-center gap-2" id="btnRefresh">
-                  <i class="bi bi-arrow-clockwise"></i> Refresh (AJAX)
+                  <i class="bi bi-arrow-clockwise"></i> Refresh
                 </button>
                 <button class="btn btn-success d-flex align-items-center gap-2 shadow-sm" id="btnPrintDirect">
                   <i class="bi bi-printer"></i> Print Table
@@ -274,8 +339,10 @@
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
   <script>
+    const refreshIntervalSeconds = parseInt("{{ refresh_interval_seconds }}") || 900;
+    const refreshIntervalMs = refreshIntervalSeconds * 1000;
+    let autoRefreshTimer = null;
     let currentManifestData = JSON.parse('{{ result.data | tojson | safe }}');
 
     function showNotification(msg) {
@@ -289,13 +356,13 @@
       const opts = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
       $('#currentClock').text(now.toLocaleDateString('id-ID', opts));
     }
+
     setInterval(updateLiveClock, 1000);
     updateLiveClock();
 
     function renderTableGroups(filterKeyword = "", selectedCostCenter = "") {
       const $container = $("#costCenterGroupsContainer");
       $container.empty();
-
       let totalEmployeesCount = 0;
       let visibleGroups = 0;
 
@@ -379,18 +446,28 @@
 
     function populateCostCenterDropdown() {
       const $select = $("#costCenterFilter");
+      const currentSelection = $select.val();
+      
       $select.find('option:not(:first)').remove();
       currentManifestData.forEach(g => {
         const label = g.cost_center_name || g.cost_center_id;
         $select.append(`<option value="${g.cost_center_id}">${label}</option>`);
       });
+
+      if (currentSelection) {
+        $select.val(currentSelection);
+      }
     }
 
-    function fetchApiData() {
+    function fetchApiData(isAutoRefresh = false) {
       const $btn = $("#btnRefresh");
-      const selectedDate = $("#target_date").val(); // Mengambil nilai dari input date
+      const selectedDate = $("#target_date").val();
+      const currentSearch = $("#searchInput").val();
+      const currentCC = $("#costCenterFilter").val();
       
-      $btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Loading...');
+      if (!isAutoRefresh) {
+          $btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Loading...');
+      }
 
       let apiUrl = "/api/data?tag=manifest";
       if (selectedDate) {
@@ -402,24 +479,33 @@
           if (res.status === 200 || res.status === 206) {
             currentManifestData = res.data;
             
-            $("#dataSourceBadge").text(res.source);
-            $("#statCostCenters").text(currentManifestData.length);
-            
-            populateCostCenterDropdown();
-            renderTableGroups();
+            $("#statCostCenters").text(currentManifestData.length);            
+            populateCostCenterDropdown();            
+            renderTableGroups(currentSearch, currentCC);
             updateDownloadLink();
 
             const safeDate = selectedDate ? selectedDate.replace(/-/g, '') : new Date().toISOString().split('T')[0].replace(/-/g, '');
             $("#uiFileName").text(`manifest_karyawan_${safeDate}.txt`);
 
-            showNotification(`Data manifest ${selectedDate ? 'tanggal ' + selectedDate : ''} berhasil dimuat.`);
+             if (!isAutoRefresh) {
+                showNotification(`Data manifest ${selectedDate ? 'tanggal ' + selectedDate : ''} berhasil dimuat.`);
+            } else {
+                console.log("Auto-Refresh sukses pada:", new Date().toLocaleTimeString());
+            }
           }
         })
-        .fail(function() {
-          showNotification("Gagal menghubungi endpoint API.");
+        .fail(function(xhr) {
+          if (xhr.status === 401) {
+              window.location.href = '/login';
+          }
+          if (!isAutoRefresh) {
+              showNotification("Gagal menghubungi endpoint API.");
+          }
         })
         .always(function() {
-          $btn.prop("disabled", false).html('<i class="bi bi-arrow-clockwise"></i> Refresh (AJAX)');
+          if (!isAutoRefresh) {
+              $btn.prop("disabled", false).html('<i class="bi bi-arrow-clockwise"></i> Refresh');
+          }
         });
     }
 
@@ -436,25 +522,37 @@
       return params;
     }
 
-    // Update link download setiap kali filter UI berubah
     function updateDownloadLink() {
       $("#btnDownloadDirect").attr("href", `/download_txt?${buildFilterParams()}`);
     }
 
-    // =======================================================================
-    // INITIALIZATION & EVENT LISTENERS
-    // =======================================================================
+    function startAutoRefresh() {
+        stopAutoRefresh();
+        if (refreshIntervalMs > 0) {
+            autoRefreshTimer = setInterval(function() {
+                fetchApiData(true);
+            }, refreshIntervalMs);
+            console.log(`Auto-refresh aktif setiap ${refreshIntervalSeconds} detik.`);
+        }
+    }
+
+    function stopAutoRefresh() {
+        if (autoRefreshTimer) {
+            clearInterval(autoRefreshTimer);
+            autoRefreshTimer = null;
+        }
+    }
+
     $(document).ready(function() {
-      
       if (!$("#target_date").val()) {
           const today = new Date().toISOString().split('T')[0];
           $("#target_date").val(today);
       }
-
+      
       populateCostCenterDropdown();
       renderTableGroups();
-      
-      updateDownloadLink(); 
+      updateDownloadLink();
+      startAutoRefresh();
 
       $("#searchInput").on("keyup", function() {
         renderTableGroups($(this).val(), $("#costCenterFilter").val());
@@ -470,25 +568,24 @@
         $("#searchInput").val("");
         $("#costCenterFilter").val("");
         fetchApiData();
+        startAutoRefresh();
       });
 
       $("#btnRefresh").on("click", function() {
         $("#searchInput").val("");
         $("#costCenterFilter").val("");
         fetchApiData();
+        startAutoRefresh();
       });
 
       $("#btnPrintDirect").on("click", function() {
         const filterKeyword = $("#searchInput").val().toLowerCase();
         const selectedCostCenter = $("#costCenterFilter").val();
-
         let filteredGroups = [];
         let grandTotal = 0;
 
-        // 1. In-Memory Filtering
         currentManifestData.forEach(group => {
           if (selectedCostCenter && group.cost_center_id !== selectedCostCenter) return;
-
           const filteredEmps = group.employees.filter(emp => {
             return (
               emp.name.toLowerCase().includes(filterKeyword) ||
@@ -496,7 +593,6 @@
               emp.department.toLowerCase().includes(filterKeyword)
             );
           });
-
           if (filteredEmps.length > 0) {
             filteredGroups.push({
               cost_center_id: group.cost_center_id,
@@ -512,19 +608,17 @@
            return;
         }
 
-        const $btn =$(this);
-        const originalHtml = $btn.html();$btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Menyiapkan...');
+        const $btn = $(this);
+        const originalHtml = $btn.html();
+        $btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Menyiapkan...');
 
-        // 2. LOGIKA CHUNKING (Pemotongan Halaman Manual)
-        const MAX_ROWS_PER_PAGE = 45; // Maksimal karyawan per halaman A4
+        const MAX_ROWS_PER_PAGE = 45; 
         let pages = [];
-
         filteredGroups.forEach(group => {
           let emps = group.employees;
           let totalEmps = emps.length;
           let currentIndex = 0;
 
-          // Jika 1 Cost Center punya lebih dari 45 orang, akan otomatis dipecah ke halaman berikutnya
           while (currentIndex < totalEmps) {
             pages.push({
               cost_center_id: group.cost_center_id,
@@ -539,7 +633,6 @@
         const totalPages = pages.length;
         const printDate = new Date().toLocaleString('id-ID');
 
-        // 3. Bangun Struktur HTML
         let htmlContent = `
         <!DOCTYPE html>
         <html>
@@ -558,7 +651,7 @@
                 page-break-after: always; 
                 display: flex;
                 flex-direction: column;
-                min-height: 27cm; /* Mengisi penuh 1 halaman A4 */
+                min-height: 27cm;
               }
               .print-page:last-child {
                 page-break-after: auto; 
@@ -570,7 +663,7 @@
                 padding-bottom: 10px;
               }
               .print-content {
-                flex-grow: 1; /* Mendorong footer ke paling bawah kertas */
+                flex-grow: 1;
               }
               pre {
                 white-space: pre-wrap; 
@@ -590,7 +683,6 @@
         <body>
         `;
 
-        // 4. Render Data per Halaman (Bukan per Cost Center lagi, agar rapi jika kepanjangan)
         pages.forEach((pageData, index) => {
           const currentPageNum = index + 1;
           
@@ -608,18 +700,15 @@
           htmlContent += `======================================================================\n`;
           htmlContent += `NRP       | NAMA KARYAWAN                  | CLOCK IN\n`;
           htmlContent += `----------------------------------------------------------------------\n`;
-
           pageData.employees.forEach(emp => {
             let idPad = String(emp.id).padEnd(9, ' ');
             let namePad = String(emp.name).padEnd(30, ' ').substring(0, 30);
             htmlContent += `${idPad} | ${namePad} | ${emp.clock_in}\n`;
           });
-
           htmlContent += `======================================================================\n`;
           htmlContent += `</pre>
             </div>
             
-            <!-- NOMOR HALAMAN HARDCODED (DIJAMIN MUNCUL 100% DI SEMUA BROWSER) -->
             <div class="print-footer">
               Halaman ${currentPageNum} dari ${totalPages}
             </div>
@@ -632,7 +721,6 @@
         </html>
         `;
 
-        // 5. Eksekusi Iframe Print
         const iframe = document.createElement('iframe');
         iframe.style.visibility = 'hidden';
         iframe.style.position = 'absolute';
@@ -640,12 +728,10 @@
         iframe.style.height = '0';
         iframe.style.border = 'none';
         document.body.appendChild(iframe);
-
         const iframeDoc = iframe.contentWindow.document;
         iframeDoc.open();
         iframeDoc.write(htmlContent);
         iframeDoc.close();
-
         setTimeout(function() {
           iframe.contentWindow.focus();
           iframe.contentWindow.print();
@@ -657,7 +743,25 @@
         }, 300);
       });
 
+      const $jumpBtn = $('#btnJumpToTop');
+      $(window).on('scroll', function() {
+        if ($(this).scrollTop() > 300) {
+          $jumpBtn.addClass('show');
+        } else {
+          $jumpBtn.removeClass('show');
+        }
+      });
+      $jumpBtn.on('click', function() {
+        $('html, body').animate({ scrollTop: 0 }, 'smooth');
+        return false;
+      });
+
     });
   </script>
+
+  <button id="btnJumpToTop" title="Kembali ke Atas">
+    <i class="bi bi-arrow-up-short"></i>
+  </button>
+
 </body>
 </html>

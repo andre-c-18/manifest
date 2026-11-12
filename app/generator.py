@@ -17,7 +17,7 @@ def build_txt_manifest_content(data_list: list) -> str:
 
     # 3. Looping per Cost Center
     for group in data_list:
-        lines.append(f"Cost Center : {group['cost_center_id']} - {group['cost_center_name']}")
+        lines.append(f"Cost Center : {group['cost_center_name']}")
         lines.append(f"Sub-Total   : {len(group['employees'])} Orang")
         lines.append("-" * 70)
         lines.append("NRP       | NAMA KARYAWAN                  | CLOCK IN")

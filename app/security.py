@@ -1,7 +1,6 @@
 import bcrypt
 
 def get_password_hash(password: str) -> str:
-    """Mengubah password plain text menjadi Hash menggunakan Native Bcrypt."""
     pwd_bytes = password.encode('utf-8')
     salt = bcrypt.gensalt()
     hashed_password = bcrypt.hashpw(password=pwd_bytes, salt=salt)    
