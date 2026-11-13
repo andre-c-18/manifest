@@ -28,8 +28,9 @@ def generate_and_save_manifest_job():
         txt_content = build_txt_manifest_content(result["data"])
         
         # 3. Tentukan nama file (Timestamps harian)
-        safe_date_file = result['date'].replace('-', '')
-        filename = f"manifest_karyawan_{safe_date_file}.txt"
+        now = datetime.now()
+        timestamp_str = now.strftime("%Y%m%d_%H%M") 
+        filename = f"manifest_karyawan_{timestamp_str}.txt"
         filepath = os.path.join(STORAGE_DIR, filename)
 
         # 4. Tulis ke file fisik (I/O Operation)

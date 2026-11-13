@@ -22,18 +22,23 @@ scheduler = BackgroundScheduler()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("Menyalakan Scheduler...")
+    interval_mins = int(UPDATE_INTERVAL_MINUTES)
+    logger.info(f"Menyalakan Scheduler (Interval: {interval_mins} menit)...")
+    
     scheduler.add_job(
-        generate_and_save_manifest_job,
-        trigger="interval",
-        minutes=UPDATE_INTERVAL_MINUTES,
-        id="auto_manifest_job",
-        replace_existing=True
+        # generate_and_save_manifest_job,
+        # trigger="interval",
+        # minutes=interval_mins,
+        # next_run_time=datetime.now(),
+        # coalesce=True,
+        # misfire_grace_time=300,
+        # id="auto_manifest_job",
+        # replace_existing=True
     )
     scheduler.start()
     yield
     logger.info("Mematikan Scheduler...")
-    scheduler.shutdown()
+    scheduler.shutdown(wait=False)
 
 app = FastAPI(title="Live Clocking Manifest", lifespan=lifespan)
 templates = Jinja2Templates(directory="app/templates")
@@ -199,5 +204,70 @@ def download_arsip(request: Request, date: str = Query(..., description="Format 
     if os.path.exists(filepath): return FileResponse(path=filepath, filename=filename, media_type='text/plain')
     return JSONResponse(status_code=404, content={"error": f"File {filename} belum dibentuk oleh sistem."})
 
+# ============================================================================
+# ENDPOINT MANAJEMEN BACKGROUND TASKS & ARSIP (Terlindungi)
+# ============================================================================
+@app.post("/api/trigger-manifest")
+def trigger_manifest_generation(request: Request, background_tasks: BackgroundTasks):
+    if not require_api_auth(request):
+        return JSONResponse(status_code=401, content={"error": "Unauthorized"})
+    background_tasks.add_task(generate_and_save_manifest_job)
+    return JSONResponse(status_code=202, content={"message": "Proses pembentukan manifest fisik berjalan di background."})
+
+@app.get("/api/arsip-list")
+def list_arsip_files(request: Request):
+    """Membaca daftar file fisik .txt berformat YYYYMMDD_HHMM di folder storage/manifests"""
+    if not require_api_auth(request):
+        return JSONResponse(status_code=401, content={"error": "Unauthorized"})
+
+    os.makedirs(STORAGE_DIR, exist_ok=True)
+    files_data = []
+
+    for fname in sorted(os.listdir(STORAGE_DIR), reverse=True):
+        if fname.endswith(".txt") and fname.startswith("manifest_karyawan_"):
+            fpath = os.path.join(STORAGE_DIR, fname)
+            mtime = datetime.fromtimestamp(os.path.getmtime(fpath)).strftime("%Y-%m-%d %H:%M:%S")
+            
+            raw_str = fname.replace("manifest_karyawan_", "").replace(".txt", "")
+            parts = raw_str.split("_")
+            
+            formatted_date = ""
+            file_time = ""
+            
+            if len(parts) >= 1 and len(parts[0]) == 8:
+                d = parts[0]
+                formatted_date = f"{d[:4]}-{d[4:6]}-{d[6:8]}"
+            
+            if len(parts) == 2 and len(parts[1]) == 4:
+                t = parts[1]
+                file_time = f"{t[:2]}:{t[2:]}"
+                
+            files_data.append({
+                "filename": fname,
+                "date": formatted_date,
+                "time": file_time,
+                "last_modified": mtime
+            })
+
+    return JSONResponse(status_code=200, content={"files": files_data})
+
+@app.get("/api/download-arsip-direct")
+def download_arsip_direct(request: Request, filename: str = Query(...)):
+    """Mengunduh file arsip spesifik berdasarkan nama file (termasuk jam)"""
+    if not require_api_auth(request):
+        return HTMLResponse("Unauthorized", status_code=401)
+    
+    # Proteksi Path Traversal: hanya izinkan file .txt langsung di dalam STORAGE_DIR
+    if not filename.endswith(".txt") or ".." in filename or "/" in filename or "\\" in filename:
+        return JSONResponse(status_code=403, content={"error": "Akses dilarang. Nama file tidak valid."})
+        
+    filepath = os.path.join(STORAGE_DIR, filename)
+
+    if os.path.exists(filepath):
+        return FileResponse(path=filepath, filename=filename, media_type="text/plain")
+        
+    return JSONResponse(status_code=404, content={"error": f"File {filename} tidak ditemukan di server."})
+
 if __name__ == "__main__":
-    uvicorn.run("main:app", host=APP_HOST, port=APP_PORT, reload=True)
+    # Gunakan reload=False agar background scheduler 3 jam tidak ter-reset
+    uvicorn.run("main:app", host=APP_HOST, port=APP_PORT, reload=False)

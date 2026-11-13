@@ -1,0 +1,2433 @@
+MANIFEST KARYAWAN ON-SITE
+Total Keseluruhan: 2212 Orang
+======================================================================
+
+Cost Center : 911
+Sub-Total   : 24 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+72000     | IYUL KAMAWIJAYA                | 13-Nov-2026 06:22
+72001     | ANDRIYANA HERAWAN              | 13-Nov-2026 14:40
+72003     | DADANG DARMAWAN                | 13-Nov-2026 14:24
+72005     | TASRIADI                       | 13-Nov-2026 06:04
+72009     | REDAN                          | 13-Nov-2026 14:06
+72013     | KASMIR ALI                     | 13-Nov-2026 06:51
+72022     | MUMUH MULYADI                  | 13-Nov-2026 06:37
+72029     | ASEP HENDI                     | 13-Nov-2026 14:54
+72031     | RISKA UTAMI                    | 13-Nov-2026 14:48
+72036     | BUDI  SUDRAJAT                 | 13-Nov-2026 07:07
+72052     | ANDIKA PRIBADI                 | 13-Nov-2026 06:26
+72055     | ADIS GUSNANDAR                 | 13-Nov-2026 14:03
+72056     | ARISON                         | 13-Nov-2026 14:12
+72057     | RIAN KURNIA SEPTIADI           | 13-Nov-2026 14:57
+72059     | ANGGA AZHAR SUMIRAT            | 13-Nov-2026 06:56
+72062     | ASEP GUNADI                    | 13-Nov-2026 14:06
+72073     | MUHAMAD SULFAN                 | 13-Nov-2026 14:57
+72074     | TANTI MEILAWATI                | 13-Nov-2026 14:37
+72076     | SANDY SAPUTRA                  | 13-Nov-2026 06:49
+72095     | AGUS SETIANTO                  | 13-Nov-2026 06:16
+72100     | RIZKI ADITYA                   | 13-Nov-2026 14:57
+72101     | RANDI ABDUL ROHIM              | 13-Nov-2026 14:12
+72111     | CEPI RAHMAN                    | 13-Nov-2026 06:43
+72112     | IKBAL FAUZI                    | 13-Nov-2026 14:06
+======================================================================
+
+Cost Center : ACCOUNTING & FINANCE
+Sub-Total   : 34 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10000960  | NINA SARININGSIH               | 13-Nov-2026 12:10
+10001248  | LIKE ROSLYNDA                  | 13-Nov-2026 12:47
+10001386  | HANDARYANI .                   | 13-Nov-2026 07:47
+10001780  | CECEP RUDI HARTONO             | 13-Nov-2026 07:40
+10001798  | MARITA HENDRATO                | 13-Nov-2026 07:58
+10001804  | TITIN ALFIYAH                  | 13-Nov-2026 07:40
+10002122  | AYAT TARYATSAH                 | 13-Nov-2026 06:43
+10002588  | WAWAN HERMAWAN                 | 13-Nov-2026 07:22
+10002826  | YOGI FIRMANSYAH                | 13-Nov-2026 07:48
+10003006  | VINA RIYANTI                   | 13-Nov-2026 07:55
+10003320  | FAMMI ANDIANI PAWITHRA         | 13-Nov-2026 07:56
+10003960  | WATI MULIAWATI                 | 13-Nov-2026 07:50
+10004046  | AEP SAEPUDIN                   | 13-Nov-2026 07:37
+10011272  | MONICA YOSSY MANALU            | 13-Nov-2026 08:04
+10011445  | SRI KEMBARSARI                 | 13-Nov-2026 07:11
+10012932  | IVANA MANNUELA                 | 13-Nov-2026 07:58
+10018044  | SALSYABILA KURNIAWAN           | 13-Nov-2026 07:51
+10018480  | YOSIANA PUTRI DAJ HOMBI        | 13-Nov-2026 07:58
+10020114  | SELVIA YUNI CAHYANI            | 13-Nov-2026 07:35
+10020421  | ISMAIL AHMAD FAUZAN            | 13-Nov-2026 07:50
+10020630  | SUCI CAHYA UTAMI               | 13-Nov-2026 07:48
+10021748  | AMANDA YUNNE ERLANDIAN         | 13-Nov-2026 07:45
+10022287  | SHERLY FELIYANTI LESTARI       | 13-Nov-2026 07:54
+10022480  | NOVIA DWI HAFSARI              | 13-Nov-2026 07:51
+10022948  | NURMALASARI .                  | 13-Nov-2026 07:40
+10023000  | KRISTANTO .                    | 13-Nov-2026 07:47
+10023102  | STANLEY EVAN WILLIAM           | 13-Nov-2026 07:58
+10023610  | IMAN ISMAIL                    | 13-Nov-2026 07:48
+10024150  | CECEP YAYA SONJAYA             | 13-Nov-2026 07:42
+69487     | BRAGA JATI UTAMA               | 13-Nov-2026 12:23
+69536     | SIGIT PERMANA                  | 13-Nov-2026 07:36
+70062     | SOFA ALFATONAH                 | 13-Nov-2026 07:57
+70664     | ALDI RAHMAT GUMELAR            | 13-Nov-2026 07:42
+70765     | DANI WIDODO                    | 13-Nov-2026 12:16
+======================================================================
+
+Cost Center : BEAN TO BAR
+Sub-Total   : 6 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+65169     | MUHAMMAD DWI JULIZAR           | 13-Nov-2026 14:59
+68072     | TIRA FERIYANTI                 | 13-Nov-2026 14:43
+68352     | AINUN RIZKIKA NURSYIFA         | 13-Nov-2026 14:28
+68473     | SILSILIA MASTAIDA SITANGGANG   | 13-Nov-2026 14:30
+68618     | SHIFA HADIANI PUTRI            | 13-Nov-2026 14:40
+80877     | YOSEF SETIA PERMANA            | 13-Nov-2026 04:30
+======================================================================
+
+Cost Center : BISCUIT & SNACK
+Sub-Total   : 40 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001100  | FITRIYANTO .                   | 13-Nov-2026 06:45
+10001556  | IRMAYANTI .                    | 13-Nov-2026 06:42
+10001762  | DEDI SYAHROWARDI FADILAH       | 13-Nov-2026 06:55
+10002120  | MULYANA SIDIK                  | 13-Nov-2026 06:39
+10002174  | SUARSA .                       | 13-Nov-2026 12:25
+10002272  | SOFIRA NOVIANA                 | 13-Nov-2026 14:37
+10002730  | RANGGA PUTUSEWU                | 13-Nov-2026 06:50
+10002732  | RIKI HENDRAYANA                | 13-Nov-2026 12:16
+10002810  | DEWI HANDAYANI                 | 13-Nov-2026 14:04
+10003040  | EDWIN MAULUDIN                 | 13-Nov-2026 06:42
+10003044  | MUHSIN ABDUL AZIZ              | 13-Nov-2026 07:47
+10003110  | DANI SAEPULOH                  | 13-Nov-2026 06:46
+10003610  | YUSUF ABDUL SLAMET             | 13-Nov-2026 07:17
+10003734  | APIN PARHANUDIN                | 13-Nov-2026 07:51
+10003740  | ROSI ROSITA DEWI               | 13-Nov-2026 06:44
+10011580  | SERAMBI DAMAI DWIKA            | 13-Nov-2026 07:42
+10022967  | FITRI APRIYANTI                | 13-Nov-2026 07:44
+10022980  | ASEP A PERMANA                 | 13-Nov-2026 06:47
+10024123  | SAEPUL HIDAYAT                 | 13-Nov-2026 06:48
+10024158  | LUVITA MYALANI                 | 13-Nov-2026 07:28
+10024174  | MILA NOPIANTI                  | 13-Nov-2026 14:12
+65105     | DHEA AGUSTINA                  | 13-Nov-2026 07:35
+65318     | DEYRA LISTIAZEE                | 13-Nov-2026 07:48
+65319     | DHEA PITALOKA                  | 13-Nov-2026 07:36
+65443     | RISKA RESMIYATI                | 13-Nov-2026 07:36
+65490     | REPANNA NURDIANSYAH            | 13-Nov-2026 07:44
+65782     | FIKRY SYAHDAN DAUD             | 13-Nov-2026 06:26
+65949     | RINA RAHMAWATI                 | 13-Nov-2026 07:45
+68020     | HAMZAH FIRDAUS                 | 13-Nov-2026 07:40
+68280     | BUDI SANTOSO                   | 13-Nov-2026 07:38
+68681     | RIRIN AGUSTINA                 | 13-Nov-2026 07:33
+68685     | DIKO WAHYUDI                   | 13-Nov-2026 07:38
+68813     | HENDRI CANDRA ALVIANA          | 13-Nov-2026 06:49
+68960     | RYAN AGUSTIAN                  | 13-Nov-2026 06:45
+80029     | NUR KARLINA                    | 13-Nov-2026 07:26
+80219     | ARI NURDIANSYAH                | 13-Nov-2026 07:44
+80221     | DAMAI YERIKO SETIAWAN          | 13-Nov-2026 06:45
+80222     | DAVI IBNU ADENAR               | 13-Nov-2026 06:45
+80223     | DIKA NOVALIANO                 | 13-Nov-2026 06:45
+80224     | FAHRI MAHESA ADITYA            | 13-Nov-2026 07:44
+======================================================================
+
+Cost Center : CHOCBAR&SILVERQUEEN
+Sub-Total   : 601 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001270  | TINA YUNINGSIH                 | 13-Nov-2026 06:46
+10001298  | WIWIN .                        | 13-Nov-2026 06:38
+10001302  | LELLI HERAWATI                 | 13-Nov-2026 14:50
+10001328  | WIWI .                         | 13-Nov-2026 06:17
+10001332  | NONOK .                        | 13-Nov-2026 06:30
+10001350  | DADI ARDIANSYAH                | 13-Nov-2026 06:46
+10001352  | WAGITO .                       | 13-Nov-2026 06:44
+10001436  | ANA SAODAH                     | 13-Nov-2026 06:37
+10001518  | SURTINI .                      | 13-Nov-2026 06:52
+10001532  | ELVA SETIAWATI                 | 13-Nov-2026 05:09
+10001666  | HIDAYAT .                      | 13-Nov-2026 06:35
+10001716  | SUSANTI .                      | 13-Nov-2026 14:47
+10001810  | ANIK EKOSARI                   | 13-Nov-2026 03:57
+10001830  | RINI SUMIATI                   | 13-Nov-2026 06:24
+10001890  | SUMIATI .                      | 13-Nov-2026 03:56
+10001920  | KIKI HANDIAN                   | 13-Nov-2026 04:49
+10002040  | DEWI KURNIA                    | 13-Nov-2026 05:52
+10002042  | YETI HERAWATI                  | 13-Nov-2026 06:08
+10002090  | RENI NURWENDA                  | 13-Nov-2026 06:06
+10002106  | RINA HERMAWATI                 | 13-Nov-2026 06:27
+10002222  | SITI DARMILAH                  | 13-Nov-2026 06:22
+10002232  | BERLIN .                       | 13-Nov-2026 06:29
+10002238  | NURJENAH .                     | 13-Nov-2026 06:00
+10002244  | IMAS HASANAH                   | 13-Nov-2026 13:58
+10002254  | UKE PUSPITASARI                | 13-Nov-2026 14:00
+10002312  | SITI SOLIHAH                   | 13-Nov-2026 06:16
+10002338  | RENI MARLINA                   | 13-Nov-2026 06:18
+10002376  | MARTINA                        | 13-Nov-2026 06:37
+10002436  | VIVIT NURHAYATI                | 13-Nov-2026 06:24
+10002558  | WENNI WIDYA ASTUTI             | 13-Nov-2026 06:53
+10002678  | DARWIN WIJAYA                  | 13-Nov-2026 06:44
+10002680  | MUSTOPA .                      | 13-Nov-2026 14:46
+10002754  | EDIH SUTARDI                   | 13-Nov-2026 04:46
+10002838  | DANG MERDEKA                   | 13-Nov-2026 06:46
+10002930  | EGA NIRWANA                    | 13-Nov-2026 04:01
+10002960  | SURYADI .                      | 13-Nov-2026 14:03
+10003072  | ICANG PARMAN                   | 13-Nov-2026 06:46
+10003096  | EEF ZARKASIH                   | 13-Nov-2026 06:21
+10003108  | SANTI ARISTA                   | 13-Nov-2026 06:19
+10003116  | AHMAD MUHAMAD                  | 13-Nov-2026 06:45
+10003124  | SOLEHUDIN .                    | 13-Nov-2026 05:34
+10003146  | GANJAR PERMANA                 | 13-Nov-2026 14:38
+10003148  | TITO MUHAROM                   | 13-Nov-2026 14:48
+10003152  | AGUNG .                        | 13-Nov-2026 04:49
+10003154  | ANDRI HERMAWAN                 | 13-Nov-2026 06:20
+10003364  | MOCHAMAD JAELANI               | 13-Nov-2026 07:03
+10003424  | JAKA RAMDANI PERMANA SIDIK     | 13-Nov-2026 06:48
+10019686  | ALFI NURFAUZIAH                | 13-Nov-2026 06:40
+10021118  | NABILA NURJANNAH               | 13-Nov-2026 06:47
+10021397  | TIA AMELIA                     | 13-Nov-2026 06:48
+10022057  | SALMA CLAUDIA WIJAYATAMA       | 13-Nov-2026 07:32
+10023147  | IRDAM RAGA MASYAWARA           | 13-Nov-2026 06:52
+10023192  | ASEP MUHAMAD MUHYI             | 13-Nov-2026 13:50
+10023193  | TAUPIK RAHMAN                  | 13-Nov-2026 06:47
+10023199  | RIZWAN MAULANA                 | 13-Nov-2026 06:43
+10023205  | ADIT RAZAN ZAERI               | 13-Nov-2026 04:56
+10023208  | PUTRI DIANTI SALSABILA         | 13-Nov-2026 14:14
+10023216  | RIKI KAHARUDIN                 | 13-Nov-2026 04:03
+10023221  | RENALDO ALUSIUS TAMBA          | 13-Nov-2026 06:43
+10023231  | RIZKI SUBAGJA NUGRAHA          | 13-Nov-2026 06:44
+10023252  | NABILATUS SADIAH               | 13-Nov-2026 06:16
+10023491  | SINTYA SEPTIANI                | 13-Nov-2026 06:35
+10023599  | HASNA ARDELIA NAFILA           | 13-Nov-2026 06:47
+10023600  | RADIANTI NOVITA SARI           | 13-Nov-2026 06:39
+10023781  | RANGGA RENALDI                 | 13-Nov-2026 03:53
+10023785  | FEYZA PRAYANDA RENZIAN         | 13-Nov-2026 04:57
+10023787  | CANDRA ANDRIANSYAH             | 13-Nov-2026 06:45
+10023788  | EGI PIRMANSAH                  | 13-Nov-2026 06:45
+10023789  | YOGI SULAEMAN                  | 13-Nov-2026 06:45
+10024091  | AXCEL NAUFAL FERDIANSYAH       | 13-Nov-2026 03:53
+10024092  | ERWIN .                        | 13-Nov-2026 06:53
+10024096  | MOCHAMAD FAJAR KURNIAWAN       | 13-Nov-2026 03:58
+10024097  | ARYA RAMDANI                   | 13-Nov-2026 04:59
+10024113  | ALFIANA ZASIRANINGTYAS         | 13-Nov-2026 14:11
+10024131  | MUHAMMAD RODIFA                | 13-Nov-2026 04:39
+10024155  | TOMY RAMADHANI                 | 13-Nov-2026 06:15
+10024167  | ADAM MALIK MAULANA             | 13-Nov-2026 06:40
+10024185  | BERLIANA PUTRI RAMADHANI       | 13-Nov-2026 06:39
+65018     | REIGINA                        | 13-Nov-2026 03:55
+65033     | NAJWA KANISA                   | 13-Nov-2026 14:10
+65045     | FAUZI AHMAD MAULANA            | 13-Nov-2026 03:58
+65052     | MUTIA MULYA DEWI               | 13-Nov-2026 04:58
+65055     | DANYA APRIANI                  | 13-Nov-2026 03:59
+65068     | DIYONG SYAZWAN                 | 13-Nov-2026 05:01
+65076     | DINA FITRIA ANGGRAENI          | 13-Nov-2026 06:42
+65084     | NAZWA ANGGRAENI AZHARA         | 13-Nov-2026 04:55
+65093     | SITI ALIPAH                    | 13-Nov-2026 03:32
+65099     | AZULA ZUREL ALEXA              | 13-Nov-2026 14:31
+65100     | MUHAMAD FAHMI ABDULROHIM       | 13-Nov-2026 14:51
+65118     | NABILA PUSPITA                 | 13-Nov-2026 14:50
+65129     | NURUL ANDRIYANI                | 13-Nov-2026 04:17
+65132     | FIRYAL EVANTIE HERDIANI        | 13-Nov-2026 06:31
+65140     | IIS PEBRIANTI                  | 13-Nov-2026 14:28
+65147     | ELSA SYIFA''U QHOLBI           | 13-Nov-2026 06:18
+65151     | JUJUN JUNAEDI                  | 13-Nov-2026 06:32
+65155     | EKA AGUSTIN NASIR              | 13-Nov-2026 13:54
+65156     | RANDY RIZALDI                  | 13-Nov-2026 14:39
+65158     | KINKIN NUR LITA                | 13-Nov-2026 04:59
+65161     | LISNAWATI                      | 13-Nov-2026 14:07
+65163     | EDWIN OKTAPIAN                 | 13-Nov-2026 14:54
+65176     | ERGI ILHAM SETYADI             | 13-Nov-2026 06:30
+65177     | IIS DANIATI                    | 13-Nov-2026 14:31
+65184     | JESIKA ANGGRAENI               | 13-Nov-2026 03:57
+65185     | ERLIN FITRIANI                 | 13-Nov-2026 14:43
+65195     | ANISA                          | 13-Nov-2026 03:59
+65200     | AKBAR HIDAYAT                  | 13-Nov-2026 03:51
+65202     | ADELIA MARITO HASIBUAN         | 13-Nov-2026 05:08
+65214     | ASTRI SEPTIANI                 | 13-Nov-2026 06:49
+65217     | TATANG                         | 13-Nov-2026 06:52
+65219     | DEN REGA MULYADI               | 13-Nov-2026 06:48
+65222     | ANTI FEBRIANTI                 | 13-Nov-2026 14:56
+65233     | NABILA AULIA                   | 13-Nov-2026 03:58
+65234     | HARIZA AHMAD JANUAR            | 13-Nov-2026 06:17
+65235     | TIARA SITI FAUZIAH             | 13-Nov-2026 13:55
+65236     | REVALINA JANUARTI              | 13-Nov-2026 03:51
+65240     | ANDINI DWIYANTI                | 13-Nov-2026 14:13
+65244     | INDAH SUCI MELANY              | 13-Nov-2026 14:43
+65246     | HERLINA                        | 13-Nov-2026 04:55
+65255     | ANDRIANI AJI SAPITRI           | 13-Nov-2026 05:04
+65268     | RARA ADINDA RAHMAYANTI         | 13-Nov-2026 03:58
+65269     | RIFKY KOMARA NUR FIRDAUS       | 13-Nov-2026 14:46
+65272     | SANDRA SEPTIAN                 | 13-Nov-2026 14:45
+65273     | AYU SUCHY JULYANTINY           | 13-Nov-2026 14:26
+65275     | DINAR PUJA GINANJAR            | 13-Nov-2026 14:47
+65277     | NESA ANGGRAENI                 | 13-Nov-2026 03:51
+65282     | SRI RAHAYU                     | 13-Nov-2026 14:09
+65284     | BARKAH SUBAGJA                 | 13-Nov-2026 14:28
+65285     | NAZILDAN PABLO PUTRA           | 13-Nov-2026 04:56
+65288     | DESRI WAHYUNI                  | 13-Nov-2026 05:04
+65297     | FAHMI ZULFIKRI                 | 13-Nov-2026 03:56
+65309     | RIDA IRLANI                    | 13-Nov-2026 14:50
+65317     | NIDA SOLEHATUL FAZRI           | 13-Nov-2026 14:22
+65320     | EGYN PUTRININGSIH              | 13-Nov-2026 14:44
+65335     | AFNI AFIDAH                    | 13-Nov-2026 14:45
+65337     | DEAN KASDIRANSYAH              | 13-Nov-2026 03:51
+65345     | SELMA NOVIA RAHMAWATI          | 13-Nov-2026 04:56
+65351     | REGIN RESA SETIANA             | 13-Nov-2026 14:53
+65352     | MUHAMMAD HAIDAR AMRULLAH       | 13-Nov-2026 04:52
+65356     | MILA KARMILA                   | 13-Nov-2026 14:43
+65371     | SALMAN MAHENDRA                | 13-Nov-2026 14:51
+65382     | RIKA YULIANTI                  | 13-Nov-2026 14:02
+65390     | PAURESTA A A M K               | 13-Nov-2026 14:13
+65394     | NABILA AUFA PUTRI              | 13-Nov-2026 14:43
+65398     | DANIYA                         | 13-Nov-2026 14:18
+65400     | RISMA AGHNYA MEYFA             | 13-Nov-2026 14:27
+65401     | ANISA DWI KURNIA               | 13-Nov-2026 05:06
+65405     | VADIA ZALIANTI                 | 13-Nov-2026 06:17
+65408     | REYNALDI TRI HERDIANSYAH       | 13-Nov-2026 14:46
+65412     | YADI SURYADI                   | 13-Nov-2026 05:43
+65421     | PURNAMA HADY                   | 13-Nov-2026 03:58
+65426     | SITI JUMAEROH                  | 13-Nov-2026 03:45
+65429     | RAYA SYALWANI ATISTANA         | 13-Nov-2026 14:46
+65432     | RIZQI SEFTIANI YUSUF           | 13-Nov-2026 14:31
+65437     | SILVIA RISKA OKTAVIANI         | 13-Nov-2026 04:55
+65453     | NOVI FITRYA WULANDARI          | 13-Nov-2026 03:57
+65459     | RISNA SANIA                    | 13-Nov-2026 04:55
+65467     | SANDY ARIFFA FAUZI             | 13-Nov-2026 14:52
+65475     | SUNIIATI APIAH                 | 13-Nov-2026 14:42
+65477     | NAYLA DWI SHABILA              | 13-Nov-2026 03:55
+65498     | SYIFA NURUL HAYAT              | 13-Nov-2026 14:48
+65505     | PANJI PERKASA                  | 13-Nov-2026 04:53
+65511     | SHALSA PUTRI TRESNANINGTYAS    | 13-Nov-2026 05:08
+65512     | IQBAL ADIYANSYAH               | 13-Nov-2026 06:52
+65514     | ADELLYA EKA PUTRI              | 13-Nov-2026 14:30
+65520     | FADIA ANGGITA PUTRI            | 13-Nov-2026 14:29
+65526     | DESTYA AMALIAH                 | 13-Nov-2026 14:08
+65535     | BILAL MUZAKI                   | 13-Nov-2026 03:47
+65540     | KHOIRUL NISA                   | 13-Nov-2026 04:59
+65548     | CELSY AMELIA PUTRI             | 13-Nov-2026 14:15
+65551     | SOPIYAN HADI GUNAWAN           | 13-Nov-2026 03:51
+65552     | FEBI PEBRIANTI                 | 13-Nov-2026 06:06
+65554     | RANTI PUSPITASARI              | 13-Nov-2026 03:58
+65559     | CHELSEA LIBYA                  | 13-Nov-2026 05:01
+65561     | WILDAN WILDANI                 | 13-Nov-2026 14:52
+65564     | SYAFIRA LARASATI               | 13-Nov-2026 03:58
+65567     | HERLINA EVITA                  | 13-Nov-2026 14:06
+65568     | DANDI FEBRIO                   | 13-Nov-2026 14:15
+65569     | MUHAMMAD QAIS NUHADI           | 13-Nov-2026 04:52
+65572     | DIAS SEPTIAN                   | 13-Nov-2026 07:52
+65578     | SALFA PUTRI KEMALA             | 13-Nov-2026 14:27
+65581     | DEVA DEPIA                     | 13-Nov-2026 14:26
+65583     | ADRIAN RAZAK MUSLIM            | 13-Nov-2026 04:50
+65593     | DENDI ADE YASA                 | 13-Nov-2026 14:28
+65595     | PUTRI ANDRIANI                 | 13-Nov-2026 03:55
+65604     | JUHARA ARYA SAPUTRA            | 13-Nov-2026 03:51
+65612     | ARI SUGIYANTO                  | 13-Nov-2026 03:58
+65618     | HANA APRILIANI                 | 13-Nov-2026 04:59
+65620     | SYABILLA FAJWA LUTFILLAH       | 13-Nov-2026 14:41
+65626     | SAHMAN                         | 13-Nov-2026 06:14
+65638     | PASARIBU SHAMMAH LOVELYN SHALL | 13-Nov-2026 03:54
+65639     | MUNAWAROH                      | 13-Nov-2026 04:59
+65643     | NEVI OKTAVIANI DEWI            | 13-Nov-2026 14:53
+65648     | WANTY YUNDA DEWI               | 13-Nov-2026 14:43
+65655     | DINDA AZAHRAWANI WULAN N       | 13-Nov-2026 14:08
+65657     | GUNAWAN                        | 13-Nov-2026 05:42
+65658     | ZALZA MEILANI                  | 13-Nov-2026 14:41
+65659     | GILANG PRADITYA                | 13-Nov-2026 14:53
+65660     | SITI NUR KEYSHA                | 13-Nov-2026 14:41
+65665     | NENG SRI SURYANI               | 13-Nov-2026 14:44
+65670     | ZIDAN FEBRIAN                  | 13-Nov-2026 14:10
+65677     | MUHAMAD DAFFA RAMADHAN AL AHWA | 13-Nov-2026 06:26
+65680     | RUHYANA TAUPIK                 | 13-Nov-2026 03:45
+65687     | NABILLA PUTRI JUHANA           | 13-Nov-2026 03:58
+65692     | FAZAR MUHAMMAD RIZKI           | 13-Nov-2026 14:48
+65695     | SANIYYAH CAHYATI               | 13-Nov-2026 14:02
+65696     | TASYA LUTFIAH SUBHIAWATI       | 13-Nov-2026 04:57
+65697     | GILANG RAMADHAN                | 13-Nov-2026 04:00
+65699     | MUHAMMAD DAFFA AL-MUKLIS       | 13-Nov-2026 14:47
+65701     | SITI HALIMATUS SADIAH          | 13-Nov-2026 13:53
+65705     | SETIAWAN                       | 13-Nov-2026 14:39
+65710     | SHYARA ADILIA                  | 13-Nov-2026 14:31
+65723     | TAUFIK FIRMANSYAH              | 13-Nov-2026 04:52
+65725     | RISMA RIJKI NAJA NADIA         | 13-Nov-2026 06:41
+65733     | ALFIAN SHALEH WAHID            | 13-Nov-2026 03:57
+65740     | RANI NURHIDAYAH                | 13-Nov-2026 06:19
+65745     | PIAN PIRMANSYAH                | 13-Nov-2026 14:16
+65747     | REVI TANZIAH                   | 13-Nov-2026 03:56
+65753     | KELIN FITRIANI                 | 13-Nov-2026 14:31
+65759     | AYU SYIFFAA NUR''MEIDA         | 13-Nov-2026 06:36
+65762     | ARIF ROHMAN FAUZI              | 13-Nov-2026 14:35
+65768     | ALMA SABDA ROBIYA              | 13-Nov-2026 14:43
+65780     | AJI MUSTHAFA                   | 13-Nov-2026 14:50
+65783     | WISNU ROBIANSYAH               | 13-Nov-2026 07:03
+65787     | DANIA LARAS ARDIANTI           | 13-Nov-2026 14:11
+65789     | ZAKI SAPUTRA                   | 13-Nov-2026 06:44
+65796     | SILVIANI NURDIANTI ARNISTIYA   | 13-Nov-2026 06:24
+65797     | PERI SETIAWAN                  | 13-Nov-2026 14:36
+65804     | YUNITA PERTIWI TAMBUNAN        | 13-Nov-2026 14:49
+65805     | RIZKA SITI NAZWA               | 13-Nov-2026 05:46
+65810     | FARHAN MAULANA RAHMAN          | 13-Nov-2026 06:52
+65812     | SANSAN LESMANA                 | 13-Nov-2026 05:00
+65822     | HASNA NUR MAULIDYA             | 13-Nov-2026 06:45
+65823     | ENENG NURHIKMAH                | 13-Nov-2026 14:54
+65824     | SOLEHUDIN                      | 13-Nov-2026 06:25
+65826     | EKA SAEPUL FIKRI               | 13-Nov-2026 14:38
+65828     | IKHSAN NUR HAKIM               | 13-Nov-2026 14:47
+65833     | KARINA DWIYANTI                | 13-Nov-2026 14:42
+65838     | NAURA AZZAHRA PUTRIANA         | 13-Nov-2026 14:44
+65842     | MUHAMAD AULIYA RAHMAN          | 13-Nov-2026 03:51
+65856     | PUTRI KHAIRUN NISYA            | 13-Nov-2026 14:13
+65866     | RIZKI PADILAH                  | 13-Nov-2026 04:56
+65867     | EGI ROHIMAN                    | 13-Nov-2026 14:08
+65871     | MUHHAMAD KAHWAN                | 13-Nov-2026 14:45
+65881     | AFIFAH SYAHIDA MARDIYAH        | 13-Nov-2026 14:05
+65885     | ANWAR AHMAD MUSADAD            | 13-Nov-2026 14:49
+65886     | DERIS PRATAMA                  | 13-Nov-2026 03:47
+65893     | RAMDANI                        | 13-Nov-2026 14:51
+65900     | DELA ANJAS WIBOWO              | 13-Nov-2026 14:55
+65904     | RIYAN ARIPIN                   | 13-Nov-2026 14:49
+65906     | RISMA NUR ANDINI               | 13-Nov-2026 04:02
+65907     | REZA PRISILIA                  | 13-Nov-2026 14:41
+65909     | FEBI ADRIANI                   | 13-Nov-2026 14:46
+65911     | VINI NURYANTI                  | 13-Nov-2026 14:49
+65914     | ARSILA AULIA RAHMA             | 13-Nov-2026 14:14
+65915     | VAIZAL SOBUR                   | 13-Nov-2026 14:49
+65932     | ATIKA ARIYANTI                 | 13-Nov-2026 05:00
+65944     | ARTI                           | 13-Nov-2026 14:44
+65955     | RIZAL MUSTOPA ABDULAH          | 13-Nov-2026 03:58
+65963     | DESTRIA AMALIA                 | 13-Nov-2026 04:55
+65964     | NAJWA SANY FAUZIYAH            | 13-Nov-2026 14:38
+65965     | SITI SERUNI SAHARA HERMAN      | 13-Nov-2026 04:55
+65969     | FADILA AMANY.A                 | 13-Nov-2026 14:32
+65972     | ELENA CAHYA PUTERI             | 13-Nov-2026 14:43
+65977     | HENDRI SULAEMAN                | 13-Nov-2026 14:51
+65981     | AURA PUTRI KIREINA             | 13-Nov-2026 14:43
+65983     | FARZAN MAULANA                 | 13-Nov-2026 06:47
+65985     | ARI ADI PUTRA                  | 13-Nov-2026 14:29
+65986     | DANIS AGUNG TRIADI             | 13-Nov-2026 14:50
+65988     | LESNAWATI                      | 13-Nov-2026 14:41
+65992     | FINNKAN RAIZA FERMAWAN         | 13-Nov-2026 14:44
+65997     | TOPAN MULYADI                  | 13-Nov-2026 14:28
+68001     | SISKA NHOVALIA                 | 13-Nov-2026 14:32
+68003     | NOVIA RUSTANTI                 | 13-Nov-2026 14:32
+68008     | SITI NURYANI                   | 13-Nov-2026 06:34
+68009     | GENDIS RATNA KAMILA            | 13-Nov-2026 14:32
+68014     | AMELIA TRISNAYANTI             | 13-Nov-2026 04:57
+68018     | HIKMAL RAMADHAN                | 13-Nov-2026 14:47
+68026     | PUTRI AYU LESTARI              | 13-Nov-2026 14:23
+68034     | ANGGRAENI SAFITRI              | 13-Nov-2026 14:43
+68037     | IRAWIANI                       | 13-Nov-2026 14:41
+68038     | RISTANTI MARDIANI              | 13-Nov-2026 06:30
+68043     | NUR FITRI SACHRUL              | 13-Nov-2026 14:32
+68049     | WULAN DEWI SANTIA              | 13-Nov-2026 14:41
+68052     | ANDIKA MOHAMAD AKBAR           | 13-Nov-2026 14:54
+68058     | IRA WIDYA LESTARI              | 13-Nov-2026 14:43
+68059     | DANI HAMDANI                   | 13-Nov-2026 14:52
+68065     | AGUNG FEBRIAN                  | 13-Nov-2026 06:41
+68068     | ZENITA SUKMA RAHAYU            | 13-Nov-2026 14:32
+68070     | FARHAN FIRDAUS                 | 13-Nov-2026 15:01
+68073     | KEISYA NURUL AGUSTIANA         | 13-Nov-2026 14:43
+68080     | RUIS GENTARI                   | 13-Nov-2026 03:51
+68081     | SANTIKA                        | 13-Nov-2026 14:02
+68091     | BAYU SAFTA RANGGA              | 13-Nov-2026 04:04
+68092     | DENCA PUTRA PRATAMA            | 13-Nov-2026 04:53
+68095     | ANDRE PRIMA                    | 13-Nov-2026 04:53
+68096     | ROONEY RIZKY MALAU             | 13-Nov-2026 06:35
+68107     | SHILVIA KARISMA                | 13-Nov-2026 03:51
+68111     | MELINA AMELIA                  | 13-Nov-2026 14:24
+68134     | SAFITRI GUNAWAN                | 13-Nov-2026 14:43
+68142     | MUHAMMAD HIKMAH CAHYA PUTRA    | 13-Nov-2026 14:45
+68147     | MUHAMAD RAYIHAN NURDIANSYAH    | 13-Nov-2026 05:01
+68148     | ROSMIAH SARI BAROKAH           | 13-Nov-2026 06:14
+68157     | ANDREAN DAPA SAPUTRA           | 13-Nov-2026 14:44
+68158     | NENG SITI DWIYANTI             | 13-Nov-2026 06:38
+68161     | RAIHAN FATURRAHMAN             | 13-Nov-2026 06:35
+68163     | KARTIWI RIADI PUTERI           | 13-Nov-2026 14:23
+68167     | ILHAM PERMANA                  | 13-Nov-2026 07:06
+68182     | NURHALIMAH                     | 13-Nov-2026 04:54
+68183     | PARHAN OKTARIANDO              | 13-Nov-2026 14:42
+68184     | RONI ROMANSYAH PUTRA           | 13-Nov-2026 03:51
+68188     | MUHAMAD SEPTIAN MAULANA        | 13-Nov-2026 07:33
+68194     | KHALID PADLAN KUSUMA           | 13-Nov-2026 14:46
+68196     | AFIKA MAULANA                  | 13-Nov-2026 14:48
+68198     | INTAN PERMATA SARI SIDIK       | 13-Nov-2026 03:56
+68201     | ANDHIRA STEVIA NURUL HIDAYAT   | 13-Nov-2026 14:19
+68204     | RANGGA ALVI GHANI              | 13-Nov-2026 04:54
+68210     | MOCHAMAD RIDWAN IRAWAN         | 13-Nov-2026 03:54
+68214     | ALFANS ANGGARA                 | 13-Nov-2026 14:34
+68215     | IRSA RIZKI DARMAWAN            | 13-Nov-2026 14:39
+68219     | HILAR RASYDAN FADSIN           | 13-Nov-2026 03:57
+68220     | IRSA IRPANSYAH                 | 13-Nov-2026 03:58
+68223     | NENG RAHAYU FEBRIANTI          | 13-Nov-2026 06:14
+68229     | RHAFA MUHAMAD MAULANA          | 13-Nov-2026 14:37
+68234     | SITI NURAZIZAH                 | 13-Nov-2026 14:32
+68239     | WINDY AGNITHIA PRATIWI         | 13-Nov-2026 04:55
+68241     | ALYA ZAHRA ANDINI              | 13-Nov-2026 14:46
+68243     | SYLVIA PUSPITA PURNAMSARI      | 13-Nov-2026 06:24
+68245     | RESA REGINA                    | 13-Nov-2026 14:41
+68246     | SINTIA PERATIWI                | 13-Nov-2026 14:43
+68249     | RANI ALDENIYA PUTRI            | 13-Nov-2026 14:05
+68253     | SARAH JESSIKA CLARA            | 13-Nov-2026 14:35
+68256     | ILHAM RAMADHAN                 | 13-Nov-2026 03:58
+68259     | DENA DINAR                     | 13-Nov-2026 14:30
+68260     | INDY RISMAYANTI                | 13-Nov-2026 14:41
+68264     | RATNA SARI                     | 13-Nov-2026 06:33
+68275     | REPA ISMAYA WARISATUL JANNAH   | 13-Nov-2026 14:26
+68277     | NENG DESTI SAVITRI             | 13-Nov-2026 14:43
+68285     | ADIT PRATAMA                   | 13-Nov-2026 03:51
+68286     | MOCHAMAD RACHEL PUTRA          | 13-Nov-2026 14:42
+68291     | IMAM SAPUTRO                   | 13-Nov-2026 14:47
+68292     | MEIZA UMMUL HAFSHAH            | 13-Nov-2026 04:58
+68295     | DARA AMELIA                    | 13-Nov-2026 14:43
+68307     | ADNAN DIMAS SAPUTRA            | 13-Nov-2026 06:09
+68311     | HILNA RAHAYU                   | 13-Nov-2026 03:55
+68315     | RAHMAT FAISAL                  | 13-Nov-2026 05:01
+68319     | ISTI JULIANI                   | 13-Nov-2026 14:14
+68324     | SYAFIRA BILBINA PUTRI HERMANTO | 13-Nov-2026 03:55
+68344     | ANGGI INDRIANI PUTRI           | 13-Nov-2026 03:55
+68345     | REYSA RISMAYA                  | 13-Nov-2026 14:41
+68351     | NADHIN ADHANI SAFRIYANTI       | 13-Nov-2026 14:41
+68355     | AA DINASTIAR                   | 13-Nov-2026 14:39
+68359     | RISKA AMELIA                   | 13-Nov-2026 14:20
+68367     | M ROBI RUDIANSYAH              | 13-Nov-2026 06:15
+68373     | NASTA INAYAH                   | 13-Nov-2026 04:01
+68376     | LINA KURNIAWATI                | 13-Nov-2026 14:43
+68378     | SEPTHYA RAMADHANI              | 13-Nov-2026 14:31
+68379     | ABDUL AZIS                     | 13-Nov-2026 03:56
+68383     | GINA ANDRIANI                  | 13-Nov-2026 05:01
+68385     | KHAILA LIANA FADILAH           | 13-Nov-2026 03:56
+68388     | AILSA NABILA                   | 13-Nov-2026 14:20
+68398     | M SAHRUL FAUZAN                | 13-Nov-2026 03:58
+68403     | WINI NOVIANI                   | 13-Nov-2026 05:00
+68411     | NAYLA RIANTY PUTRI             | 13-Nov-2026 14:41
+68422     | NESYA S APRIANTI               | 13-Nov-2026 14:31
+68426     | TIARA APRILIANTI               | 13-Nov-2026 14:14
+68437     | RISMA                          | 13-Nov-2026 14:34
+68442     | FITRIA RAMADANI                | 13-Nov-2026 14:26
+68443     | AURREL NAZHWA SAFIRA           | 13-Nov-2026 14:31
+68445     | YUNI SRI HANDAYANI             | 13-Nov-2026 14:11
+68452     | TASYA SUCI SEPTIANI            | 13-Nov-2026 03:32
+68456     | AMANULAH DWI TUNGGAL           | 13-Nov-2026 14:43
+68463     | CICA NURCAHYANI                | 13-Nov-2026 14:28
+68468     | RIPALDI SHOLIHIN PRATAMA       | 13-Nov-2026 14:49
+68470     | RIPA APRIANTI                  | 13-Nov-2026 14:35
+68474     | Deni Heryana                   | 13-Nov-2026 14:35
+68475     | NURUL AKHWAT                   | 13-Nov-2026 14:41
+68476     | SASKIA NABILA NUR IQMAL        | 13-Nov-2026 03:55
+68480     | DENIS SOLIHIN                  | 13-Nov-2026 14:33
+68482     | MOHAMAD AKBAR FIRDAUS          | 13-Nov-2026 14:47
+68483     | VERA PUSPITA DEWI              | 13-Nov-2026 04:56
+68484     | ALFATHUR ASRYL ALAMSYAH        | 13-Nov-2026 14:45
+68488     | ROBBY ADHIS PRAMUDITA          | 13-Nov-2026 03:58
+68491     | SELVI TRIANI                   | 13-Nov-2026 14:41
+68494     | REYNAL ANANDA URLICH           | 13-Nov-2026 03:58
+68498     | MUTIARA DWI RAMADHANI          | 13-Nov-2026 03:59
+68500     | NURUL HIDAYAH                  | 13-Nov-2026 14:42
+68505     | RISQ ANISA SETIAWATI           | 13-Nov-2026 14:43
+68507     | HERI ARIFIN                    | 13-Nov-2026 03:47
+68518     | WINA WIDIANA                   | 13-Nov-2026 04:46
+68521     | KARINA DELA RHAMADHINA         | 13-Nov-2026 14:31
+68522     | ARVI ARDIAN                    | 13-Nov-2026 14:45
+68532     | DERA AGUNG PERMANA             | 13-Nov-2026 14:49
+68537     | MUHAMMAD AFNAN DHIA MUFID      | 13-Nov-2026 04:55
+68538     | FARREL AL GISLI                | 13-Nov-2026 14:46
+68539     | SASKYA AULIA                   | 13-Nov-2026 06:31
+68545     | WULAN NURAENI                  | 13-Nov-2026 03:58
+68550     | MUCHAMAD FIKRI FEBRYANSAH      | 13-Nov-2026 14:47
+68556     | FEBYOLLA HANA SEPTIANI         | 13-Nov-2026 14:28
+68558     | AYU ANDINI                     | 13-Nov-2026 14:32
+68559     | ADE PURNAMA MAULUDIN           | 13-Nov-2026 03:58
+68562     | MELI LAELA ASRI                | 13-Nov-2026 03:56
+68565     | RIZKI MAULA FIRMANSYAH         | 13-Nov-2026 14:47
+68583     | RATNA GALUH PITRIYANI          | 13-Nov-2026 14:27
+68587     | WANDA OCTAVIANY                | 13-Nov-2026 14:32
+68592     | MISSAROH                       | 13-Nov-2026 14:31
+68598     | GINA SANTIKA                   | 13-Nov-2026 14:48
+68599     | KIKIN GIMNASTIAR               | 13-Nov-2026 03:58
+68601     | RITA KOMALA                    | 13-Nov-2026 06:21
+68604     | TRESNA FAUZAL MALIK            | 13-Nov-2026 04:09
+68605     | RIZKY RIZALDY ABIDIN           | 13-Nov-2026 06:52
+68606     | SABILA MUDRIKA                 | 13-Nov-2026 14:02
+68611     | GANDI SAPUTRA                  | 13-Nov-2026 03:52
+68612     | SALWA MAULIDINA                | 13-Nov-2026 03:55
+68614     | WINDI WIDIA PUTRI              | 13-Nov-2026 14:32
+68615     | KINTAN AYU DALVA               | 13-Nov-2026 03:58
+68619     | TIARA HERNOV JULIANIE          | 13-Nov-2026 04:55
+68620     | SALSA OKTAVIA                  | 13-Nov-2026 14:40
+68623     | LEVI MUHAMMAD SYAEFUL HUDA     | 13-Nov-2026 04:57
+68626     | RIDA PUTRI                     | 13-Nov-2026 04:58
+68633     | SOFWAN FAVIAN FAUZAN           | 13-Nov-2026 04:02
+68635     | WAWAN ERVAN FAZRIANSYAH        | 13-Nov-2026 06:41
+68643     | WILY SYAPUTRA PRATAMA          | 13-Nov-2026 14:43
+68648     | JAMILAH                        | 13-Nov-2026 06:35
+68655     | KANIA FEBRIANTY                | 13-Nov-2026 04:55
+68658     | RENDI PERMANA                  | 13-Nov-2026 05:04
+68661     | ANTI MULYANI                   | 13-Nov-2026 03:59
+68664     | NASYWAA NUR ALIKA              | 13-Nov-2026 03:59
+68689     | YOGAS DESTARIANSYAH            | 13-Nov-2026 04:43
+68691     | PARAS KHOIRUNNISA              | 13-Nov-2026 14:38
+68692     | RADITYA TRIPUTRA GEFARY        | 13-Nov-2026 14:44
+68693     | DELA ARYANTI                   | 13-Nov-2026 03:59
+68700     | HAIKAL MUHAMMAD WISTIAR        | 13-Nov-2026 04:55
+68701     | M INDRA IRAWAN                 | 13-Nov-2026 03:51
+68704     | DARUL FIQRI ASYIDIQ            | 13-Nov-2026 06:41
+68707     | VANI                           | 13-Nov-2026 14:11
+68711     | NAZWA AULIA AZZAHRA            | 13-Nov-2026 03:59
+68712     | ILHAN IHSAN GUSTIAN            | 13-Nov-2026 03:58
+68718     | SITI AINUN                     | 13-Nov-2026 14:35
+68719     | RAYYA ALMIRA                   | 13-Nov-2026 14:21
+68726     | KEYSA EVELINA                  | 13-Nov-2026 14:37
+68730     | MUHAMAD EVAN PRATAMA           | 13-Nov-2026 14:22
+68731     | SITI ZAINAB                    | 13-Nov-2026 14:11
+68733     | ARYA RANGGA PERMANA            | 13-Nov-2026 14:47
+68736     | AINA NABILA                    | 13-Nov-2026 14:41
+68742     | RAIHAN FAHRISAL PUTRA          | 13-Nov-2026 04:55
+68744     | TINO KURNIA SANDI              | 13-Nov-2026 05:09
+68748     | LULU RIHHDATUL AISYA           | 13-Nov-2026 04:00
+68750     | INDRI ANDRIYANI                | 13-Nov-2026 04:01
+68753     | REVAN ALIYANSYAH FADILLAH      | 13-Nov-2026 14:44
+68758     | REIZKY SAPUTRA                 | 13-Nov-2026 03:58
+68759     | ADITYA FIRMANSYAH              | 13-Nov-2026 14:46
+68763     | ZAMIR NUR FADIL                | 13-Nov-2026 14:44
+68772     | ALFAZ NAUVAL AZMI              | 13-Nov-2026 14:49
+68773     | RIVANA ANISAH DESTIMALA NASDAR | 13-Nov-2026 14:27
+68784     | PUTRI NURJANAH                 | 13-Nov-2026 14:23
+68785     | DIMAS PANDU WICAKSANA          | 13-Nov-2026 05:04
+68786     | NIZAAR ALFIANSYAH              | 13-Nov-2026 14:42
+68789     | REYSA RADITYA                  | 13-Nov-2026 14:38
+68793     | ELIS NORIN                     | 13-Nov-2026 14:31
+68795     | FARLAN RAMADHAN BIRUKU         | 13-Nov-2026 14:39
+68797     | ASEP RISKI                     | 13-Nov-2026 03:51
+68798     | ALDO DANILO                    | 13-Nov-2026 14:35
+68801     | NADIA AYU INDRIANI             | 13-Nov-2026 04:00
+68805     | RINA YUNITA                    | 13-Nov-2026 14:32
+68806     | DAFFA SHAFWAN MUHTARAM         | 13-Nov-2026 03:51
+68809     | HARIS RAIHAN                   | 13-Nov-2026 03:52
+68810     | RAFLI ALFIN                    | 13-Nov-2026 04:53
+68811     | ALIF NURRAHMAN                 | 13-Nov-2026 14:50
+68814     | FARHAN AL FARIDL               | 13-Nov-2026 14:40
+68815     | DANI DARUSSALAM                | 13-Nov-2026 04:57
+68816     | REFA FADILAH                   | 13-Nov-2026 04:57
+68818     | DEMA ACHMAD RAMDANI            | 13-Nov-2026 14:07
+68825     | NURI ZULIANTI                  | 13-Nov-2026 14:26
+68827     | MUTIA RATNA GALUH              | 13-Nov-2026 14:11
+68832     | RASYA ADITYA HERMAWAN          | 13-Nov-2026 14:47
+68838     | ACEP AGIL MUHAMMAD FAUZAN      | 13-Nov-2026 07:23
+68839     | RIKI ARIYANTO                  | 13-Nov-2026 14:38
+68840     | RIZWAN NULLOH RISFANZI         | 13-Nov-2026 03:56
+68841     | SANDIKA DWI KURNIA             | 13-Nov-2026 14:30
+68855     | RIDWAN SUFYAN NUR HUDA         | 13-Nov-2026 03:58
+68862     | IKBAL PRADILA RIZKI            | 13-Nov-2026 14:38
+68877     | NADIA FEBRIANI                 | 13-Nov-2026 14:44
+68880     | FIRZAN FIRJATULLOH             | 13-Nov-2026 04:56
+68881     | GALIH SAMUDRA BATISTUTA        | 13-Nov-2026 14:37
+68882     | IBNU SANDI MU'ARRIZ            | 13-Nov-2026 04:58
+68884     | KIKI KANDELA SOBARI            | 13-Nov-2026 14:52
+68885     | MUHAMAD SHAMIL IBNU JIHAD      | 13-Nov-2026 14:46
+68887     | MUHAMMAD REYHAN IRAWAN         | 13-Nov-2026 14:37
+68888     | NURHAMAD SAHIDIN               | 13-Nov-2026 14:38
+68891     | BAYU ABDULATIF                 | 13-Nov-2026 14:48
+68894     | RENA DESIYANTI                 | 13-Nov-2026 14:10
+68895     | MUHAMAD MIFTAH FARID           | 13-Nov-2026 14:40
+68911     | NENENG NURLITA                 | 13-Nov-2026 14:31
+68916     | REYHAN ABDUL AZIS HASIBUHAN    | 13-Nov-2026 13:52
+68917     | SINTA PURNAMA SARI             | 13-Nov-2026 14:24
+68918     | SOPI JULIANTI                  | 13-Nov-2026 14:48
+68924     | ANGGIRA                        | 13-Nov-2026 04:55
+68926     | RASYID HUSAENI                 | 13-Nov-2026 14:49
+68927     | MILATI MUSTAQIMAH              | 13-Nov-2026 13:44
+68928     | LAURA BOLIVIA                  | 13-Nov-2026 14:42
+68937     | DINDIN SUPRIADI                | 13-Nov-2026 04:53
+68938     | RIKI HENDRIANA                 | 13-Nov-2026 03:58
+68941     | UJANG RUKMANA                  | 13-Nov-2026 03:51
+68942     | EGI GINANJAR                   | 13-Nov-2026 04:53
+68943     | NURON SAEFUL HIDAYAT           | 13-Nov-2026 14:28
+68944     | RAMA DWI PANGGA                | 13-Nov-2026 03:01
+68948     | LIA WARLIAH                    | 13-Nov-2026 05:03
+68950     | SITI SUPRIYATIN                | 13-Nov-2026 04:01
+68951     | RITA PUJIAWATI                 | 13-Nov-2026 04:01
+68953     | RISA ADANIA                    | 13-Nov-2026 05:03
+68956     | HELVINA DAMAYANTI              | 13-Nov-2026 05:03
+68963     | RIZKI ALANWARI                 | 13-Nov-2026 06:34
+68966     | GOLDIE MOWGLI CHRISTIAN MUFLIH | 13-Nov-2026 03:58
+68972     | ALVIDA CAROUVALYANA            | 13-Nov-2026 14:40
+68977     | RIDWAN SEPRIZAL                | 13-Nov-2026 14:49
+68978     | FADHLI FAARIS ALÃ¿Â¿AZIZ       | 13-Nov-2026 06:54
+68979     | UJANG RUHIAT                   | 13-Nov-2026 14:38
+68980     | DZIKRI FATHARANI               | 13-Nov-2026 14:52
+68983     | ASEP DIANTO                    | 13-Nov-2026 14:41
+68984     | DILA SELPIANI                  | 13-Nov-2026 04:00
+68985     | GINANJAR SUPRIATNA             | 13-Nov-2026 14:49
+68987     | RIKI SUTRESNA                  | 13-Nov-2026 07:27
+80001     | NOVAL NOPIAN                   | 13-Nov-2026 14:44
+80041     | FANI PEBRIANTI MUALIF          | 13-Nov-2026 14:47
+80042     | TITI ROHAETY                   | 13-Nov-2026 14:36
+80050     | WISNU ADITIA                   | 13-Nov-2026 03:46
+80068     | CITRA APRILLIYANTI             | 13-Nov-2026 06:35
+80075     | RISTA REFALYNA                 | 13-Nov-2026 05:05
+80077     | MUHAMMAD IQBAL PRAYOGA         | 13-Nov-2026 03:55
+80104     | DAFA ADITYA PRATAMA            | 13-Nov-2026 14:43
+80107     | FAJAR NURDIKRI                 | 13-Nov-2026 14:50
+80108     | FASSA RIZKI RAMADHAN           | 13-Nov-2026 04:53
+80110     | ILHAM RAHMANSYAH               | 13-Nov-2026 14:50
+80121     | SHALSABILA APRILIAWATI         | 13-Nov-2026 14:14
+80123     | JULIAN FADILLAH                | 13-Nov-2026 04:58
+80139     | REZA HARDIANSYAH               | 13-Nov-2026 07:02
+80147     | MUHAMMAD RAFA SYAFIQ ANSORI    | 13-Nov-2026 14:13
+80149     | EKA CAHYANA                    | 13-Nov-2026 04:56
+80151     | DEWITA SEPTIANI                | 13-Nov-2026 05:01
+80185     | NISRINA AMBARO                 | 13-Nov-2026 05:05
+80195     | SALSABILA NURFADHILAH          | 13-Nov-2026 03:58
+80233     | INTAN AZAHRA ELISA MAHARANI    | 13-Nov-2026 14:33
+80263     | ADELLIA ANANDA NURHASANAH      | 13-Nov-2026 14:43
+80302     | DEDEN RIDHO ABDURROHMAN        | 13-Nov-2026 03:52
+80303     | RIDHA NUR FITRIYANI            | 13-Nov-2026 14:50
+80306     | DANISH RAHARDIAN               | 13-Nov-2026 03:38
+80310     | RIDWAN PIRMANSYAH              | 13-Nov-2026 14:43
+80313     | MUHAMAD AKBAR                  | 13-Nov-2026 14:45
+80333     | FADHLI SYAHRAN MUHAMMAD AKBAR  | 13-Nov-2026 05:00
+80339     | RADYTA TIRTA LASMANA           | 13-Nov-2026 14:45
+80346     | ARDELIA NUR FAUZIAH            | 13-Nov-2026 14:46
+80348     | IQBAL ASHALAM                  | 13-Nov-2026 14:46
+80352     | RIBI ZULFA KAMALUZ ZAMAN       | 13-Nov-2026 04:56
+80355     | MUHAMMAD SOFYAN                | 13-Nov-2026 04:57
+80364     | ZHAREEN AZHAR                  | 13-Nov-2026 12:43
+80371     | KELVIN ERLANGGA IRAWAN         | 13-Nov-2026 14:45
+80374     | ZAHRA MEGA NURAENI             | 13-Nov-2026 14:13
+80375     | LUTHFI FADHIL RAMDHANI         | 13-Nov-2026 14:45
+80388     | M HADI RAHMATULOH              | 13-Nov-2026 14:45
+80398     | DANDI RIAN FEBRIANSYAH         | 13-Nov-2026 14:23
+80415     | BUNGA AYU ANASTASYA            | 13-Nov-2026 14:23
+80443     | ABDUL RAUF                     | 13-Nov-2026 04:55
+80447     | ASEP WILLY PERMANA             | 13-Nov-2026 03:51
+80505     | FAUZAN ARYANTA PUTRA           | 13-Nov-2026 14:48
+80535     | MUHAMMAD AFLAH                 | 13-Nov-2026 04:34
+80543     | MOHAMAD DEVAN MAULANA          | 13-Nov-2026 04:55
+80554     | DUDE PASHA HATALA              | 13-Nov-2026 03:38
+80557     | MUHAMMAD AFRIZAL FIRDAUS       | 13-Nov-2026 14:44
+80563     | MUHAMAD YUDHA PRADITIA         | 13-Nov-2026 04:59
+80568     | MULYANA                        | 13-Nov-2026 14:44
+80570     | RENI DANIA                     | 13-Nov-2026 14:31
+80572     | SARIF                          | 13-Nov-2026 14:46
+80578     | MUHAMAD IQBAL FAUZI            | 13-Nov-2026 03:54
+80582     | GHINANJAR RAHMADHANI           | 13-Nov-2026 14:41
+80598     | ANDHIKA AL FARIZI              | 13-Nov-2026 03:57
+80622     | RIRIN RINJANI                  | 13-Nov-2026 14:27
+80625     | MUHAMAD RIVKY FADILLAH         | 13-Nov-2026 14:48
+80639     | DAPI JULIANO HIDAYAT           | 13-Nov-2026 05:03
+80671     | NELSA NUR SOLEHA               | 13-Nov-2026 14:28
+80721     | ALLYA LABAYQY                  | 13-Nov-2026 14:20
+80728     | PRINCESSA ANANDA AYU           | 13-Nov-2026 06:34
+80729     | REYHAN KURNIAWAN               | 13-Nov-2026 14:27
+80733     | TINA SEPTIANA                  | 13-Nov-2026 14:37
+80759     | FACHRI ANURHADI                | 13-Nov-2026 14:43
+80767     | HAPID RIZKI MUBAROK            | 13-Nov-2026 05:01
+80769     | MUHAMAD IRSYAD TAUFIK KUROHMAN | 13-Nov-2026 14:42
+80772     | ALIFIA NURAINI                 | 13-Nov-2026 06:30
+80778     | DEITA ROVINA                   | 13-Nov-2026 04:58
+80783     | KHAILA YULINDA RAJABBANIAH     | 13-Nov-2026 14:20
+80818     | INDAH PUTRI NURJANAH           | 13-Nov-2026 14:44
+80823     | MOCHAMAD IBNU FADLI            | 13-Nov-2026 03:52
+80832     | ASYA SYAHRA NABILLA            | 13-Nov-2026 14:46
+80842     | SALMA ASYIFA NURJANAH          | 13-Nov-2026 06:27
+80847     | NAJLA SITI AZZAHRA             | 13-Nov-2026 06:27
+80854     | JAHRA ASTRI LESTARI            | 13-Nov-2026 06:35
+80855     | DADANG GANTINA HIDAYATULLOH    | 13-Nov-2026 14:41
+80858     | MUHAMAD RIZKI                  | 13-Nov-2026 14:43
+80867     | ALYA NABILAH AZHAR             | 13-Nov-2026 14:46
+80878     | SRI RAMADAN                    | 13-Nov-2026 14:43
+80889     | RIANTI                         | 13-Nov-2026 06:40
+80944     | KEVIN SETIAWAN                 | 13-Nov-2026 04:54
+======================================================================
+
+Cost Center : CHOCOA POWDER
+Sub-Total   : 30 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001134  | HANDI SUTIAWAN                 | 13-Nov-2026 14:47
+10001260  | SUMARNI .                      | 13-Nov-2026 06:29
+10001464  | HURY WILIANTO                  | 13-Nov-2026 07:48
+10001640  | SITI SONIFAH                   | 13-Nov-2026 06:12
+10002184  | RITA PUSPITA                   | 13-Nov-2026 06:41
+10002390  | WANTI SUPRIATIEN               | 13-Nov-2026 06:38
+10003668  | RONI ANWAR                     | 13-Nov-2026 06:20
+10023975  | AULIA SAFIRA ANUGERAH          | 13-Nov-2026 06:34
+69004     | ADITYA YUDHA PERMANA           | 13-Nov-2026 12:33
+69295     | RIYANTO                        | 13-Nov-2026 05:00
+69478     | SALDA SITI SA¿ADAH A           | 13-Nov-2026 13:55
+69521     | MUHAMAD REZA FAHLEVI           | 13-Nov-2026 12:34
+69528     | RIZKI NURUL FADILAH            | 13-Nov-2026 03:34
+69649     | FADLI FAHRIJAL                 | 13-Nov-2026 05:00
+69670     | RIZAL REZIANA                  | 13-Nov-2026 12:34
+69674     | AEP SURYANA                    | 13-Nov-2026 14:42
+69729     | RAMZY MUHAMMAD FADHIL          | 13-Nov-2026 14:41
+69977     | DESTINA NURANI                 | 13-Nov-2026 14:47
+70072     | NADYA QURAINI SANDRA DEWI      | 13-Nov-2026 14:31
+70260     | MUHAMAD FAHRI RAMDHANI P       | 13-Nov-2026 12:33
+70282     | ZULFA HIKMATUN NISA            | 13-Nov-2026 06:42
+70334     | ISAL SALWANA                   | 13-Nov-2026 06:52
+70575     | DEJANHAR GUSOPIK               | 13-Nov-2026 12:34
+70598     | IRFAN                          | 13-Nov-2026 14:38
+70609     | INTAN NUR CAHYATI              | 13-Nov-2026 06:44
+70632     | HERVIANI SEPTA WULAN           | 13-Nov-2026 14:07
+70641     | RAFLI SEPTIAN ANUGRAH          | 13-Nov-2026 12:34
+70781     | DINA RAMDAENI                  | 13-Nov-2026 13:55
+70850     | MASYA KOMALASARI               | 13-Nov-2026 14:30
+70931     | INDRA SARANA                   | 13-Nov-2026 13:55
+======================================================================
+
+Cost Center : CHOCOLATE RICE
+Sub-Total   : 76 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001080  | ERSIE KENHARTATI               | 13-Nov-2026 07:44
+10001220  | ENI PRASETYOWATI               | 13-Nov-2026 14:52
+10001262  | AIP NUROHMAN                   | 13-Nov-2026 06:42
+10001338  | DIDIN WAHYUDIN                 | 13-Nov-2026 06:34
+10001340  | ANDRI YOGA PRANATA             | 13-Nov-2026 06:21
+10001342  | AGUS SUPRIADI                  | 13-Nov-2026 06:43
+10001428  | KAMAL SONJAYA                  | 13-Nov-2026 14:09
+10001566  | SRI YAMTINI                    | 13-Nov-2026 06:14
+10001602  | ASEP NOVI SAEFULLOH            | 13-Nov-2026 03:48
+10001612  | ABDUL QODIR JAELANI            | 13-Nov-2026 06:40
+10001668  | DADAN SETIAWAN                 | 13-Nov-2026 06:41
+10001742  | KUSNANDAR HENDARSYAH           | 13-Nov-2026 14:08
+10001744  | RIYANTO .                      | 13-Nov-2026 06:47
+10001758  | ANI SUSANTI                    | 13-Nov-2026 06:35
+10001786  | MUCHSIN JAMALUDIN              | 13-Nov-2026 14:41
+10001814  | MOCHAMMAD HARLIANTO TEMMI      | 13-Nov-2026 06:37
+10001932  | RUSLI SUANDI                   | 13-Nov-2026 06:32
+10002030  | SUGIARTI .                     | 13-Nov-2026 14:32
+10002094  | DEDI .                         | 13-Nov-2026 06:27
+10002182  | IMAN SUPARMAN                  | 13-Nov-2026 14:33
+10002208  | SUSI FITRIYAH                  | 13-Nov-2026 14:42
+10002292  | KUNRAT SETIAWAN                | 13-Nov-2026 04:51
+10002340  | SUGIARTO .                     | 13-Nov-2026 14:42
+10002352  | HILMAN ROHMANSYAH              | 13-Nov-2026 14:26
+10002382  | ASEP KURNIA                    | 13-Nov-2026 14:22
+10002626  | BERNHARD SIMANJUNTAK           | 13-Nov-2026 05:49
+10003402  | VERA FEBRIANA DEWI             | 13-Nov-2026 07:51
+10003484  | WARSITO .                      | 13-Nov-2026 06:44
+10003756  | ASEP PRIATNA                   | 13-Nov-2026 04:41
+10008838  | HARIS RISMAWAN                 | 13-Nov-2026 06:21
+10023188  | ALVIRA WIDYAWATI               | 13-Nov-2026 06:42
+10023874  | MUHAMAD HILMAN DARMAWAN        | 13-Nov-2026 06:48
+10024053  | MUHAMMAD RAFLY FERDIANSYAH     | 13-Nov-2026 07:28
+68224     | M JIMMI HERMAWAN               | 13-Nov-2026 06:41
+69012     | A. LATIP SAPUTRA               | 13-Nov-2026 14:48
+69017     | WILDAN MA'SUM NASRULOH         | 13-Nov-2026 14:43
+69183     | ALDIAN GUCIANO                 | 13-Nov-2026 06:45
+69227     | REVA WYZANUR                   | 13-Nov-2026 14:48
+69308     | IBNU MAULANA                   | 13-Nov-2026 04:23
+69429     | MUHAMAD ISLAH CARDANI          | 13-Nov-2026 14:41
+69444     | KIKI PERMANA                   | 13-Nov-2026 06:36
+69464     | MOCH FACHRUL AQSHAL            | 13-Nov-2026 14:45
+69474     | MUHAMMAD RAZA NUR FAJRI        | 13-Nov-2026 13:40
+69496     | IKHSAN FADILLA                 | 13-Nov-2026 06:47
+69501     | MARLIANA SUPARTINI             | 13-Nov-2026 13:48
+69502     | RODIAH SITI RAMDANIAH          | 13-Nov-2026 14:42
+69510     | RIAN FIRMANSYAH                | 13-Nov-2026 14:48
+69522     | ABDUL AZIS MANSUR              | 13-Nov-2026 14:32
+69579     | ANIS FITRIANI                  | 13-Nov-2026 14:42
+69748     | MUHAMMAD RAFLI                 | 13-Nov-2026 14:43
+69778     | D ARI YULIANTO                 | 13-Nov-2026 14:48
+69865     | ALFIN RAMADHAN                 | 13-Nov-2026 14:42
+69881     | TAOFIK ISMAIL SALEH            | 13-Nov-2026 06:21
+69884     | ANUGRAH CANDRA PERWIRA         | 13-Nov-2026 06:40
+69927     | AHMAD                          | 13-Nov-2026 14:25
+69928     | VIRGIAWAN F LISTIANTO          | 13-Nov-2026 14:39
+69932     | SUTISNA HADI S                 | 13-Nov-2026 14:42
+69951     | DIKKY YEHEZKIEL SITIO          | 13-Nov-2026 04:57
+69953     | ADI SOPANDI BARKAH             | 13-Nov-2026 04:27
+69955     | ADAM TORIKURROHMAN             | 13-Nov-2026 04:05
+69963     | INDRA ZALA PERMATA             | 13-Nov-2026 13:55
+70027     | GUNTUR BRAMSTAR HUTAGAOL       | 13-Nov-2026 14:35
+70112     | FADLI NUR RIZKY                | 13-Nov-2026 06:27
+70114     | REZA DANIEL FRASETYA           | 13-Nov-2026 14:03
+70200     | PRASETIO NUGROHO               | 13-Nov-2026 14:48
+70243     | RENI HANDAYANI                 | 13-Nov-2026 06:40
+70285     | AGUS KURNIAWAN                 | 13-Nov-2026 06:38
+70360     | EDWARD SANTOSO PUTRA           | 13-Nov-2026 14:42
+70590     | ILYAS IBADUROHMAN              | 13-Nov-2026 14:46
+70640     | TRIYAN VEBRIYANSYAH            | 13-Nov-2026 14:04
+70690     | TAOFIK GUNAWAN                 | 13-Nov-2026 14:44
+70721     | RIKI AGUSTIANA                 | 13-Nov-2026 14:48
+70730     | M IKSAN RAMANSAH               | 13-Nov-2026 14:44
+70927     | WILDAN RIZQI ARDIANSYAH        | 13-Nov-2026 06:20
+90030     | ANGGI APRILIANTI PUSPITA DEWI  | 13-Nov-2026 14:08
+90077     | MUHAMMAD RIDZWAN               | 13-Nov-2026 14:44
+======================================================================
+
+Cost Center : CONBAR
+Sub-Total   : 256 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001232  | DANIYAWATI .                   | 13-Nov-2026 06:43
+10001276  | NENI RUKMINI                   | 13-Nov-2026 06:41
+10001394  | INA RUSDIANA                   | 13-Nov-2026 07:50
+10001410  | HERLINA .                      | 13-Nov-2026 06:33
+10001528  | IIS ISMAYANTI                  | 13-Nov-2026 07:32
+10001846  | MUHAMMAD IRFAN                 | 13-Nov-2026 06:46
+10001880  | RITA HERNAWATI                 | 13-Nov-2026 06:42
+10002614  | RENI RAHAYU                    | 13-Nov-2026 05:52
+10002644  | SAEFUL GUMILAR                 | 13-Nov-2026 06:49
+10002646  | JUHENDI .                      | 13-Nov-2026 14:45
+10002652  | HENDI SUHENDI                  | 13-Nov-2026 14:12
+10002942  | INDAH AYU APRIANI              | 13-Nov-2026 07:32
+10002978  | WILDAN NURDIANSYAH             | 13-Nov-2026 06:40
+10002980  | ANTONIUS YUDHI                 | 13-Nov-2026 06:22
+10003000  | RIKA WULANSARI                 | 13-Nov-2026 14:12
+10003008  | RIDWAN MAULANI                 | 13-Nov-2026 06:31
+10003106  | IFAN NURJAMAN                  | 13-Nov-2026 05:06
+10003126  | INDRA HARUMAN DJAYA            | 13-Nov-2026 14:52
+10003138  | AGUNG BUDIMAN                  | 13-Nov-2026 06:16
+10003192  | YANA JOHANA                    | 13-Nov-2026 06:17
+10003268  | ANDRIYANSAH .                  | 13-Nov-2026 05:06
+10003270  | GALIH SETIA PUTRA              | 13-Nov-2026 06:30
+10003374  | FAJAR CIPTA FALLAHI            | 13-Nov-2026 06:28
+10003848  | ASTRI SUGIH LESTARI            | 13-Nov-2026 07:15
+10006738  | SELI SILVIA FRIDIANTI          | 13-Nov-2026 06:35
+10020906  | ANNISA AULIA ANSHARI           | 13-Nov-2026 07:52
+10021304  | JESICA MIRANDA                 | 13-Nov-2026 07:27
+10021318  | MUHAMAD FIKRI                  | 13-Nov-2026 05:02
+10021319  | KURNIA .                       | 13-Nov-2026 06:18
+10021324  | APRI MUHAMMAD SYABAN           | 13-Nov-2026 03:52
+10022084  | MAHESHA MUHAMMAD EL FARUQY     | 13-Nov-2026 06:02
+10022237  | DENI RAMDANI                   | 13-Nov-2026 06:50
+10022595  | UJANG TASLIM                   | 13-Nov-2026 06:39
+10023063  | RIAN GUSTIAN                   | 13-Nov-2026 04:59
+10023126  | RAHMAT PEBBY YAMA              | 13-Nov-2026 05:54
+10023242  | MUHAMMAD IHSANUDDIN            | 13-Nov-2026 04:57
+10023276  | RENDI HADIYANSAH               | 13-Nov-2026 06:18
+10023288  | FAUZI RAHMAN                   | 13-Nov-2026 04:37
+10023293  | IPAN SOPIAN                    | 13-Nov-2026 06:34
+10023340  | HOSANA WIDHANINGTYAS           | 13-Nov-2026 07:54
+10023487  | FIRDAUSA RAMADHANTI            | 13-Nov-2026 06:37
+10023715  | RENATA NAOMI CINTA SEDJATI     | 13-Nov-2026 07:50
+10023867  | SYAHDA MAHDIYAH                | 13-Nov-2026 14:44
+10023972  | MUHAMAD ABIL WAPA              | 13-Nov-2026 03:52
+10023973  | SEPTIANA SUGIAWAN              | 13-Nov-2026 06:44
+10024061  | DICKY TRI PUTRA                | 13-Nov-2026 14:13
+10024064  | GHALIN HADIA PUTERA PUTERA     | 13-Nov-2026 04:32
+65008     | ACEP DADAN SOMANTRI            | 13-Nov-2026 05:01
+65035     | MUHAMMAD IRGI ZULFIANSYAH      | 13-Nov-2026 03:52
+65037     | NAFADILA KHOERUNNISA           | 13-Nov-2026 05:13
+65042     | RENALDY PRASTYA                | 13-Nov-2026 03:57
+65049     | SENDI PERMANA                  | 13-Nov-2026 04:49
+65059     | ABDURRAHMAN                    | 13-Nov-2026 03:51
+65063     | ANGGI ANGGRAENI                | 13-Nov-2026 04:59
+65077     | SYAIRA OCTAVIANI               | 13-Nov-2026 14:46
+65080     | AZKIA WAHDAN ALMUNAWAR         | 13-Nov-2026 06:28
+65094     | IIP RISALDI                    | 13-Nov-2026 03:57
+65098     | NAZMAL MALIK                   | 13-Nov-2026 06:47
+65101     | R KLEOPATRA PUTRI SASTRAWIGUNA | 13-Nov-2026 06:15
+65103     | RONI AGUSTIAR                  | 13-Nov-2026 06:25
+65106     | SENDI RAHMAWAN                 | 13-Nov-2026 06:01
+65113     | ALFIFAH NP RAMDANI             | 13-Nov-2026 14:32
+65115     | ANI LESNAWATI                  | 13-Nov-2026 14:39
+65121     | KUSNADI ARIPIN                 | 13-Nov-2026 04:13
+65122     | ASRI HAJAR NURRAHMANIA         | 13-Nov-2026 14:18
+65124     | EVA FITRIYAH                   | 13-Nov-2026 14:52
+65126     | FAUZAN ARIFIANSYAH             | 13-Nov-2026 14:43
+65128     | SITI SOLIHAH                   | 13-Nov-2026 03:59
+65133     | HADI SIDIK PERMANA             | 13-Nov-2026 14:37
+65135     | ROSITA OKTAVIANI               | 13-Nov-2026 04:57
+65137     | IMAN MAULANA                   | 13-Nov-2026 13:35
+65146     | KAMELIA PUSPITA SARI           | 13-Nov-2026 14:39
+65148     | LIA YULYANA                    | 13-Nov-2026 13:59
+65153     | MOCHAMAD ILHAM                 | 13-Nov-2026 14:53
+65172     | PITRI ANGGRAENI                | 13-Nov-2026 14:41
+65174     | RAHMA ALYA RAMADANI            | 13-Nov-2026 14:34
+65179     | SYAFIRA NUR ANNISA             | 13-Nov-2026 14:32
+65182     | VIRLI DESWINTA                 | 13-Nov-2026 14:36
+65192     | ALIFAH RAMDINI                 | 13-Nov-2026 03:59
+65207     | ALFANI RAHMAWATI               | 13-Nov-2026 05:04
+65212     | MAULANA ALHADI                 | 13-Nov-2026 03:58
+65221     | SHINTA EKA PUTRI               | 13-Nov-2026 14:43
+65225     | JAHIRA MAULUDINA AMELYA        | 13-Nov-2026 14:30
+65237     | DAFFA PRATAMA                  | 13-Nov-2026 05:09
+65258     | KURNIA                         | 13-Nov-2026 03:58
+65263     | DITA PUSPITA                   | 13-Nov-2026 03:57
+65274     | ILMA SITI ATIKAH               | 13-Nov-2026 04:56
+65280     | JULIANA EKA PUTRI              | 13-Nov-2026 03:56
+65294     | RIDWANA MUHBUBANALLAH          | 13-Nov-2026 14:53
+65295     | WATI                           | 13-Nov-2026 03:55
+65301     | YULIASARI SITI NUROHMAH        | 13-Nov-2026 03:57
+65304     | IKEU DAMAYANTI                 | 13-Nov-2026 04:53
+65310     | LIA YULIANTI                   | 13-Nov-2026 04:46
+65329     | RIO SUGIHARTO                  | 13-Nov-2026 06:57
+65340     | REVALINA                       | 13-Nov-2026 06:34
+65341     | TEGAR DEWA SAPUTRA             | 13-Nov-2026 04:54
+65342     | MOH DANDI WIDIKA               | 13-Nov-2026 05:03
+65343     | HENDRIYANTO                    | 13-Nov-2026 03:50
+65361     | RIZWAN FITRI YADI              | 13-Nov-2026 06:47
+65369     | YUDHA KAFAFI                   | 13-Nov-2026 03:52
+65376     | RAMA PAUJI PERMANA             | 13-Nov-2026 05:03
+65387     | ALSA GITTA FIRANTI NOOR        | 13-Nov-2026 13:53
+65391     | HIKBAL SOPANDI                 | 13-Nov-2026 03:45
+65403     | MOHAMAD RAZKI KHOERUDIN        | 13-Nov-2026 03:58
+65420     | WULAN ANDINI                   | 13-Nov-2026 05:03
+65430     | ENDAH LESTARI                  | 13-Nov-2026 03:56
+65457     | CINTIA NURI                    | 13-Nov-2026 14:31
+65460     | NENG APIPAH APRIANI            | 13-Nov-2026 04:59
+65469     | MEGIA TRISAPTURA               | 13-Nov-2026 14:49
+65470     | THASYA NAZLA SALSABILA         | 13-Nov-2026 03:57
+65471     | TIARA NUR HALIMAH              | 13-Nov-2026 04:59
+65481     | RUDI HERYANTO                  | 13-Nov-2026 03:58
+65483     | FRESTI FEBRIYANTI              | 13-Nov-2026 04:00
+65486     | TOMMY FAJAR RAMDHANI           | 13-Nov-2026 06:47
+65521     | DITA SULASTININGTYAS           | 13-Nov-2026 14:44
+65524     | GISKA AULIA MELFIANI           | 13-Nov-2026 04:55
+65525     | DWIKI ADHIYANSYAH ABDULLAH     | 13-Nov-2026 14:11
+65530     | ALYA KHOERUNISA PERMANA        | 13-Nov-2026 06:23
+65531     | ANDI PERMADI                   | 13-Nov-2026 06:41
+65534     | SHIFA SABIRA FAUZINA           | 13-Nov-2026 03:58
+65545     | PUTRI APRIANI                  | 13-Nov-2026 03:59
+65549     | CEPI CAHYADI                   | 13-Nov-2026 06:44
+65582     | EKA FITRIYANTI ASTUTI          | 13-Nov-2026 14:53
+65589     | SYIFA KHUSNUL AZIZAH           | 13-Nov-2026 14:47
+65614     | IKBAL USTANDI                  | 13-Nov-2026 14:47
+65621     | ALIKA DWI ARIYANTI             | 13-Nov-2026 03:58
+65624     | INDRA DARMAWAN                 | 13-Nov-2026 06:27
+65635     | M. SYAIFULLAH                  | 13-Nov-2026 06:30
+65663     | MESHA SUCI ROMDONI             | 13-Nov-2026 05:46
+65667     | CHINTYA SABILA                 | 13-Nov-2026 14:11
+65673     | MUHAMAD RIDWAN                 | 13-Nov-2026 06:49
+65686     | NANDA RIZKI PRAYOGA GANDANI    | 13-Nov-2026 06:29
+65702     | RAVIF SHODIQIEN                | 13-Nov-2026 06:24
+65711     | ARIZAL AKMAL                   | 13-Nov-2026 14:47
+65728     | SAHRUL RAMADHAN                | 13-Nov-2026 06:35
+65731     | SANTI RISMAYANTI               | 13-Nov-2026 06:27
+65738     | SELVY YULIANTI                 | 13-Nov-2026 06:23
+65743     | MARDHIYAH NURBUNGA PADILLAH    | 13-Nov-2026 06:20
+65749     | KHEN MUHAMMAD RAMADHAN         | 13-Nov-2026 14:51
+65767     | ELSA AFLIANI                   | 13-Nov-2026 14:38
+65775     | WILDAN                         | 13-Nov-2026 05:55
+65799     | IRGI FAHREZI                   | 13-Nov-2026 14:44
+65809     | CINDY HARIYANTI                | 13-Nov-2026 14:29
+65811     | ARIS ARDIANSYAH                | 13-Nov-2026 14:56
+65815     | WIDHI MEILANI                  | 13-Nov-2026 14:35
+65820     | GILANG KURNIA PUTRA            | 13-Nov-2026 14:31
+65829     | ALFIANSYAH ABDILLAH            | 13-Nov-2026 06:34
+65830     | IQBAL SOHIBUL WAFA             | 13-Nov-2026 14:49
+65837     | ODIH SIHABUDIN                 | 13-Nov-2026 06:39
+65846     | NIDA NURAZIZAH ALAWIAH         | 13-Nov-2026 14:56
+65850     | DADANG MAULUDIN                | 13-Nov-2026 06:53
+65851     | TEDY SETIAWAN                  | 13-Nov-2026 06:43
+65853     | ADANG SAPUTRA                  | 13-Nov-2026 14:49
+65855     | TEZA MAULANA                   | 13-Nov-2026 06:02
+65857     | ADE NURCAHYA                   | 13-Nov-2026 14:39
+65861     | ADE RAHMAWATI                  | 13-Nov-2026 14:47
+65863     | ADETIA NUR RAMADHAN            | 13-Nov-2026 13:49
+65875     | ADI MOH RAMDAN                 | 13-Nov-2026 14:53
+65884     | HANDI HERMAWAN                 | 13-Nov-2026 05:03
+65890     | AGIT HERMAWAN                  | 13-Nov-2026 14:39
+65891     | ALDI SOPIAN                    | 13-Nov-2026 14:54
+65894     | ALNA HELMALIA FITRI            | 13-Nov-2026 14:17
+65899     | ANGGIA JUNIATI                 | 13-Nov-2026 14:13
+65903     | ARI                            | 13-Nov-2026 14:44
+65910     | YUNIAR                         | 13-Nov-2026 05:00
+65917     | ASTRI NURFAZIAH MULYA          | 13-Nov-2026 14:26
+65922     | ATIN KUSTINA                   | 13-Nov-2026 14:49
+65925     | DINNY ALIFA KUSUMAWATI         | 13-Nov-2026 04:57
+65926     | AYUNIKA PRATAMI                | 13-Nov-2026 14:14
+65931     | DEDEN ISMAIL                   | 13-Nov-2026 14:39
+65934     | DENIS ILHAM IRPANA             | 13-Nov-2026 14:52
+65941     | ALLYA                          | 13-Nov-2026 14:43
+65951     | FANNY NUR FADILAH              | 13-Nov-2026 14:26
+65953     | FITRI                          | 13-Nov-2026 14:44
+65956     | FITRIANI                       | 13-Nov-2026 14:30
+65959     | GUGUN GUNAWAN                  | 13-Nov-2026 14:51
+65960     | HANA RIDWANA                   | 13-Nov-2026 14:53
+65974     | HENDY HERDIANA                 | 13-Nov-2026 14:52
+65976     | IVAN PRASETYO OKTAVIAN         | 13-Nov-2026 06:20
+65982     | SILFIE RAHAYU OKTAVIA          | 13-Nov-2026 06:11
+65987     | TUBAGUS NAZARUDIN ARDIANSYAH   | 13-Nov-2026 14:45
+65995     | MELINDA NURFAIZA               | 13-Nov-2026 14:41
+65996     | MIA APRILIYANTI                | 13-Nov-2026 14:22
+65998     | MIRNA HARYANTI                 | 13-Nov-2026 14:24
+68006     | SELVI KARYATI                  | 13-Nov-2026 04:57
+68011     | LUNI ULFAH                     | 13-Nov-2026 14:43
+68012     | NURHAYATI                      | 13-Nov-2026 14:41
+68017     | FANI AULIA HATAMI              | 13-Nov-2026 06:39
+68024     | RAMAYANA PARDEDE               | 13-Nov-2026 14:16
+68032     | RIANTI RAHAYU                  | 13-Nov-2026 14:02
+68035     | RIDWAN MAULANA                 | 13-Nov-2026 14:39
+68039     | RIDWAN NUR FAUZI               | 13-Nov-2026 14:49
+68046     | RIMBA SILVANA DARA SANTIKA     | 13-Nov-2026 14:13
+68047     | INTAN SITI NUR KHOLISOH        | 13-Nov-2026 14:41
+68048     | NOVIA RACHMA AZ ZAHRA          | 13-Nov-2026 04:00
+68050     | RINDI PUSPITA                  | 13-Nov-2026 14:52
+68056     | MURTI NAJIAH                   | 13-Nov-2026 14:30
+68062     | RISKA ROSMANAH                 | 13-Nov-2026 13:55
+68064     | RITA NURAINI APRILIA           | 13-Nov-2026 13:56
+68069     | RIZKA ARYANTI                  | 13-Nov-2026 14:05
+68078     | RONI FEBRIANTO                 | 13-Nov-2026 14:46
+68082     | RATU SABILA AULIA              | 13-Nov-2026 04:57
+68090     | TASYA FIRDAYANTI               | 13-Nov-2026 14:41
+68093     | MERRY KUSMIATI                 | 13-Nov-2026 14:30
+68105     | TRIA AMELINDA                  | 13-Nov-2026 14:01
+68113     | TSANIA AZHARY                  | 13-Nov-2026 14:07
+68114     | WISNU SUJAYA                   | 13-Nov-2026 14:46
+68117     | YAYANG KURNIAWAN               | 13-Nov-2026 14:47
+68120     | YOGI PRANATA                   | 13-Nov-2026 14:43
+68122     | YONRI HADIANSYAH HAPDA         | 13-Nov-2026 14:48
+68123     | DENYSA PEBRIYANI               | 13-Nov-2026 06:25
+68132     | LANTRYA RIHANTINI              | 13-Nov-2026 03:58
+68218     | R RADEN ANNISA FEBRIYANI       | 13-Nov-2026 06:44
+68221     | QIANU MAULIDDIAWAN             | 13-Nov-2026 14:44
+68242     | RHIYANTI NUR LITA              | 13-Nov-2026 04:00
+68304     | NURI FADILA                    | 13-Nov-2026 14:32
+68308     | REPAN PERDIANSAH               | 13-Nov-2026 06:48
+68317     | ABDUL ROHIM                    | 13-Nov-2026 03:48
+68333     | ANISA DWI RETNAWATI            | 13-Nov-2026 03:58
+68347     | ARISKA RIYANTI                 | 13-Nov-2026 03:58
+68402     | RISKA NURMAENI                 | 13-Nov-2026 14:31
+68428     | SENDY SAPALAH                  | 13-Nov-2026 04:57
+68436     | TANTRI RAHMAWATI               | 13-Nov-2026 14:25
+68466     | EVI FITRIANI                   | 13-Nov-2026 04:57
+68469     | NAZWA NURAINI                  | 13-Nov-2026 14:32
+68499     | RANI NURHALIMAH                | 13-Nov-2026 05:13
+68502     | MUHAMAD NUR RIZKY              | 13-Nov-2026 04:52
+68510     | FERDI HERDIANSAH PURNOMO       | 13-Nov-2026 04:37
+68541     | DANDI MUHAMMAD RIDWAN          | 13-Nov-2026 03:58
+68594     | DWI AGUSTINA                   | 13-Nov-2026 14:28
+68609     | SHINTA NUR MUHAROMAH           | 13-Nov-2026 14:21
+68617     | WIDI SAEPUL PALAH              | 13-Nov-2026 06:54
+68624     | WAFFA AGUSTINA                 | 13-Nov-2026 14:31
+68690     | HARI NUGRAHA                   | 13-Nov-2026 06:36
+68721     | DESTI AOLIA                    | 13-Nov-2026 06:27
+68747     | MIA GUSMIATI                   | 13-Nov-2026 14:32
+68775     | FAZA FAUZAN A''DZIMA           | 13-Nov-2026 04:53
+68822     | RATU ENDAH RAHMA PRATIWI       | 13-Nov-2026 14:33
+68945     | AGUNG HADI WIBOWO MUHTAR       | 13-Nov-2026 05:01
+68969     | IMAM ZAKARIA AL ANSORI         | 13-Nov-2026 06:20
+80032     | RAVIKA SARI DEWI               | 13-Nov-2026 05:00
+80046     | MEISYANI PUTRI                 | 13-Nov-2026 14:40
+80101     | SIFA AULIA                     | 13-Nov-2026 14:30
+80247     | IIP HANIPAH                    | 13-Nov-2026 14:31
+80361     | ROSA AMELIA                    | 13-Nov-2026 03:58
+80544     | WINDA ROSDIANA                 | 13-Nov-2026 05:00
+80609     | SELIN SEPTIARANI               | 13-Nov-2026 03:53
+80619     | JIRAYA KEYSHA AZHARI           | 13-Nov-2026 04:58
+80654     | LURI FITRI ARIYANTI            | 13-Nov-2026 06:27
+80685     | DHEA ADISTA SUDIRMAN           | 13-Nov-2026 14:44
+80751     | WINA NUR HASANAH               | 13-Nov-2026 06:27
+80770     | SITI MARYAM                    | 13-Nov-2026 14:24
+80857     | WIKEU PUTRI DAYANTI            | 13-Nov-2026 04:58
+80947     | DINDA NUR OCTAVIANI            | 13-Nov-2026 04:58
+80949     | NAZIB RIZQULLOH                | 13-Nov-2026 03:54
+80952     | RIDHO HADIAN PURNAMA           | 13-Nov-2026 14:39
+======================================================================
+
+Cost Center : CONBAR - WAFER
+Sub-Total   : 20 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001196  | RINRIN CAHYAWATI               | 13-Nov-2026 06:41
+10001200  | PEPI FEBRIANA                  | 13-Nov-2026 06:32
+10001364  | DEDE HERYANTO FIRDAUS          | 13-Nov-2026 14:43
+10001380  | AGUS SOLIHIN                   | 13-Nov-2026 06:33
+10002322  | IMAS KARTINI                   | 13-Nov-2026 06:24
+10002902  | YUSEP SUHERMAN                 | 13-Nov-2026 06:47
+10002972  | ANDRIANA SUPENDI               | 13-Nov-2026 06:50
+10003022  | HIKMAT RAMDHANI                | 13-Nov-2026 06:51
+10003454  | TATI SETIAWATI                 | 13-Nov-2026 06:33
+10003586  | IHAT TARMANA                   | 13-Nov-2026 14:39
+10003608  | RIZKI SANTIKA                  | 13-Nov-2026 05:06
+10003708  | FEBI .                         | 13-Nov-2026 06:41
+10003758  | EVAN SALMAN ALFA RISSHI        | 13-Nov-2026 06:51
+10003766  | ADITYA PUTRA PRATAMA           | 13-Nov-2026 05:01
+10012459  | INDAH PRATIWI MAHARDITA SANTOS | 13-Nov-2026 07:33
+10021322  | YUYUN SUTARNA                  | 13-Nov-2026 06:41
+10021334  | ZAM-ZAM SYAHRUN NIZAR          | 13-Nov-2026 14:49
+10022578  | DAPA AL FAUZAN                 | 13-Nov-2026 06:11
+10023295  | AGUNG GUNAWAN                  | 13-Nov-2026 04:55
+10023964  | WAHYUDI .                      | 13-Nov-2026 06:34
+======================================================================
+
+Cost Center : COUVERTURE/MIXER
+Sub-Total   : 33 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001082  | GUNAWAN SUKOCO                 | 13-Nov-2026 07:38
+10001420  | WAWAN HERNAWAN                 | 13-Nov-2026 06:44
+10001972  | RUSMANA .                      | 13-Nov-2026 06:34
+10002158  | IWAN SUHERLAN                  | 13-Nov-2026 06:41
+10002696  | ASEP TRIYAWAN                  | 13-Nov-2026 06:42
+10002994  | ENGKUS KUSPANI                 | 13-Nov-2026 06:33
+10003074  | ATEP IING                      | 13-Nov-2026 06:40
+10003100  | ADITIA WIBAWA                  | 13-Nov-2026 07:53
+10003288  | YOGA ANGGARA                   | 13-Nov-2026 07:32
+10003304  | HERMANSYAH .                   | 13-Nov-2026 06:25
+10003344  | IYAN MARDIYAN                  | 13-Nov-2026 14:01
+10003348  | NURUL HUDA                     | 13-Nov-2026 06:25
+10003350  | JOKO ARIWIBOWO                 | 13-Nov-2026 06:51
+10003532  | RUDIMAN .                      | 13-Nov-2026 09:33
+10003662  | RAMDAN                         | 13-Nov-2026 06:40
+10021899  | SIGIT MAULANA RIDWAN           | 13-Nov-2026 06:32
+10022013  | SHEHA NUR AZZAHRA IBRAHIM      | 13-Nov-2026 06:47
+10023780  | ANA FITRIANI                   | 13-Nov-2026 14:09
+10023843  | ERIZKA FEBIAZNI                | 13-Nov-2026 06:01
+10024062  | BAGUS IMAM FIRMANSAH           | 13-Nov-2026 06:33
+10024156  | DWIKA ROSNANTI                 | 13-Nov-2026 06:30
+65130     | ALI MUHAMMAD IQBAL             | 13-Nov-2026 04:02
+65144     | DIDIN SOBIRIN                  | 13-Nov-2026 07:42
+65386     | ILHAM MUSTOFA                  | 13-Nov-2026 06:40
+65397     | AGUS HERMAWAN                  | 13-Nov-2026 06:12
+65601     | WILDAN                         | 13-Nov-2026 06:30
+65676     | DENI RAMDANI                   | 13-Nov-2026 14:07
+65938     | ILYAS FAJAR ROHIMAT            | 13-Nov-2026 06:33
+68236     | ANGGI RUSNADI                  | 13-Nov-2026 06:36
+68257     | BAGUS PRAMUJA                  | 13-Nov-2026 05:31
+68312     | SURYA ILHAM MAULANA            | 13-Nov-2026 06:32
+68390     | ALDO MULYANA                   | 13-Nov-2026 06:12
+80096     | RAEHAN HERLAMBANG              | 13-Nov-2026 06:45
+======================================================================
+
+Cost Center : DRAGESS
+Sub-Total   : 264 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001034  | SITI ANJAR ROSTIJAH            | 13-Nov-2026 07:43
+10001214  | IDA HANIDA                     | 13-Nov-2026 06:09
+10001406  | AGUS TRI SUKARNO               | 13-Nov-2026 06:50
+10001454  | SUPRAPTIASIH .                 | 13-Nov-2026 06:36
+10001468  | ROSAINI SIDAURUK               | 13-Nov-2026 06:29
+10001580  | IGUN SETIADI                   | 13-Nov-2026 13:47
+10001638  | IRAWATI NURJANAH               | 13-Nov-2026 05:57
+10001960  | KOMARIAH (B)                   | 13-Nov-2026 06:40
+10001992  | IIN SARININGSIH                | 13-Nov-2026 06:41
+10002130  | HARTATI .                      | 13-Nov-2026 06:48
+10002132  | WULAN DEWI                     | 13-Nov-2026 14:10
+10002144  | PEGGY PIETERSZ                 | 13-Nov-2026 05:15
+10002196  | TUTI KUSMIATI                  | 13-Nov-2026 06:46
+10002218  | YENI HERAWATI                  | 13-Nov-2026 06:39
+10002412  | NETI SUNIARTI                  | 13-Nov-2026 06:44
+10002416  | YANTI .                        | 13-Nov-2026 14:38
+10002858  | TETEN ROHENDI                  | 13-Nov-2026 14:11
+10002860  | EMAN SULAEMAN                  | 13-Nov-2026 14:40
+10002974  | NANA SUPRIATNA (C)             | 13-Nov-2026 06:35
+10002990  | DEDY KURNIAWAN                 | 13-Nov-2026 14:41
+10003060  | ARIYADI IBNU SOLIH             | 13-Nov-2026 06:25
+10003102  | RIZKY HIDAYAT                  | 13-Nov-2026 05:58
+10003136  | AHMAD .                        | 13-Nov-2026 06:26
+10003170  | YUDI KOSWARA                   | 13-Nov-2026 06:46
+10003206  | IMAS FITRIYANTI                | 13-Nov-2026 06:36
+10003368  | SONI SISWARA                   | 13-Nov-2026 14:11
+10003474  | DADAN NUGRAHA                  | 13-Nov-2026 13:56
+10003480  | DASEP KURNIA                   | 13-Nov-2026 06:27
+10003512  | WILLY WIDIANTORO               | 13-Nov-2026 06:35
+10003516  | SELI PURWANTI                  | 13-Nov-2026 07:43
+10003530  | FITRIYANI MARDIANTI            | 13-Nov-2026 13:54
+10003554  | INDRIANI KUSUMA                | 13-Nov-2026 14:01
+10003670  | ANDRI JAYANSAH                 | 13-Nov-2026 14:42
+10003674  | ROBBY CAHYADI                  | 13-Nov-2026 14:42
+10003700  | LISTYA KUMALA DEWI             | 13-Nov-2026 06:42
+10003702  | ANDRI SUPRIADI                 | 13-Nov-2026 14:41
+10003964  | INTAN MUNIRA                   | 13-Nov-2026 07:51
+10004056  | ARIS SISWANDI                  | 13-Nov-2026 06:00
+10011033  | DANI RAMDANI                   | 13-Nov-2026 06:08
+10019826  | ANGGA KOSWARA                  | 13-Nov-2026 14:14
+10022254  | ANDI SUSILO                    | 13-Nov-2026 14:10
+10022993  | RIZQY NUR FADHILAH RAKHMAT     | 13-Nov-2026 06:40
+10023968  | SESILIA SUARNI ROTUA SIGALINGG | 13-Nov-2026 07:39
+68992     | RISMAWAN                       | 13-Nov-2026 06:42
+68993     | EGI PERMANA GUMILAR            | 13-Nov-2026 06:53
+69002     | ERNI RATNASARI                 | 13-Nov-2026 13:50
+69007     | ALWI SAQHI AL''BUKHORI         | 13-Nov-2026 06:49
+69013     | ASRI RAHAYU                    | 13-Nov-2026 13:41
+69014     | ANGGI FEBRIYANSYAH             | 13-Nov-2026 06:05
+69054     | HIERONIMUS ALVEN TANGI         | 13-Nov-2026 06:47
+69057     | SENA INRIZ ANNUR               | 13-Nov-2026 06:42
+69059     | RISTINA NAJIB                  | 13-Nov-2026 06:07
+69060     | MITHA NUR RAHMAH               | 13-Nov-2026 06:13
+69063     | SELVI HIDAYANTI                | 13-Nov-2026 06:49
+69076     | MESTINA LAILA                  | 13-Nov-2026 06:16
+69097     | TRI HAFIZH ISMAIL              | 13-Nov-2026 06:27
+69106     | MILA ARDANI                    | 13-Nov-2026 06:38
+69110     | YULI NUR ZULHIJAH              | 13-Nov-2026 14:12
+69113     | RIZKE ANNISA ISLAMI MAULIDA    | 13-Nov-2026 06:25
+69115     | SAYU OKTAVIA                   | 13-Nov-2026 06:46
+69126     | WAWAN SETIAWAN SIHOTANG        | 13-Nov-2026 06:47
+69136     | NANDA NURASIVA                 | 13-Nov-2026 06:37
+69140     | FEBI LESTARI                   | 13-Nov-2026 06:30
+69153     | SINDY WAHYUNI NUR FAZRI        | 13-Nov-2026 06:38
+69160     | LUSARNI NAIBAHO                | 13-Nov-2026 06:31
+69163     | MITA OCTAVIANI                 | 13-Nov-2026 14:03
+69177     | KARUNIA DEWI                   | 13-Nov-2026 06:50
+69186     | AA SUNENDAR                    | 13-Nov-2026 04:56
+69187     | INTAN PUSPITA SARI             | 13-Nov-2026 13:54
+69224     | HERU MARYANTO                  | 13-Nov-2026 13:55
+69239     | ASTRI AFRILIA LESTARI          | 13-Nov-2026 06:19
+69247     | PUTRI INAYA TUSSAMSIAH         | 13-Nov-2026 06:32
+69263     | KIRANA SANTIKA                 | 13-Nov-2026 06:17
+69264     | WULAN SELMI NURIANI            | 13-Nov-2026 05:53
+69266     | YOSEPH CORNELIUS NOVAN KARMELI | 13-Nov-2026 06:32
+69287     | SAPUTRA PRATAMA                | 13-Nov-2026 06:25
+69292     | MUHAMAD RIZKI ABDUL HASAN      | 13-Nov-2026 06:26
+69301     | SENI LISTIANI ANGGREA          | 13-Nov-2026 06:33
+69333     | NENG SRI SULASTRI              | 13-Nov-2026 06:37
+69336     | ANUGRAH                        | 13-Nov-2026 06:49
+69337     | DINAR HERWINA                  | 13-Nov-2026 13:42
+69381     | ADITIYA AHMAD                  | 13-Nov-2026 06:09
+69394     | RESHA PUTRI NOVIANTI           | 13-Nov-2026 13:58
+69410     | YANI SURYANI                   | 13-Nov-2026 14:09
+69422     | RASIA PRATAMA                  | 13-Nov-2026 06:23
+69424     | BERTHY DWI ANDRIYANI           | 13-Nov-2026 14:10
+69427     | ADRIANO ADI NUGROHO            | 13-Nov-2026 04:56
+69439     | SELVI PUJI JULIANTI            | 13-Nov-2026 06:19
+69440     | MUCHAMAD AJI SASTRA            | 13-Nov-2026 04:54
+69443     | REZA FATMALA                   | 13-Nov-2026 06:26
+69459     | RISMA ARISMAYANI               | 13-Nov-2026 06:19
+69460     | IQBAL DWINUGRAHA               | 13-Nov-2026 04:53
+69471     | SALMA OKTAVIANI                | 13-Nov-2026 06:32
+69476     | SANTI RAHMAWATI                | 13-Nov-2026 06:40
+69477     | WIWIT WARDANI                  | 13-Nov-2026 14:09
+69479     | LENI SULASTRI                  | 13-Nov-2026 13:48
+69485     | YOBI RAMADHAN                  | 13-Nov-2026 04:01
+69497     | MELYANA FEBRYANI NOVITASARI    | 13-Nov-2026 06:11
+69519     | RIZKI MUHAMAD RIDWAN           | 13-Nov-2026 04:36
+69526     | RIZKI AHMAD PAUJI              | 13-Nov-2026 06:35
+69527     | CHAERUL ROHYM                  | 13-Nov-2026 06:39
+69542     | SUSAN PATMALA                  | 13-Nov-2026 13:50
+69544     | ANA SISKA                      | 13-Nov-2026 06:12
+69552     | RIZQI JUNIAWAN JESMEN          | 13-Nov-2026 05:01
+69555     | RIZALUN NAUFAL FAUZAN          | 13-Nov-2026 14:33
+69569     | ICHA LESTARI                   | 13-Nov-2026 06:17
+69570     | SANTI NURHASANAH               | 13-Nov-2026 06:04
+69572     | NUR AZIZAH                     | 13-Nov-2026 06:37
+69580     | RIYAN SAPUTRA                  | 13-Nov-2026 04:56
+69608     | ANDRIYANI                      | 13-Nov-2026 14:10
+69610     | CITRA DEWI                     | 13-Nov-2026 06:47
+69611     | REZA RAMADHAN                  | 13-Nov-2026 06:51
+69613     | ANGGI RAMDANI                  | 13-Nov-2026 06:20
+69616     | ASEP KURNIA                    | 13-Nov-2026 06:40
+69617     | NENG YUNI                      | 13-Nov-2026 06:14
+69619     | RIDWAN MARTIANSYAH             | 13-Nov-2026 06:36
+69627     | ILHAM WAHYUDI                  | 13-Nov-2026 04:36
+69638     | DAFA PABIAN                    | 13-Nov-2026 06:49
+69640     | SURYANA                        | 13-Nov-2026 06:27
+69641     | FAJAR MAULANA IBRAHIM          | 13-Nov-2026 06:49
+69644     | GHILMAN AGNIYA HASBI           | 13-Nov-2026 04:04
+69654     | KIKI RAMDANI                   | 13-Nov-2026 06:51
+69689     | NONI RAHAYU                    | 13-Nov-2026 06:44
+69704     | SABILA SAFITRI                 | 13-Nov-2026 14:04
+69705     | MIRAWATI                       | 13-Nov-2026 05:44
+69712     | RIKI PRATAMA                   | 13-Nov-2026 06:39
+69714     | HENDRA                         | 13-Nov-2026 06:51
+69728     | YENI NURAENI                   | 13-Nov-2026 06:32
+69731     | ANISA SITI NURJANAH            | 13-Nov-2026 13:56
+69747     | SANTI SANTIKA                  | 13-Nov-2026 06:38
+69752     | IMAS HASANAH                   | 13-Nov-2026 06:07
+69756     | KORI FEBRIANA                  | 13-Nov-2026 13:55
+69776     | NANI SRI HARYATI               | 13-Nov-2026 14:13
+69779     | SURYANA                        | 13-Nov-2026 06:35
+69780     | NATHAN ARIYANTO                | 13-Nov-2026 06:15
+69790     | AGUNG NUGRAHA                  | 13-Nov-2026 06:31
+69794     | HERNA WANGSIH                  | 13-Nov-2026 06:42
+69821     | RESNA HERLINA                  | 13-Nov-2026 05:58
+69829     | ANGGUN NURWAHYUNI              | 13-Nov-2026 06:50
+69833     | ANISA NOVITA                   | 13-Nov-2026 14:06
+69837     | SRI LESTARI                    | 13-Nov-2026 13:49
+69882     | ELIS FAUZIAH                   | 13-Nov-2026 14:00
+69907     | YOSSI MARIANI OKTAVIA          | 13-Nov-2026 06:17
+69913     | FARHAN SOLEH                   | 13-Nov-2026 04:52
+69923     | HESTI ARISKA                   | 13-Nov-2026 14:00
+69935     | ALI ALAMSAH                    | 13-Nov-2026 04:37
+69952     | VINA FATONAH                   | 13-Nov-2026 14:03
+69993     | YADI MULYADI                   | 13-Nov-2026 03:22
+69998     | ALI SODIKIN                    | 13-Nov-2026 14:02
+70007     | HAMDAN                         | 13-Nov-2026 06:51
+70009     | MULYANTO                       | 13-Nov-2026 06:29
+70015     | EVA LIRWANTI                   | 13-Nov-2026 06:20
+70019     | FAISAL ABDULRAFIF              | 13-Nov-2026 14:03
+70020     | DINI WULANSARI                 | 13-Nov-2026 06:07
+70021     | IMANULLOH RAMADHAN             | 13-Nov-2026 14:09
+70025     | DAVID FERNANDO SITUMORANG      | 13-Nov-2026 06:46
+70032     | ERNI ANGGRAENI                 | 13-Nov-2026 06:47
+70033     | LUTFI SADRIAN                  | 13-Nov-2026 05:01
+70034     | YUDI YUDIANA                   | 13-Nov-2026 06:49
+70035     | MUHAMMAD NIZAR SHIDIQ          | 13-Nov-2026 06:48
+70041     | RAMLAN HIDAYAT                 | 13-Nov-2026 05:01
+70045     | EGA ADI PUTRA                  | 13-Nov-2026 03:56
+70050     | DANI RAMDANI                   | 13-Nov-2026 06:49
+70055     | MOHAMAD AHDIAT                 | 13-Nov-2026 04:58
+70058     | ADE HANIF AGUNG KURNIAWAN      | 13-Nov-2026 04:37
+70060     | ENDE SUPRIADI                  | 13-Nov-2026 06:38
+70063     | RANGGA SUHAYA                  | 13-Nov-2026 06:44
+70064     | TRI WAHYUNINGSIH               | 13-Nov-2026 05:44
+70065     | LENI HERLINA                   | 13-Nov-2026 06:26
+70066     | ANNISA NOVIYANTI RAMDANI       | 13-Nov-2026 06:06
+70070     | IWA SULIWA                     | 13-Nov-2026 06:18
+70074     | IWA SETIAWAN                   | 13-Nov-2026 06:24
+70075     | RIZAL CAHYA GUMILAR            | 13-Nov-2026 06:36
+70077     | RENI MARDIANI                  | 13-Nov-2026 06:10
+70078     | ARNOLD MAULANA                 | 13-Nov-2026 06:42
+70085     | RULLY RAVELI                   | 13-Nov-2026 06:32
+70088     | HERI JATMIKA                   | 13-Nov-2026 06:42
+70090     | MUHAMAD YUSUP                  | 13-Nov-2026 05:02
+70093     | ILHAM KURNIAWAN                | 13-Nov-2026 06:42
+70094     | NANDI WIJAYA                   | 13-Nov-2026 06:50
+70095     | ASEP JIMI HERDIANSAH           | 13-Nov-2026 06:04
+70100     | ANDRI BARKAH                   | 13-Nov-2026 05:45
+70101     | SANTI SUSPITA                  | 13-Nov-2026 06:18
+70106     | YULI YULIANTI                  | 13-Nov-2026 06:09
+70137     | SELVI PUSPITA DEWI             | 13-Nov-2026 06:51
+70147     | HASYA NURHASANAH               | 13-Nov-2026 06:27
+70151     | JUMALIANSAH                    | 13-Nov-2026 06:54
+70157     | MOCH. EGI YANUAR PRATAMA       | 13-Nov-2026 14:10
+70160     | ALDIRA ALFARIZA                | 13-Nov-2026 06:24
+70168     | HERI SETIAWAN                  | 13-Nov-2026 04:46
+70178     | M.FAJAR RAMDANI S              | 13-Nov-2026 13:59
+70187     | MUHAMMAD QORI KHOLILI HAKIKI   | 13-Nov-2026 04:04
+70192     | RESA QUMULOH                   | 13-Nov-2026 06:41
+70193     | HIDAYATUL AGNIA                | 13-Nov-2026 06:41
+70195     | WENDI SETIADI                  | 13-Nov-2026 06:34
+70199     | ROHIMAN                        | 13-Nov-2026 06:14
+70202     | ALI HERMAWAN                   | 13-Nov-2026 06:48
+70203     | AOPUL AHDI                     | 13-Nov-2026 05:01
+70209     | TETI MULYANI                   | 13-Nov-2026 14:09
+70213     | ILHAM YULIAN                   | 13-Nov-2026 06:35
+70220     | ROY RAMADHAN                   | 13-Nov-2026 06:42
+70228     | IMAM DUMYATI                   | 13-Nov-2026 03:48
+70235     | ANISA RAHMAWATI                | 13-Nov-2026 06:47
+70242     | FARRAS FADHILLA RAHARJA        | 13-Nov-2026 07:22
+70247     | ANDRI JULIANTO                 | 13-Nov-2026 06:47
+70276     | LILIS RINI                     | 13-Nov-2026 14:07
+70284     | ATIKAH                         | 13-Nov-2026 06:44
+70291     | WIDIA NISA KAROMAH             | 13-Nov-2026 06:10
+70315     | NENG JENI NURAINI              | 13-Nov-2026 06:16
+70317     | DESI NURPADILAH                | 13-Nov-2026 06:39
+70324     | YANA LESMANA                   | 13-Nov-2026 06:36
+70337     | OKY VERNANDA PRATAMA           | 13-Nov-2026 06:49
+70339     | AGUS TANTRA ARI                | 13-Nov-2026 14:06
+70341     | YUNI KARLYA                    | 13-Nov-2026 14:06
+70345     | SYAHDAN MUHAMAD AZIZ           | 13-Nov-2026 06:43
+70352     | ERI MUHAMAD NURDIN             | 13-Nov-2026 06:49
+70419     | ANI ROHMANIA                   | 13-Nov-2026 06:38
+70432     | KARTIKA CANDRA                 | 13-Nov-2026 06:27
+70435     | IMAS TITI SURYATI              | 13-Nov-2026 14:02
+70438     | YANTI ERNAWATI                 | 13-Nov-2026 06:25
+70450     | DERI OKTAVIANTO                | 13-Nov-2026 14:07
+70462     | TAUFIK RACHMAN                 | 13-Nov-2026 03:49
+70463     | SHELLY PUSPALESTARI            | 13-Nov-2026 06:53
+70473     | WAHYU NUGROHO PUTRA            | 13-Nov-2026 04:04
+70474     | TIARA AGUSTIN                  | 13-Nov-2026 06:44
+70542     | FELI YASTATI                   | 13-Nov-2026 06:23
+70544     | AHMAD SYAEPULOH                | 13-Nov-2026 04:05
+70550     | SALSA SABILA PUTRI             | 13-Nov-2026 13:58
+70551     | GHINAA YUSRIYYAH               | 13-Nov-2026 14:08
+70601     | IYAS YAHYA TAUFIK              | 13-Nov-2026 06:29
+70626     | ALVIANDA CANTIKA PUTRI         | 13-Nov-2026 14:03
+70627     | NIA NURUL AULIA                | 13-Nov-2026 06:18
+70633     | KARTIKASARI                    | 13-Nov-2026 14:11
+70637     | FANIA SINTA WATI               | 13-Nov-2026 06:18
+70654     | SHEINA FAZRIANI                | 13-Nov-2026 14:14
+70655     | GILANG RIZKIANA ELDANIE        | 13-Nov-2026 06:35
+70660     | DEVINA NUR HANISA              | 13-Nov-2026 06:14
+70666     | LUKMAN NUGRAHA                 | 13-Nov-2026 03:38
+70667     | YUDHA RAMADHAN                 | 13-Nov-2026 04:41
+70670     | MUHAMAD IMAM RABANI            | 13-Nov-2026 06:35
+70676     | YOGA SEPTIANDI                 | 13-Nov-2026 06:54
+70685     | APRILIA DANESWARA              | 13-Nov-2026 06:23
+70691     | ENDANG SUSILA WATI             | 13-Nov-2026 06:26
+70693     | PENTI SRI RAHAYU               | 13-Nov-2026 06:34
+70700     | RINDIANI PUTRI MAHARANI        | 13-Nov-2026 13:48
+70738     | ALIFYA RAHAYU LESTARI          | 13-Nov-2026 14:11
+70749     | DEDE NURMANSYAH                | 13-Nov-2026 03:56
+70760     | TIMOTIUS PRAKOSO               | 13-Nov-2026 03:56
+70773     | HANA ERLIANA NUR ZAMZAM        | 13-Nov-2026 06:31
+70776     | SUFIRA LUTHFIANI               | 13-Nov-2026 06:37
+70825     | ANGGA PRIMA YUDA               | 13-Nov-2026 04:05
+70826     | WIDI SAPUTRA                   | 13-Nov-2026 06:45
+70829     | REVA MAULANA                   | 13-Nov-2026 06:46
+70830     | TAZKIA RAMADHAN                | 13-Nov-2026 06:32
+70903     | DADIN                          | 13-Nov-2026 04:56
+70920     | DEVI SILVIANA                  | 13-Nov-2026 05:54
+70967     | RISKA NURMAYASARI              | 13-Nov-2026 06:21
+70969     | NENG SITI SOLEHAH              | 13-Nov-2026 06:32
+70977     | SRI HARYATI                    | 13-Nov-2026 14:10
+70981     | SENI TIA GUSTIANI              | 13-Nov-2026 14:01
+90096     | KIKI SURYA PERMANA             | 13-Nov-2026 06:03
+90130     | ADINDA TIARA NUR INTAN         | 13-Nov-2026 13:55
+90161     | MISCELL AZKYA ABDILLAH         | 13-Nov-2026 05:59
+90171     | NABILA KANIA KHOERUNISA        | 13-Nov-2026 06:10
+======================================================================
+
+Cost Center : ENGINEERING/FACILITY
+Sub-Total   : 34 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001310  | MULYONO .                      | 13-Nov-2026 07:41
+10002444  | FEBY SUSANTO                   | 13-Nov-2026 07:53
+10002682  | KIKI NUGRAHA                   | 13-Nov-2026 07:46
+10002698  | ASEP SOMANTRI                  | 13-Nov-2026 07:57
+10002982  | ROBIANTO DARMAWAN              | 13-Nov-2026 07:19
+10003390  | GUGUN HASAN MUSLIM             | 13-Nov-2026 07:52
+10003422  | FRANS DONNI NAPITUPULU         | 13-Nov-2026 06:36
+10003782  | KOIMUL MUDARIS                 | 13-Nov-2026 06:42
+10003788  | YUSUF DIAN PRAYUGA             | 13-Nov-2026 07:54
+10004002  | ANDRY FERDIANSYAH              | 13-Nov-2026 07:29
+10020756  | SAWALI NUGRAHA                 | 13-Nov-2026 06:48
+10021285  | IKHSAN ADJIE NUGRAHA           | 13-Nov-2026 12:47
+10021966  | EEF KURNIA                     | 13-Nov-2026 06:22
+10023316  | ANDRIAN KUSTIWANTO             | 13-Nov-2026 07:35
+10023401  | DEVI AHMAD SUDRAJAT            | 13-Nov-2026 07:36
+10023500  | MOCHAMAD FADHIL ADRIAN         | 13-Nov-2026 07:44
+10024046  | AZIS ANDRIADI                  | 13-Nov-2026 06:49
+69068     | NAIL NUGRAHA                   | 13-Nov-2026 06:47
+69129     | AKBAR FIDYAH                   | 13-Nov-2026 06:28
+69144     | RAHYAN NUR MULYAWAN            | 13-Nov-2026 06:47
+69293     | WILDAN PERMANA                 | 13-Nov-2026 07:50
+69318     | REVY OKTARIZA AKBAR            | 13-Nov-2026 06:44
+69347     | ANDES PERMANA                  | 13-Nov-2026 06:38
+69537     | BILLY AKBAR                    | 13-Nov-2026 06:46
+69642     | AHMAD SIDIQ                    | 13-Nov-2026 06:08
+69777     | MIFTAH                         | 13-Nov-2026 06:51
+69784     | GUGUM GUMILAR                  | 13-Nov-2026 07:51
+69798     | PINSIKA CHANDRA                | 13-Nov-2026 06:47
+69863     | ZENAL MUTAQIN                  | 13-Nov-2026 07:51
+70196     | RIZALDI AKBAR                  | 13-Nov-2026 06:47
+70592     | BAGAS YUSUF ALDIANSYAH         | 13-Nov-2026 06:44
+70678     | ROBBI DESRIADI                 | 13-Nov-2026 06:49
+70740     | EGI PRAMUDYA HARISANDI         | 13-Nov-2026 07:05
+70753     | TATAN SUTISNA SUKMA            | 13-Nov-2026 06:52
+======================================================================
+
+Cost Center : FRYING & ROASTING
+Sub-Total   : 76 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001070  | DIDING YULIANDI                | 13-Nov-2026 14:36
+10001710  | RIMA PUSPITAWATI               | 13-Nov-2026 11:39
+10001738  | BUDI BUDIMAN                   | 13-Nov-2026 14:23
+10002164  | NENG RINA                      | 13-Nov-2026 06:20
+10002400  | AMELIA YUNIARTI                | 13-Nov-2026 06:43
+10003300  | MILA NURSOLIHAH                | 13-Nov-2026 06:31
+10003446  | GINA NURJAMAN                  | 13-Nov-2026 07:51
+10003448  | SANDI AGUSTIAN                 | 13-Nov-2026 07:03
+10003450  | AYANG .                        | 13-Nov-2026 06:14
+10006142  | PAPAT PATIMAH                  | 13-Nov-2026 07:36
+10006746  | NUSA ROSDIANA                  | 13-Nov-2026 07:50
+10011041  | INDRI NURIA RAHMAWANDI         | 13-Nov-2026 06:34
+10023184  | SARIMANAH .                    | 13-Nov-2026 06:50
+10023185  | HERICO BASTIAN                 | 13-Nov-2026 06:46
+65081     | TETI RAHMAWATI                 | 13-Nov-2026 06:15
+65157     | MITA SAPARIANI                 | 13-Nov-2026 06:45
+65229     | ADI FADILLAH                   | 13-Nov-2026 06:51
+65262     | SHERINA DINA AULIA             | 13-Nov-2026 06:16
+65346     | TIWI ROSMAWATI                 | 13-Nov-2026 05:58
+65362     | PANIATI                        | 13-Nov-2026 05:54
+65414     | SATRIA SAYIDHINA RAMADHAN      | 13-Nov-2026 04:06
+65423     | ENTIN MULYATIN                 | 13-Nov-2026 05:42
+65427     | YANTI                          | 13-Nov-2026 06:14
+65615     | NANDIKA PRATAMA                | 13-Nov-2026 06:43
+65632     | SASA FAUZIAH                   | 13-Nov-2026 13:59
+65642     | YANI SURYANI                   | 13-Nov-2026 13:08
+65703     | AURELYA NOVA NATYA PUTRI       | 13-Nov-2026 06:19
+65709     | RAMDAN SANJAYA                 | 13-Nov-2026 06:19
+65720     | SENA                           | 13-Nov-2026 04:18
+65736     | RIFKY ABDILLAH                 | 13-Nov-2026 04:18
+65766     | FADHIL JAVA KUSNADI            | 13-Nov-2026 12:28
+65795     | SHIFA FEBRIANI                 | 13-Nov-2026 05:54
+65841     | IRSAN GUSTRIAN NUGRAHA         | 13-Nov-2026 06:40
+65847     | AFYANTI                        | 13-Nov-2026 06:33
+68027     | IHSAN NASHRULHAQ               | 13-Nov-2026 04:10
+68029     | IKHSAN RACHMAN FAUZAN          | 13-Nov-2026 06:08
+68124     | SEKAR BINTANG A                | 13-Nov-2026 06:34
+68175     | PUSPA NURLITA AZAHRA           | 13-Nov-2026 14:04
+68225     | MASRUR AINUN NAJIB             | 13-Nov-2026 06:43
+68227     | MUHAMMAD AZZAM JUVENAL         | 13-Nov-2026 04:10
+68268     | NINDI AULIA SEPTI              | 13-Nov-2026 13:59
+68337     | RAMA SATRIO                    | 13-Nov-2026 04:09
+68517     | DIRGA MAULANA                  | 13-Nov-2026 06:51
+68519     | CALVIN JAZZI CENNA JORDANIEL   | 13-Nov-2026 06:18
+68536     | M SYAHDAN AL RASYID            | 13-Nov-2026 06:43
+68551     | TIAN MARYANI                   | 13-Nov-2026 06:20
+68577     | RANTI ARIYANI                  | 13-Nov-2026 06:31
+68628     | FAUZI TEGAR LESMANA            | 13-Nov-2026 06:18
+68656     | DANAR HADI HIDAYAT             | 13-Nov-2026 06:43
+68687     | FAHIRA ANJANI                  | 13-Nov-2026 06:31
+68695     | RULLY ARDIANSYAH               | 13-Nov-2026 04:18
+68696     | JHO SUA NABABAN                | 13-Nov-2026 06:37
+68713     | IDA BAGUS SIGIT PRAYOGA        | 13-Nov-2026 06:38
+68756     | SELI FITROH ALJAZILAH          | 13-Nov-2026 06:32
+68757     | ILMA NADIA SIFA                | 13-Nov-2026 14:10
+68790     | ATTHATUR GIVANI ALVARINO       | 13-Nov-2026 04:58
+68871     | RIZKA NURAINI                  | 13-Nov-2026 14:13
+68940     | RAKA FARHAN MAULANA            | 13-Nov-2026 12:36
+80321     | ZINEDIN ZAGAT RISQIAN          | 13-Nov-2026 06:46
+80386     | DEISYA AMELIA                  | 13-Nov-2026 06:22
+80387     | DECHA RAHMAWATI                | 13-Nov-2026 06:42
+80392     | AULIA PUTRI RIZKINA FITRIANI   | 13-Nov-2026 06:25
+80580     | ARI SUBAGJA                    | 13-Nov-2026 06:45
+80613     | NURUL ANGGRAENI                | 13-Nov-2026 14:44
+80651     | ISMAWANTI                      | 13-Nov-2026 05:52
+80677     | HASBI ALI ASSIDIQ              | 13-Nov-2026 04:18
+80684     | DEVI NURHAYATI                 | 13-Nov-2026 06:24
+80687     | RAFI FIRMAN MAULANA            | 13-Nov-2026 06:49
+80711     | ALMADINA HANIFA                | 13-Nov-2026 06:26
+80776     | FINIZA MEIZA SALSABILAH        | 13-Nov-2026 06:04
+80853     | CHALYSTA PUTRI                 | 13-Nov-2026 06:26
+80856     | AGUS LATHIF NURROHIM           | 13-Nov-2026 06:43
+80859     | ALVIN SAUQI                    | 13-Nov-2026 05:34
+80873     | ALIFVIA NURUL QOLBY            | 13-Nov-2026 14:51
+80914     | FADIL FEDRIAN                  | 13-Nov-2026 06:44
+80928     | ASEP REZA SUKANDAR             | 13-Nov-2026 14:26
+======================================================================
+
+Cost Center : GENERAL ADMIN
+Sub-Total   : 53 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001010  | LILIK IKHWAN SARWOKO           | 13-Nov-2026 07:35
+10001078  | DANIEL KURNIYANTO              | 13-Nov-2026 07:57
+10001142  | CECEP KUSWARA                  | 13-Nov-2026 06:50
+10001174  | MAYA ARYANTI                   | 13-Nov-2026 07:58
+10001452  | DHANI IRWANSYAH                | 13-Nov-2026 14:12
+10001576  | IPIT SUMARNA                   | 13-Nov-2026 06:07
+10001628  | AYI RAHMAT SUPRIADI            | 13-Nov-2026 06:18
+10001728  | ANDRI JULISTIRA                | 13-Nov-2026 14:12
+10001792  | IRWAN ALI NURDIN               | 13-Nov-2026 06:35
+10001834  | WAWAN SUTISNA                  | 13-Nov-2026 07:12
+10001850  | WANDA PERMANA                  | 13-Nov-2026 14:14
+10001898  | ESTHER ARTAULY SITOMPUL        | 13-Nov-2026 06:44
+10001938  | LUKMAN NUL HAKIM               | 13-Nov-2026 07:43
+10002052  | YOES ALI YOESMAN               | 13-Nov-2026 06:26
+10002098  | RENI RUSCIYANI                 | 13-Nov-2026 07:48
+10002148  | NENGSIH SRI RAHAYU             | 13-Nov-2026 06:39
+10002504  | OPIK TAOPIK                    | 13-Nov-2026 07:49
+10002540  | USEP HERMAWAN SYAH             | 13-Nov-2026 12:15
+10002552  | IWAN SETIAWAN                  | 13-Nov-2026 06:55
+10002570  | FERRY FIRNANDO                 | 13-Nov-2026 06:17
+10002582  | KURNIATIN NURAENI              | 13-Nov-2026 06:31
+10002746  | HERIS KURNIYATI                | 13-Nov-2026 07:25
+10002748  | NURUL MAULIDATI HASANAH        | 13-Nov-2026 06:35
+10002820  | ACEP AHMAD SARIF               | 13-Nov-2026 07:53
+10002864  | HENY ROHAENY                   | 13-Nov-2026 07:01
+10003240  | RINA SUNTARI                   | 13-Nov-2026 07:56
+10003256  | TIAN KUSTIAN                   | 13-Nov-2026 14:10
+10003258  | IWAN ABUBAKAR SIDIK            | 13-Nov-2026 06:54
+10003260  | TIAN NUR CAHYA                 | 13-Nov-2026 06:49
+10003466  | EKO SUPRIYANTO                 | 13-Nov-2026 07:31
+10003856  | GINA OKTAVIANA WIJAYA          | 13-Nov-2026 07:17
+10003968  | SANDI FELANI                   | 13-Nov-2026 06:01
+10004012  | MUHAMMAD SHIFA MABRURI         | 13-Nov-2026 07:55
+10012744  | FAZAR MALIK MAULANA            | 13-Nov-2026 08:00
+10017846  | AAP HIDAYAT                    | 13-Nov-2026 07:57
+10019474  | ASTRI AYODHIA YAMAN            | 13-Nov-2026 07:53
+10019545  | DIFA BUDIMAN                   | 13-Nov-2026 14:45
+10020701  | SALSABILA .                    | 13-Nov-2026 07:52
+10020733  | CYNTHIA WIJAYA                 | 13-Nov-2026 07:53
+10021021  | AGUS MAULANA                   | 13-Nov-2026 08:23
+10021381  | BELLA LALITA VIRGINIA          | 13-Nov-2026 07:53
+10021970  | AYU YULIA PUTRI                | 13-Nov-2026 07:56
+10022262  | JESSLYN ARLENE                 | 13-Nov-2026 07:48
+10022283  | ANDI ANDRIAWAN                 | 13-Nov-2026 06:36
+10022738  | MARCELLUS ADRIAN               | 13-Nov-2026 07:23
+10022766  | DEISCHA RIZQITA MARCHELLIA RAH | 13-Nov-2026 07:35
+10023028  | HENA TRIA NURHAEZELIANI        | 13-Nov-2026 07:42
+10023103  | IRMA AFRIYANTI                 | 13-Nov-2026 07:48
+10023149  | YONATAN .                      | 13-Nov-2026 07:29
+10023414  | IRFAN KAMIL                    | 13-Nov-2026 07:54
+10023763  | HILDA ROSIDA                   | 13-Nov-2026 07:42
+10023955  | ATHIFAH MUFIDAH                | 13-Nov-2026 07:35
+10024087  | SARAH PUTRI NABILAH            | 13-Nov-2026 07:32
+======================================================================
+
+Cost Center : GOYA
+Sub-Total   : 6 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001520  | DIAN LESTARI                   | 13-Nov-2026 06:37
+10003212  | ARI GUSTIANINGSIH              | 13-Nov-2026 06:07
+10003392  | AGUS MARDIKA                   | 13-Nov-2026 07:34
+10003612  | AHMAD HOERUDIN                 | 13-Nov-2026 04:56
+10003672  | KUN KUN WIDJAYA                | 13-Nov-2026 13:45
+10003676  | YUSUP HADIANSYAH               | 13-Nov-2026 12:29
+======================================================================
+
+Cost Center : ISS
+Sub-Total   : 21 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+71000     | SUJANA                         | 13-Nov-2026 05:24
+71013     | DINDIN JAENUDIN                | 13-Nov-2026 06:23
+71014     | NURFIRMANSYAH                  | 13-Nov-2026 14:36
+71023     | AJAT SUPRIATNA                 | 13-Nov-2026 13:42
+71025     | IKBAL SUBARKAH                 | 13-Nov-2026 14:38
+71029     | IMAN HILMAN                    | 13-Nov-2026 14:21
+71030     | SAHID MUZAQI                   | 13-Nov-2026 14:19
+71037     | HARDIANTA                      | 13-Nov-2026 05:56
+71043     | TOTO ARYANTO ARDIANSYAH        | 13-Nov-2026 15:05
+71052     | EMAN                           | 13-Nov-2026 08:33
+71055     | MUHAMAD WILDAN                 | 13-Nov-2026 14:38
+71057     | ADANG KOSWARA                  | 13-Nov-2026 06:42
+71061     | ANTON                          | 13-Nov-2026 06:31
+71062     | MUHAMAD FIRMANSYAH             | 13-Nov-2026 14:12
+71064     | RINO                           | 13-Nov-2026 06:21
+71065     | YADI KOSASIH                   | 13-Nov-2026 14:23
+71558     | IRFAN TRESNA PUTRA LAILA       | 13-Nov-2026 13:50
+71561     | ZAENAL ARIFIN                  | 13-Nov-2026 15:07
+71562     | ANDRI HARDIANSYAH              | 13-Nov-2026 14:38
+71567     | SANDI                          | 13-Nov-2026 14:33
+71569     | RISMAN HIDAYAT                 | 13-Nov-2026 14:12
+======================================================================
+
+Cost Center : IT & MIS
+Sub-Total   : 7 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001052  | HARI SOECI SOESANTO            | 13-Nov-2026 07:46
+10002476  | TRIYADI CANTIAJI               | 13-Nov-2026 07:17
+10002484  | TOGAR GULTOM                   | 13-Nov-2026 07:46
+10022858  | JONATHAN PRATAMA SUTJIADY      | 13-Nov-2026 07:41
+10022935  | CHRISTOPHER .                  | 13-Nov-2026 07:56
+10023140  | BENNY LUKMAN RULIANTO SILALAHI | 13-Nov-2026 07:38
+10023829  | ANDREAS OCTORIANTO             | 13-Nov-2026 07:09
+======================================================================
+
+Cost Center : MAINTENANCE
+Sub-Total   : 92 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001008  | ENDANG SOLIHIN                 | 13-Nov-2026 04:54
+10001044  | IWAN KURNIAWAN                 | 13-Nov-2026 06:39
+10001048  | ROHIMAT .                      | 13-Nov-2026 13:56
+10001062  | ENDANG SUPARMAN                | 13-Nov-2026 14:36
+10001090  | GANJAR DERMAWAN                | 13-Nov-2026 06:51
+10001098  | TATANG SUPRIATNA               | 13-Nov-2026 07:40
+10001210  | HADI SUGARA                    | 13-Nov-2026 12:47
+10001238  | AGUS RAMDANI SADIKIN           | 13-Nov-2026 06:45
+10001246  | IWAN RIDWAN                    | 13-Nov-2026 07:48
+10001316  | ATANG RATMANSYAH               | 13-Nov-2026 05:48
+10001354  | ICHWAN SETIYO                  | 13-Nov-2026 14:52
+10001372  | ASEP RUSLAN                    | 13-Nov-2026 06:41
+10001456  | DEDE SUPRIATNA                 | 13-Nov-2026 06:36
+10001740  | ANDRI GUNADI                   | 13-Nov-2026 14:10
+10001908  | AGUS RIFANTO                   | 13-Nov-2026 07:05
+10002064  | ASEP SURYANA                   | 13-Nov-2026 06:46
+10002480  | JEMI SATRIANA SATRIANA PAMUNGK | 13-Nov-2026 05:51
+10002490  | DJOKO BUDIYANTO                | 13-Nov-2026 06:47
+10002530  | ADITYA ARDIMAN                 | 13-Nov-2026 05:41
+10002546  | KUSMIATI .                     | 13-Nov-2026 07:48
+10002630  | AGUS SURYANA                   | 13-Nov-2026 05:57
+10002822  | RAMDANI MOCHAMAD               | 13-Nov-2026 12:43
+10002952  | SURYA HERMAN YUNUS             | 13-Nov-2026 06:47
+10003172  | ROHIMAN .                      | 13-Nov-2026 06:15
+10003224  | AGUSTINUS HENDRO GUNTORO       | 13-Nov-2026 12:11
+10003406  | HADIAN SEFTIANA                | 13-Nov-2026 07:50
+10003620  | NAZAR SUHADA                   | 13-Nov-2026 07:49
+10003688  | HARTANTO                       | 13-Nov-2026 07:16
+10003958  | RIAN PURNAMA NUGRAHA           | 13-Nov-2026 13:56
+10003986  | KOMAR ABDUL ROHMAN             | 13-Nov-2026 06:54
+10003988  | TAUFIQ BUDI RAMADHAN           | 13-Nov-2026 14:33
+10004020  | ASEP HENDI                     | 13-Nov-2026 06:35
+10006138  | IMAM ANGGA WISNU               | 13-Nov-2026 14:47
+10006730  | GANJAR ASMARA                  | 13-Nov-2026 13:53
+10009915  | RAHMAN PRIHANADI               | 13-Nov-2026 14:28
+10009944  | INDRA CAHYANA                  | 13-Nov-2026 07:33
+10010033  | ALFIANSYAH NURBUDIMAN          | 13-Nov-2026 04:41
+10010444  | DADAN SAEFUDIN                 | 13-Nov-2026 06:52
+10011456  | OKA MINARDI                    | 13-Nov-2026 06:13
+10012009  | AGNES NAIBAHO                  | 13-Nov-2026 07:51
+10012155  | JAJANG MULYANA                 | 13-Nov-2026 04:49
+10012586  | GUGUM NOPRIANDI                | 13-Nov-2026 06:12
+10012690  | HENDRA AGUS ROCHIM             | 13-Nov-2026 14:17
+10018754  | ZAHRANISA RIPTANTO PUTRI       | 13-Nov-2026 07:45
+10020036  | RONI .                         | 13-Nov-2026 06:30
+10020103  | ENDANG ROSIDIN                 | 13-Nov-2026 07:42
+10020676  | NADI FIRMANSYAH                | 13-Nov-2026 06:47
+10020679  | LEONARDO NAINGGOLAN            | 13-Nov-2026 06:52
+10020729  | ANDRI SEPTIANDI                | 13-Nov-2026 06:43
+10021339  | SHANDY AFRILIANTO              | 13-Nov-2026 06:38
+10021941  | CAHAYA RAMADHAN                | 13-Nov-2026 07:54
+10021962  | RIDWAN SETIAWAN                | 13-Nov-2026 14:44
+10021971  | TRI SUTISNA                    | 13-Nov-2026 04:41
+10022049  | SUNANTA .                      | 13-Nov-2026 07:36
+10022058  | YUSUF MAULANA                  | 13-Nov-2026 04:55
+10022314  | SAEFUL ANWAR                   | 13-Nov-2026 06:38
+10022547  | ANDRI YANA                     | 13-Nov-2026 06:51
+10022612  | RIZKI ZAKARIA MANALU           | 13-Nov-2026 07:38
+10022726  | MOCHAMAD ZIO FIRDAUS           | 13-Nov-2026 13:43
+10022799  | YOGI CHRIS SANDI               | 13-Nov-2026 06:36
+10022816  | ANDRI SANTOSO                  | 13-Nov-2026 06:21
+10022887  | PUJI GINANJAR                  | 13-Nov-2026 04:18
+10023300  | ANDHIKA BAEHAQI                | 13-Nov-2026 06:24
+10023319  | KRISWANDI .                    | 13-Nov-2026 06:28
+10023475  | DWI PUTRA NUGRAHA              | 13-Nov-2026 07:48
+10023741  | DAFFA PASYA ARIIBAH            | 13-Nov-2026 04:55
+10023742  | INDRA KOMARA                   | 13-Nov-2026 06:46
+10023744  | SYUKUR MAULANA                 | 13-Nov-2026 05:11
+10023758  | ARIF SETIAWAN                  | 13-Nov-2026 06:29
+10023834  | TAUFIK FATTURROHMAN            | 13-Nov-2026 07:52
+10023846  | ADJI PAMUNGKAS                 | 13-Nov-2026 13:59
+10023878  | IMAN SOBARNA KOSASIH           | 13-Nov-2026 06:32
+10023926  | CHRISTOFORUS BAYU PURBO WIBISO | 13-Nov-2026 13:46
+10023934  | ALDI REYNALDI                  | 13-Nov-2026 07:31
+10023936  | SALMAN AL FARIZI               | 13-Nov-2026 07:49
+10023944  | NURUL ISKHAQ                   | 13-Nov-2026 07:47
+10023977  | ADI YANTA                      | 13-Nov-2026 07:54
+10023980  | ANGEIL CHIKAL ALIPFIO          | 13-Nov-2026 06:46
+10024120  | ANDREAN FEDRIKO NAINGGOLAN     | 13-Nov-2026 06:33
+10024122  | CHOIRUL RAMADAN                | 13-Nov-2026 06:41
+10024125  | FAHMI RIDHO MAULANA            | 13-Nov-2026 06:50
+10024127  | ZAKY MAKARIEM SUSILO WIBISONO  | 13-Nov-2026 06:32
+10024170  | MUHAMMAD FAUZAN ANNABHANY      | 13-Nov-2026 07:48
+10024172  | RAKHAA FAKHRI DIAN PUTRA       | 13-Nov-2026 07:39
+69210     | ANGGA RAMADHAN                 | 13-Nov-2026 05:33
+69270     | YUDI BUDI YAMAN                | 13-Nov-2026 14:44
+69375     | SINGGIH APRIA PRAJA            | 13-Nov-2026 14:49
+69418     | APIP ARIP PURNAMA              | 13-Nov-2026 06:43
+69656     | MUKHLIS SAEPULLOH              | 13-Nov-2026 12:31
+69986     | VIERI OKTAVIANA                | 13-Nov-2026 06:41
+70351     | DERA WAHYUDIN                  | 13-Nov-2026 14:14
+70556     | ANDRIS PRIBADI                 | 13-Nov-2026 06:51
+======================================================================
+
+Cost Center : NEW DEVELOPMENT
+Sub-Total   : 11 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10003080  | DENNY JATNIKA                  | 13-Nov-2026 07:52
+10004014  | DIAN DANIATI                   | 13-Nov-2026 07:20
+10022762  | PRISCILLA JOCELYIN             | 13-Nov-2026 07:54
+10022921  | WENING GILANG NAWANGI          | 13-Nov-2026 06:53
+10023067  | TIARA PUJI AGUSTIA             | 13-Nov-2026 07:51
+10023415  | TIMMY GUNAWAN                  | 13-Nov-2026 07:57
+10023895  | AZALIA BENEDICTA               | 13-Nov-2026 07:57
+10023920  | IVELLA YUMNA RIVANGGA          | 13-Nov-2026 07:22
+10023927  | ELDINO IRFAN MAULANA           | 13-Nov-2026 07:42
+65492     | IYAN ROHMAN                    | 13-Nov-2026 07:25
+68501     | FIRYAL ANATASYA APRILIA        | 13-Nov-2026 06:39
+======================================================================
+
+Cost Center : PERSONNEL
+Sub-Total   : 25 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001224  | WITA RESTIATI                  | 13-Nov-2026 07:38
+10001244  | CECE .                         | 13-Nov-2026 07:06
+10001450  | ANDRI SOLIHIN                  | 13-Nov-2026 06:42
+10001790  | DARMAWAN .                     | 13-Nov-2026 07:25
+10001928  | RINA NATALINA SIRINGO RINGO    | 13-Nov-2026 07:38
+10002010  | IWAN DARMAWAN                  | 13-Nov-2026 06:44
+10002062  | ASEP SUKANA                    | 13-Nov-2026 06:39
+10002124  | KURNA .                        | 13-Nov-2026 06:23
+10002768  | LILIH WARSITA                  | 13-Nov-2026 06:43
+10002842  | ARLLY IRAWAN                   | 13-Nov-2026 07:38
+10002854  | ANE YULIANI                    | 13-Nov-2026 07:02
+10002918  | ANDREAS BARKAH                 | 13-Nov-2026 07:49
+10003052  | TUTY MARYANI                   | 13-Nov-2026 07:23
+10003386  | LUKMAN IMANUDDIN               | 13-Nov-2026 07:49
+10003770  | TITA PUSPITASARI               | 13-Nov-2026 07:11
+10003796  | VINA UTAMI                     | 13-Nov-2026 07:24
+10016877  | FELICIA CHRISTINE KRISTIANTO   | 13-Nov-2026 07:43
+10021359  | DODY SUDIANA                   | 13-Nov-2026 06:39
+10022155  | SALSABYLA ZAKKHITA NURMALA DEV | 13-Nov-2026 07:50
+10022613  | ADE SEPTIANA                   | 13-Nov-2026 07:50
+10023387  | MUHAMMAD NAUFAL SHIDQI         | 13-Nov-2026 07:43
+10023601  | SAHNA WIJAYA                   | 13-Nov-2026 10:45
+68737     | INDRA PERMANA SIDIK            | 13-Nov-2026 08:37
+69096     | INTAN ICHSANUL RAMADHAN        | 13-Nov-2026 07:57
+82521     | RONI                           | 13-Nov-2026 08:31
+======================================================================
+
+Cost Center : PM ENGINEERING
+Sub-Total   : 17 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001000  | DADANG HERMAWAN                | 13-Nov-2026 08:37
+10001096  | JAJANG SURAHMAN                | 13-Nov-2026 06:08
+10001108  | ARINI WINIHATI                 | 13-Nov-2026 07:16
+10001286  | NURHAYATI .                    | 13-Nov-2026 07:00
+10002760  | CEPI HAMDANI                   | 13-Nov-2026 06:58
+10003196  | YANDRI DARYANA                 | 13-Nov-2026 07:55
+10003792  | FEBRIANSYAH GUNAWAN SUBAGJA    | 13-Nov-2026 07:31
+10012010  | SEPTIAN ADE CAHYA              | 13-Nov-2026 06:33
+10012852  | DERRY MUHARI WACHYUDI          | 13-Nov-2026 07:31
+10015609  | FAUZI MAULANA                  | 13-Nov-2026 13:32
+10021418  | EVI SAFITRI                    | 13-Nov-2026 07:38
+10021422  | APRILIANAWATI .                | 13-Nov-2026 07:45
+10022002  | RIANNY PUSPA RISMAYANI         | 13-Nov-2026 07:51
+10022266  | NADELA TRIYANA FATWA CHASANAH  | 13-Nov-2026 07:27
+10022292  | SABRINA RAINISYA SHALULIENA YU | 13-Nov-2026 07:45
+10023381  | NICHOLAS ADITYA NOVIANTO       | 13-Nov-2026 07:50
+10024184  | SHYFA FAYZA SALSABILA          | 13-Nov-2026 07:42
+======================================================================
+
+Cost Center : PROCESS ENGINEERING
+Sub-Total   : 15 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001016  | ADANG SULAEMAN                 | 13-Nov-2026 07:18
+10001656  | ERNAWATI .                     | 13-Nov-2026 07:50
+10001720  | RINI KUSRINI                   | 13-Nov-2026 07:31
+10002726  | WIWIN YUNENGSIH                | 13-Nov-2026 07:21
+10002740  | SITI PATMAH PRATIWI            | 13-Nov-2026 06:49
+10003092  | RIMAWATI OKTAVIA               | 13-Nov-2026 07:43
+10003552  | TAUFIK HIDAYAT                 | 13-Nov-2026 07:04
+10016775  | ARWINDA APRILLIA JAELAWIJAYA   | 13-Nov-2026 07:55
+10016776  | AJENG SHAFIRA PRAMADANI        | 13-Nov-2026 07:39
+10020945  | HANIF NIFTAHYUDIN              | 13-Nov-2026 06:38
+10022050  | SRI TATI MULYANI               | 13-Nov-2026 07:40
+10023012  | MONICA CAHYADI                 | 13-Nov-2026 07:39
+10023881  | REGITA PUTRI MEILINDA          | 13-Nov-2026 07:46
+10024028  | NABILA NURZAKIA PURNAMA        | 13-Nov-2026 07:49
+10024086  | TRISHA AMARA LIHARJA           | 13-Nov-2026 07:48
+======================================================================
+
+Cost Center : PROJECT
+Sub-Total   : 10 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10002520  | DADANG SUKIRMAN                | 13-Nov-2026 07:38
+10002528  | RIKI HENRIKA                   | 13-Nov-2026 07:16
+10002658  | CHRISTINE EVA NATALIA NAPITUPU | 13-Nov-2026 07:20
+10003648  | ACEP ADIYANTO                  | 13-Nov-2026 07:42
+10003694  | WAHDAN KURNIAWAN               | 13-Nov-2026 07:15
+10020734  | TAOPIK .                       | 13-Nov-2026 07:48
+10022413  | ALAM SIDIK MUHARAM             | 13-Nov-2026 07:34
+10023961  | MOCHAMAD KHAIRAN               | 13-Nov-2026 07:45
+10024020  | BAIHAQI .                      | 13-Nov-2026 06:49
+10024128  | IQBAL ABDURAHMAN               | 13-Nov-2026 07:44
+======================================================================
+
+Cost Center : PURCHASING
+Sub-Total   : 9 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001936  | SRI MULYANTINI                 | 13-Nov-2026 07:53
+10002440  | ELLIS NUR AISYAH               | 13-Nov-2026 06:54
+10003168  | RENA KANIA IRAWATI             | 13-Nov-2026 07:53
+10003982  | RAISSA GHEA YOVITA             | 13-Nov-2026 07:50
+10004050  | MARTA SETIAWAN                 | 13-Nov-2026 12:52
+10022061  | LENNY CARLINA SARI             | 13-Nov-2026 07:57
+10022936  | VEREN INTAN RAFIANI            | 13-Nov-2026 07:57
+10023442  | SHERYL MADELIN GUNAWAN         | 13-Nov-2026 07:47
+10023759  | PUTRI ALFIRA SUCIATI INDRAWAN  | 13-Nov-2026 07:39
+======================================================================
+
+Cost Center : QUALITY ASSURANCE
+Sub-Total   : 50 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001266  | ADE SUMINGRAT                  | 13-Nov-2026 06:24
+10001362  | AHMAD SOPYAN                   | 13-Nov-2026 07:36
+10001550  | SUPARMAN .                     | 13-Nov-2026 14:37
+10001570  | ASRIFAH .                      | 13-Nov-2026 06:03
+10001572  | KUSMIYATI .                    | 13-Nov-2026 14:37
+10001682  | YULIA KARTINI                  | 13-Nov-2026 14:02
+10001684  | RUSTANDI .                     | 13-Nov-2026 14:00
+10001768  | TETI ROSMIATI                  | 13-Nov-2026 06:18
+10001776  | YUYUN YUNINGSIH                | 13-Nov-2026 07:15
+10001832  | DIDING KOSASIH                 | 13-Nov-2026 07:05
+10002438  | KAMALUDIN .                    | 13-Nov-2026 07:23
+10002450  | NENDEN RATNA KOMALA            | 13-Nov-2026 07:02
+10002560  | ENDAH SUPRIATNA                | 13-Nov-2026 07:33
+10002564  | IKA MUSTIKASARI                | 13-Nov-2026 07:44
+10002616  | ADE NURHAEDAH                  | 13-Nov-2026 07:44
+10002640  | ELSA FADILAH                   | 13-Nov-2026 07:45
+10002662  | RYAN HIDAYAT                   | 13-Nov-2026 07:42
+10002716  | EKA SARTIKA                    | 13-Nov-2026 06:49
+10002718  | RENITA SINAGA                  | 13-Nov-2026 06:42
+10002814  | RAHMI NUR HAFIYYAH             | 13-Nov-2026 07:55
+10002832  | HERADEWI .                     | 13-Nov-2026 07:52
+10002872  | RENI SUKMAWATI                 | 13-Nov-2026 07:56
+10003014  | ENDAH HASANAH                  | 13-Nov-2026 06:45
+10003280  | RESYA NURYADIN                 | 13-Nov-2026 06:50
+10003358  | IIN SITI NURBAYANI             | 13-Nov-2026 06:41
+10003426  | FADLY MUHAMAD                  | 13-Nov-2026 07:51
+10003566  | ARIS FAUZI                     | 13-Nov-2026 14:44
+10003642  | DIAN RATNASIH                  | 13-Nov-2026 07:36
+10012352  | RULI SUSANTO                   | 13-Nov-2026 04:14
+10012876  | YADI ARYADI                    | 13-Nov-2026 12:44
+10018768  | AJIS FALAHUDIN                 | 13-Nov-2026 06:02
+10019223  | ANGGA MARDIANSYAH              | 13-Nov-2026 06:33
+10020450  | MOHAMAD SAHID                  | 13-Nov-2026 12:59
+10021396  | DINDIN JAENUDIN                | 13-Nov-2026 06:31
+10021918  | SYERLIN NURAINI                | 13-Nov-2026 06:15
+10022062  | YULIANI DAMAYANTI              | 13-Nov-2026 06:46
+10022273  | PAMUJI FARDHIYAH RAHAYU        | 13-Nov-2026 14:14
+10023074  | YOGA DIVA WINARSO              | 13-Nov-2026 06:28
+10023106  | MUHAMMAD ILHAM FIRDAUS         | 13-Nov-2026 06:37
+10023327  | TIAN RAHAYU                    | 13-Nov-2026 06:37
+10023391  | STEPFANY HALIM                 | 13-Nov-2026 07:49
+10023646  | REGITA THORY PRINGGANDINI      | 13-Nov-2026 07:42
+10023810  | FRANSISKA NURAINI              | 13-Nov-2026 06:34
+10023947  | FATHAN IDZHAR AYATULLAH        | 13-Nov-2026 06:50
+10024021  | HANA NUR LAYALIA HASYA         | 13-Nov-2026 07:32
+10024138  | JASMINE EFFIA ZAHIRA           | 13-Nov-2026 07:11
+10024149  | ROFIK HIDAYAT                  | 13-Nov-2026 12:35
+10024189  | YUGA VIKARIVALDA               | 13-Nov-2026 06:46
+40003     | ZAHRA AULIA NAFIS              | 13-Nov-2026 07:56
+40004     | KHAILA SYAHIRA HARPIL          | 13-Nov-2026 07:56
+======================================================================
+
+Cost Center : TOP
+Sub-Total   : 249 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001198  | ENDAH HARTATI                  | 13-Nov-2026 06:36
+10001278  | ENUR NURJANAH                  | 13-Nov-2026 06:27
+10001280  | IYARNIDAH .                    | 13-Nov-2026 06:16
+10001292  | AAT ATIKAH                     | 13-Nov-2026 06:29
+10001296  | DEWI SARTIKA KURNIASIH         | 13-Nov-2026 13:55
+10001412  | BUDIYANTO .                    | 13-Nov-2026 06:03
+10001414  | DADAN .                        | 13-Nov-2026 14:06
+10001540  | NENY SOFIANI                   | 13-Nov-2026 06:30
+10001544  | AI KOKOM KOMALASARI            | 13-Nov-2026 06:14
+10001546  | SRI HENDRAYANI                 | 13-Nov-2026 07:54
+10001548  | HERRY FAUZIE                   | 13-Nov-2026 06:40
+10001562  | GUGUN GUNAWAN                  | 13-Nov-2026 06:36
+10001574  | FITRI SURYANI                  | 13-Nov-2026 06:38
+10001584  | IRVAN GUNAWAN                  | 13-Nov-2026 06:36
+10001618  | ANI FARIDAH                    | 13-Nov-2026 14:37
+10001620  | DETI MULYATI                   | 13-Nov-2026 14:11
+10001624  | AA BADRUDIN                    | 13-Nov-2026 06:38
+10001704  | NINA ROSDIANA                  | 13-Nov-2026 06:35
+10001708  | LESTARI .                      | 13-Nov-2026 14:50
+10001714  | NENENG IDA HIDAYAH             | 13-Nov-2026 06:30
+10001724  | SUPARNO .                      | 13-Nov-2026 06:46
+10001746  | BUDI HARTO                     | 13-Nov-2026 06:10
+10001760  | SOPANDI .                      | 13-Nov-2026 06:43
+10001774  | OTONG WARIN                    | 13-Nov-2026 06:32
+10001870  | IRMA RISMAYANTIE               | 13-Nov-2026 06:24
+10001872  | WULAN MAESAROH                 | 13-Nov-2026 06:18
+10002032  | YAYAN .                        | 13-Nov-2026 06:24
+10002100  | ELIS TITA ROSITA               | 13-Nov-2026 07:51
+10002114  | LILIS SURYANI                  | 13-Nov-2026 06:27
+10002288  | MAESAROH .                     | 13-Nov-2026 06:45
+10002296  | HAN HAN RAPIDAH                | 13-Nov-2026 06:30
+10002328  | RANI ROSMAWATI                 | 13-Nov-2026 06:10
+10002332  | YOLINDIAH WAHYU A              | 13-Nov-2026 06:03
+10002334  | IDA SAADAH                     | 13-Nov-2026 06:06
+10002360  | HAYATI .                       | 13-Nov-2026 06:48
+10002372  | ENENG YANTI                    | 13-Nov-2026 06:37
+10002374  | SUSILAWATI .                   | 13-Nov-2026 06:33
+10002378  | TATANG MASRIKI                 | 13-Nov-2026 06:14
+10002398  | DEDE PIPIT                     | 13-Nov-2026 06:34
+10002404  | LINDA MARLINDA                 | 13-Nov-2026 14:11
+10002430  | YULIANTI .                     | 13-Nov-2026 06:35
+10002464  | PANJI KEMAL                    | 13-Nov-2026 06:41
+10002466  | DENI HERDIANA                  | 13-Nov-2026 14:02
+10002604  | DINI ERYUNI                    | 13-Nov-2026 06:24
+10002606  | FITRI JUHARIAH                 | 13-Nov-2026 06:33
+10002618  | ELVI YUSNI                     | 13-Nov-2026 06:06
+10002624  | ANDI SYAHRIL PARYADI           | 13-Nov-2026 06:46
+10002736  | WAWAN KARNAWAN                 | 13-Nov-2026 06:12
+10002784  | TRI YANUARISKA AMHARYANI       | 13-Nov-2026 07:47
+10002984  | DENI SURYANA                   | 13-Nov-2026 06:39
+10003028  | NINING NOVIANINGSIH            | 13-Nov-2026 14:38
+10003034  | ADE ALIT YULIANTI              | 13-Nov-2026 06:05
+10003076  | FITRI ROSLIYANTI               | 13-Nov-2026 06:32
+10003114  | SEP HANI .                     | 13-Nov-2026 14:07
+10003118  | REPI DANI PRASETIA             | 13-Nov-2026 13:46
+10003174  | DENI JAELANI                   | 13-Nov-2026 06:11
+10003238  | ANDI IRAWAN                    | 13-Nov-2026 07:58
+10003326  | ANDRY SATRIANA                 | 13-Nov-2026 13:53
+10003330  | IHSAN SAEPUROHMAN              | 13-Nov-2026 06:47
+10003332  | HILMAN NUGRAHA CAHYADI         | 13-Nov-2026 14:42
+10003336  | DEDEN CAHYA HIDAYAT            | 13-Nov-2026 04:42
+10003362  | SANDI SUMARNA                  | 13-Nov-2026 14:36
+10003410  | NANI SAFITRI                   | 13-Nov-2026 06:29
+10003412  | NURHAYATI .                    | 13-Nov-2026 06:35
+10003458  | NOVI ARIPIYANTI                | 13-Nov-2026 06:25
+10003460  | AJI GINANJAR                   | 13-Nov-2026 07:49
+10003490  | DIAN HADIANTO                  | 13-Nov-2026 14:58
+10003576  | TIA SABARINI MARDIANA          | 13-Nov-2026 06:36
+10003578  | HARTINI .                      | 13-Nov-2026 14:08
+10003590  | HENDARI RAHAYU ANDESTI         | 13-Nov-2026 06:35
+10003598  | RATIH PURNAMASARI              | 13-Nov-2026 06:20
+10003604  | DEWI SUSANTI                   | 13-Nov-2026 06:28
+10003606  | HAMIM HAMDANI                  | 13-Nov-2026 14:47
+10003628  | SITI BAROKAH                   | 13-Nov-2026 06:41
+10003632  | ARIZAL ARISONI                 | 13-Nov-2026 06:46
+10003634  | AGUS BADRIAN                   | 13-Nov-2026 06:27
+10003640  | MAULANA YUSUF WIJAYA           | 13-Nov-2026 06:58
+10003722  | USMAN .                        | 13-Nov-2026 06:48
+10003776  | KANIA FITRIANI                 | 13-Nov-2026 07:29
+10020160  | ANA ANDIANA                    | 13-Nov-2026 07:39
+10021692  | MUHAMMAD SHIDIQ PERMANA        | 13-Nov-2026 06:53
+10022717  | WINDA KARTIKA DEWI             | 13-Nov-2026 06:14
+65010     | MAUDINA MARYAM                 | 13-Nov-2026 06:08
+65013     | ACEP SUPRIMAN                  | 13-Nov-2026 14:21
+65022     | ERNI HERAWATI                  | 13-Nov-2026 05:54
+65031     | IMAS KOKOM JUBAEDAH            | 13-Nov-2026 14:35
+65038     | DODI DESTIAN                   | 13-Nov-2026 06:41
+65061     | SITI NURHAYATI                 | 13-Nov-2026 14:27
+65069     | LENI HANIAH                    | 13-Nov-2026 14:24
+65071     | IWAN RIDWAN                    | 13-Nov-2026 06:17
+65087     | FIKRI HANIF PRATAMA            | 13-Nov-2026 06:22
+65092     | LILI TAJIRI                    | 13-Nov-2026 05:50
+65125     | ROHENDI                        | 13-Nov-2026 05:44
+65134     | TAZAKA TSALSABILA              | 13-Nov-2026 06:26
+65142     | BARAN SUNARDI                  | 13-Nov-2026 14:37
+65150     | SENI HANDAYANI                 | 13-Nov-2026 14:19
+65194     | SANSAN SETIAWAN                | 13-Nov-2026 03:56
+65245     | RISKA RISDIANA                 | 13-Nov-2026 14:19
+65260     | IETA ALIS SETIAWATI            | 13-Nov-2026 14:21
+65265     | RIVALDI RIDWAN                 | 13-Nov-2026 06:16
+65328     | KAKA RIZKY                     | 13-Nov-2026 06:42
+65334     | LILIS YULIANI                  | 13-Nov-2026 06:19
+65338     | WINDI INDRIANI                 | 13-Nov-2026 14:14
+65347     | IRPAN OKTAFIAN                 | 13-Nov-2026 14:02
+65360     | NURUL AINI                     | 13-Nov-2026 06:24
+65389     | NENG RESA DESIANTI             | 13-Nov-2026 06:33
+65402     | LINA KUSMAWATI                 | 13-Nov-2026 06:44
+65416     | DANDY SETIAWAN                 | 13-Nov-2026 14:41
+65444     | RENDI AFDANI                   | 13-Nov-2026 14:43
+65449     | TRY PUSPA NINGRUM              | 13-Nov-2026 14:35
+65455     | SEPTI KURNIA NINGRUM           | 13-Nov-2026 14:40
+65458     | NURDIN HIDAYATULLOH            | 13-Nov-2026 14:24
+65478     | ZAKIYAH WULANDARI              | 13-Nov-2026 06:16
+65480     | MERLY ANGGRAENI                | 13-Nov-2026 14:20
+65517     | KRISTIAWAN                     | 13-Nov-2026 05:56
+65541     | HELMA ANGGRAENI AGUSTIN        | 13-Nov-2026 14:27
+65542     | NISA AULIA NURJANAH            | 13-Nov-2026 14:35
+65570     | CENDI NURUL PAUZI              | 13-Nov-2026 06:21
+65576     | RIFA FEBRIANTI                 | 13-Nov-2026 14:06
+65600     | MUHAMAD RIZZAL RAMADAN         | 13-Nov-2026 14:46
+65617     | CECEP SYAEFUL ANWAR            | 13-Nov-2026 14:21
+65645     | DIAN NURDIANTI                 | 13-Nov-2026 14:45
+65651     | RIFKI RIAN FIRMANSYAH          | 13-Nov-2026 14:42
+65684     | SUNARNI                        | 13-Nov-2026 14:44
+65704     | SURYA LESMANA                  | 13-Nov-2026 06:43
+65729     | KRISNA A NURIMAN               | 13-Nov-2026 04:04
+65750     | RATI HARTATI                   | 13-Nov-2026 06:27
+65763     | VANJAE ARMADHAN                | 13-Nov-2026 06:25
+65788     | RIJAL SAEPULOH                 | 13-Nov-2026 03:56
+65814     | AHMAD FRISMA H                 | 13-Nov-2026 14:45
+65817     | RAHMA HASNIA GUSTIANTI         | 13-Nov-2026 05:52
+65819     | YUYUN NURMALA                  | 13-Nov-2026 06:17
+65827     | IKSAN MAHENDRA FIRMANSYAH      | 13-Nov-2026 04:04
+65868     | GERY RIZKI KARIANDI            | 13-Nov-2026 06:42
+65874     | SELASELVIANI                   | 13-Nov-2026 06:17
+65889     | YOGA FIRMANSYAH                | 13-Nov-2026 14:32
+65930     | AHMAD SAEPUDIN                 | 13-Nov-2026 06:29
+65939     | SALSA ALYA LESTARI             | 13-Nov-2026 06:17
+65943     | ANNISA HUSNUL KHOTIMAH         | 13-Nov-2026 06:31
+65948     | SAFITRI APRILIANI              | 13-Nov-2026 14:15
+65952     | WIDANINGRUM                    | 13-Nov-2026 14:26
+65980     | NAZWA HANIFAH                  | 13-Nov-2026 06:39
+68019     | TAUPIK NUGRAHA                 | 13-Nov-2026 14:37
+68030     | ARUN GUNAWAN                   | 13-Nov-2026 06:43
+68042     | RIRIN RISMAWATI                | 13-Nov-2026 06:10
+68098     | RIFKI ADITYA                   | 13-Nov-2026 14:48
+68104     | GINNA AGNIA                    | 13-Nov-2026 14:29
+68109     | YULIYANTI                      | 13-Nov-2026 06:19
+68116     | LISA AMELIA SARI               | 13-Nov-2026 14:42
+68119     | INTAAN MUSTIKA                 | 13-Nov-2026 14:24
+68192     | JIHAN HASNA NAQIAH             | 13-Nov-2026 13:59
+68233     | FADILA RESTI FAUZIYAH          | 13-Nov-2026 14:33
+68266     | ALDISON                        | 13-Nov-2026 05:02
+68282     | JOSE NURUL HAKIM               | 13-Nov-2026 06:22
+68287     | ASPIA LESTARI                  | 13-Nov-2026 14:20
+68289     | IMAS JELITA SARI               | 13-Nov-2026 06:11
+68293     | RANI NURAENI DEWI              | 13-Nov-2026 06:31
+68296     | WIWIT HANAFIAH                 | 13-Nov-2026 06:26
+68318     | AYU SITI NURJANAH              | 13-Nov-2026 06:31
+68326     | WINDI WIDIYANTI                | 13-Nov-2026 06:14
+68384     | KANIAWATI                      | 13-Nov-2026 14:46
+68386     | NUR ALIP KHOLIFAH              | 13-Nov-2026 06:26
+68389     | RIZKA NOVIA FITRIANI           | 13-Nov-2026 14:29
+68393     | PRASETYO PRATAMA               | 13-Nov-2026 14:12
+68471     | NAZWA FAZIA SHAKIEB            | 13-Nov-2026 06:28
+68549     | MARDIANSAH                     | 13-Nov-2026 06:04
+68591     | HADIAT RASHAD FAZLULLAH        | 13-Nov-2026 06:43
+68622     | REZA ADITIA PUTRA              | 13-Nov-2026 14:45
+68654     | ASEP MUHAMAD                   | 13-Nov-2026 14:45
+68669     | DIKDIK PERMANA                 | 13-Nov-2026 03:52
+68679     | KHOEYRUL IKHSAN NURSYA'BAN     | 13-Nov-2026 03:47
+68710     | RENDI RIZKIANDRI DWINANDA      | 13-Nov-2026 06:13
+68723     | DIANA DWI CAHYANI              | 13-Nov-2026 14:18
+68725     | FITRI                          | 13-Nov-2026 06:05
+68762     | YOGA FEBRIANA                  | 13-Nov-2026 07:29
+68781     | IKSAN IRAM RAMADAN             | 13-Nov-2026 14:42
+68782     | IKSAN MUHAMAD WIJAYA           | 13-Nov-2026 03:51
+68851     | MUHAMAD INSAN ABDUL BA'IS      | 13-Nov-2026 14:44
+68860     | AZIZ WADI NUR BANYU            | 13-Nov-2026 14:47
+68896     | ZIHAN NURMAN                   | 13-Nov-2026 14:27
+68952     | SALWA NUR APRIL                | 13-Nov-2026 06:15
+68981     | MUHAMAD ALIF NUR FADJRI        | 13-Nov-2026 14:45
+80026     | RIKO SINATRIA                  | 13-Nov-2026 14:35
+80076     | MOHAMAD RIFQI SUBAGJA          | 13-Nov-2026 04:52
+80098     | MUHAMMAD GIO SUHERMAN          | 13-Nov-2026 06:06
+80120     | RIVKI MUHAMAD ADRIANSYAH       | 13-Nov-2026 14:35
+80161     | SALMAN SYAHIDAR MAHDIA         | 13-Nov-2026 14:34
+80162     | STEVANY DERALYAYONG            | 13-Nov-2026 14:35
+80163     | SYEHAN ASYAHWAL RUSWANDI       | 13-Nov-2026 04:53
+80199     | RENI MULYATI                   | 13-Nov-2026 14:31
+80227     | SAKIRA AGUANTI                 | 13-Nov-2026 14:31
+80228     | FAUZAN NUR RAMADHAN            | 13-Nov-2026 14:34
+80231     | HAMKA MUHHARIK ARDIANSAH       | 13-Nov-2026 06:31
+80236     | ILHAM AHMAD FAHREZY            | 13-Nov-2026 06:29
+80243     | RIAN HADIANSYAH                | 13-Nov-2026 14:10
+80244     | SHAHRUL RAFLIANSYAH            | 13-Nov-2026 14:10
+80254     | MISYKUL ANWAR                  | 13-Nov-2026 14:10
+80255     | MOCHAMAD RADITYA RACHMAN       | 13-Nov-2026 06:01
+80256     | MUHAMAD RAPLI PASA             | 13-Nov-2026 14:10
+80257     | MOHAMAD IKRAM FAUZAN BUDI ALWA | 13-Nov-2026 14:36
+80258     | MOHAMAD WILDAN RAMDANI         | 13-Nov-2026 06:29
+80259     | MUHAMAD FADHIL TRIANDIKA       | 13-Nov-2026 14:11
+80264     | M.JALALUDIN AL AJHAR           | 13-Nov-2026 06:06
+80267     | KURNIAWAN PAMUNGKAS RAMADHAN   | 13-Nov-2026 03:57
+80314     | NEISKA DIANA                   | 13-Nov-2026 14:23
+80362     | RAISYA MARIYAM                 | 13-Nov-2026 14:23
+80373     | LULU ILMAKNUN                  | 13-Nov-2026 06:22
+80383     | IRMA MUSLIMAH                  | 13-Nov-2026 06:20
+80429     | JERY PRAYOGA A.T UTOMO         | 13-Nov-2026 03:45
+80441     | MOCH ARGA FATURROHMAN          | 13-Nov-2026 14:34
+80509     | CHELSEA RESTA NURAENI SUTISNA  | 13-Nov-2026 14:12
+80519     | NOVI KURNIASARI                | 13-Nov-2026 14:27
+80520     | NADILA MAY AGUSTINA            | 13-Nov-2026 14:27
+80531     | NATASYA MARWAN PERTIWI         | 13-Nov-2026 14:27
+80542     | ANDINI SRI RAHAYU              | 13-Nov-2026 14:20
+80565     | FEBRIANTI PUTRI PRIMADI        | 13-Nov-2026 14:27
+80610     | MELYSA ST ALIA ALIFA           | 13-Nov-2026 06:27
+80631     | ALVI TERA PUSPITA              | 13-Nov-2026 14:23
+80633     | CINDY AMALIA                   | 13-Nov-2026 06:29
+80643     | NESSA SHAVIRA PUTRI REDESTA    | 13-Nov-2026 14:22
+80645     | SABRINA RESYA PUTRI            | 13-Nov-2026 06:29
+80647     | SILVI                          | 13-Nov-2026 14:20
+80648     | FIRDA AINUR JANNAH             | 13-Nov-2026 06:32
+80656     | RANI FERANI                    | 13-Nov-2026 06:35
+80660     | DELIA ARTHA SONIA              | 13-Nov-2026 06:30
+80682     | SRI DINI MULYADI               | 13-Nov-2026 06:26
+80686     | SENI PERTIWI                   | 13-Nov-2026 14:31
+80694     | ADELA PUSPITASARI              | 13-Nov-2026 06:17
+80727     | SHALSA NABILA SHINTA DEWI      | 13-Nov-2026 14:20
+80734     | TRISTANTI                      | 13-Nov-2026 14:22
+80739     | ZIANY PRIMATASARI              | 13-Nov-2026 14:22
+80743     | PUTRI RAHAYU                   | 13-Nov-2026 14:20
+80746     | SHIFA AZZAHRA                  | 13-Nov-2026 14:40
+80766     | QONITA NURUL AZZIZAH           | 13-Nov-2026 06:27
+80768     | YAYANG AGUSTIN ANDRIANI        | 13-Nov-2026 14:44
+80781     | INDRI PUSPITA DEWI             | 13-Nov-2026 06:15
+80811     | INDAH SAPHIRA                  | 13-Nov-2026 06:05
+80820     | RUMAISA SHAFFA AULIA           | 13-Nov-2026 14:24
+80848     | WULAN MUNA ANJANI              | 13-Nov-2026 06:04
+80870     | NAMIRA ANANDA ZAHRA            | 13-Nov-2026 14:45
+80898     | LENTIK EDELWIA HAYUNINGTYAS    | 13-Nov-2026 14:23
+80901     | MILA OKTAVIANTI                | 13-Nov-2026 14:27
+80910     | ERLANDA                        | 13-Nov-2026 14:45
+80912     | SUTISNA.                       | 13-Nov-2026 06:14
+80929     | FAZRI DWI RIADI                | 13-Nov-2026 03:52
+80935     | RAFLY KURNIA NUGRAHA           | 13-Nov-2026 03:52
+80936     | NAZELA RAMADHANI               | 13-Nov-2026 14:23
+80938     | WIDIA ANZANI                   | 13-Nov-2026 06:27
+80943     | ARIF WIJAYA                    | 13-Nov-2026 14:45
+======================================================================
+
+Cost Center : TULIP/ROUNDIES&JAGO
+Sub-Total   : 10 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001290  | LARRY HOLMES SIMANJUNTAK       | 13-Nov-2026 06:48
+10001652  | MASRIAH .                      | 13-Nov-2026 13:59
+10001914  | RIRIN UTAMI GUNAWAN            | 13-Nov-2026 06:16
+10002078  | HENI ERNAWATI                  | 13-Nov-2026 14:31
+10002082  | ROLIYAH .                      | 13-Nov-2026 14:04
+10002264  | RIKA .                         | 13-Nov-2026 06:28
+10002486  | ATEN ROHMAN SENJAYA            | 13-Nov-2026 07:24
+10002756  | ADIK PERMANA                   | 13-Nov-2026 14:47
+10003120  | MAMAN SUHERMAN                 | 13-Nov-2026 06:49
+10003158  | NUR DEWI ANGGRAENI             | 13-Nov-2026 14:12
+======================================================================
+
+Cost Center : TWISTER
+Sub-Total   : 69 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001186  | AGUS NURCAHYA                  | 13-Nov-2026 06:45
+10001190  | IWAN WIJANA                    | 13-Nov-2026 14:14
+10001254  | IRMA SUGIANTI                  | 13-Nov-2026 06:20
+10001294  | TAUFIK HAMDANI                 | 13-Nov-2026 14:48
+10001320  | FIAN MAOLUDIN                  | 13-Nov-2026 07:27
+10001422  | NUR MULYANI                    | 13-Nov-2026 06:48
+10001494  | NURHAENI .                     | 13-Nov-2026 06:54
+10001504  | NELLA KUSMAYANTI               | 13-Nov-2026 06:44
+10001626  | ASEP LUTFI NURJAMAN            | 13-Nov-2026 06:26
+10001696  | LENI YULIANA                   | 13-Nov-2026 06:42
+10001848  | HERI BUDIYANA                  | 13-Nov-2026 14:06
+10001878  | SURATNI .                      | 13-Nov-2026 06:26
+10001906  | TATI HERWATI                   | 13-Nov-2026 14:35
+10002310  | IDA ROSIDAH                    | 13-Nov-2026 06:45
+10002420  | ASEP SAEPUDIN                  | 13-Nov-2026 06:33
+10002590  | FERNANDES .                    | 13-Nov-2026 06:46
+10002596  | YONATAN BUDHI PRASETYO         | 13-Nov-2026 06:29
+10002600  | AGUS DIAN SUDIANA              | 13-Nov-2026 06:47
+10002664  | LUKI HILMANSYAH                | 13-Nov-2026 06:47
+10002668  | HARMOKO .                      | 13-Nov-2026 06:43
+10002776  | CEP ENGKAT                     | 13-Nov-2026 06:30
+10002804  | UJANG ROHENDI                  | 13-Nov-2026 06:21
+10002834  | OKTALIA RUSMAN                 | 13-Nov-2026 07:54
+10002846  | ADE FIRMANSYAH                 | 13-Nov-2026 06:48
+10002876  | SITI AMALIAH                   | 13-Nov-2026 06:10
+10003396  | ENDANG RUKMANA                 | 13-Nov-2026 06:16
+10003492  | LALAN SUPARLAN                 | 13-Nov-2026 14:37
+10003644  | IIP KURNIAWAN                  | 13-Nov-2026 14:37
+10023450  | SHARVILKA LINTANG AZ ZAHRA     | 13-Nov-2026 14:07
+10023452  | DELLA AWALIA RUFIATUNNAJAH     | 13-Nov-2026 11:48
+10023453  | MEIRA PUTRI                    | 13-Nov-2026 06:28
+65358     | ADI TIYANA SENTANA             | 13-Nov-2026 07:46
+69039     | AYU SONIA                      | 13-Nov-2026 06:01
+69042     | DINAR DAMIYATI                 | 13-Nov-2026 06:20
+69256     | LILIS NUR ALISYAH              | 13-Nov-2026 06:28
+69259     | SAHLAN AHMAD HAMBALI           | 13-Nov-2026 06:04
+69289     | HAIKAL ABDILLAH                | 13-Nov-2026 13:40
+69291     | YONIS GALANG RAKA BUANA        | 13-Nov-2026 06:46
+69435     | NURUL ISMADYANI                | 13-Nov-2026 06:10
+69483     | INTAN SRI WAHYUNI              | 13-Nov-2026 06:34
+69612     | SYUKRON RINALDI                | 13-Nov-2026 04:04
+69869     | EUIS SUSANTI                   | 13-Nov-2026 14:00
+69871     | ZAHNA NOVIA ARIANTI            | 13-Nov-2026 14:01
+69874     | ALIFIANY WULANDARI PUTRI       | 13-Nov-2026 05:53
+69878     | WINDI WIDYANINGSIH ROKHMAN     | 13-Nov-2026 05:47
+69885     | HASAN SADIKIN                  | 13-Nov-2026 05:53
+69887     | ABDUL HADI RUSTANDI            | 13-Nov-2026 06:26
+69892     | FEBI FERDIANSYAH               | 13-Nov-2026 12:06
+69897     | ECHA ABSYA NURULSYAM           | 13-Nov-2026 06:04
+69909     | FIRZAN YUSHAL HANIEF           | 13-Nov-2026 03:47
+70022     | PERY NUGRAHA                   | 13-Nov-2026 12:29
+70087     | IIN NURYADIN                   | 13-Nov-2026 06:49
+70141     | ANDRI FEBRIANSYAH              | 13-Nov-2026 06:00
+70148     | DITA AMELIA PUTRI              | 13-Nov-2026 06:44
+70162     | FERRY RATAMA                   | 13-Nov-2026 03:47
+70206     | YURIKE AMALIA                  | 13-Nov-2026 14:04
+70217     | RIDWAN HERNAWAN                | 13-Nov-2026 03:47
+70238     | MUHAMAD RIKI HAMDANI           | 13-Nov-2026 06:49
+70240     | YEHEZKIEL TARIGAN              | 13-Nov-2026 06:09
+70250     | DIKI WAHYUDI                   | 13-Nov-2026 07:47
+70327     | RIFKI MAULANA                  | 13-Nov-2026 06:17
+70371     | PRAYUDI PERMANA SIMANJUNTAK    | 13-Nov-2026 04:52
+70378     | RHANDIKO ANGGA RAHOWO          | 13-Nov-2026 03:42
+70628     | ROSI SUPRIATIN                 | 13-Nov-2026 06:00
+70787     | MUHAMAD SYAMSUL ARIFIN         | 13-Nov-2026 12:29
+70792     | MUHAMAD RIDWAN PARIS           | 13-Nov-2026 06:25
+70807     | SYARIEF HIDAYAT                | 13-Nov-2026 03:26
+70873     | SANTI SRI NUR SOPIAH           | 13-Nov-2026 14:05
+70975     | MUHAMAD ILHAM                  | 13-Nov-2026 06:50
+======================================================================
+
+Cost Center : WAREHOUSE - FG
+Sub-Total   : 55 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10006636  | HENDY SADIKIN                  | 13-Nov-2026 07:38
+10024069  | WANDI WAHYUDIN NUGRAHA         | 13-Nov-2026 06:41
+69008     | TOTO ISMAYANTO                 | 13-Nov-2026 06:34
+69015     | ASEP KURNIA                    | 13-Nov-2026 08:50
+69050     | ALIP HIDAYAT                   | 13-Nov-2026 06:22
+69085     | INDI TANSYAH                   | 13-Nov-2026 00:55
+69112     | ATEP SUPARMAN                  | 13-Nov-2026 06:49
+69139     | MUHAMAD GHANY AL GHIFARI       | 13-Nov-2026 00:33
+69178     | ERISWANTO                      | 13-Nov-2026 07:56
+69215     | FAREL IBNU SUTARYA             | 13-Nov-2026 06:07
+69223     | WILDAN FIRMANSYAH              | 13-Nov-2026 07:56
+69241     | RISA RAHAYU                    | 13-Nov-2026 07:56
+69261     | RAMA ZUNARKO                   | 13-Nov-2026 08:59
+69276     | RYAN RIZKY ADITYA              | 13-Nov-2026 07:46
+69310     | HANAN RAHMAN                   | 13-Nov-2026 07:40
+69324     | RUDY GUNAWAN                   | 13-Nov-2026 07:56
+69373     | MULYADI                        | 13-Nov-2026 07:50
+69388     | FADLI FAOZUL DAHLAN            | 13-Nov-2026 07:58
+69399     | ANGGRA RHAMDANI                | 13-Nov-2026 00:55
+69423     | REGI JULIYANTO                 | 13-Nov-2026 00:55
+69447     | INDRA HERMAWAN                 | 13-Nov-2026 08:53
+69508     | MUHAMMAD WAHYU NUGROHO         | 13-Nov-2026 08:49
+69533     | ASEP KUSMAN                    | 13-Nov-2026 06:36
+69562     | INDRA SAPUTRA                  | 13-Nov-2026 06:49
+69567     | KIKI                           | 13-Nov-2026 07:49
+69677     | RAKA FITRAH FAUZIAN            | 13-Nov-2026 00:55
+69744     | RIKI RIDIANSYAH                | 13-Nov-2026 12:06
+69765     | ENRICO AMAVISKA                | 13-Nov-2026 07:42
+69781     | FAJAR RESTU FAUZI              | 13-Nov-2026 06:38
+69807     | TRI LAKSANA CHANDRA GUNAWAN    | 13-Nov-2026 07:52
+69823     | AGUS SOLIHIN                   | 13-Nov-2026 06:43
+69847     | NURSALAM                       | 13-Nov-2026 07:56
+69849     | UDEN SETIAWAN                  | 13-Nov-2026 07:56
+69850     | UKIN                           | 13-Nov-2026 07:33
+69888     | TOBI SETIANA PUTRA             | 13-Nov-2026 12:06
+69905     | WILDAN HADIANSYAH              | 13-Nov-2026 08:53
+69920     | ANDRIYANTO                     | 13-Nov-2026 06:46
+69960     | NORIS DIPIGO RAMADAN           | 13-Nov-2026 06:53
+69980     | TATAN HERDIANSYAH              | 13-Nov-2026 09:06
+70061     | AGUS ICRISNA SETIAWAN          | 13-Nov-2026 07:52
+70198     | ABDUL SIDIK                    | 13-Nov-2026 08:52
+70216     | MUHAMAD RIDWAN KUSNADI         | 13-Nov-2026 08:53
+70227     | RADHITIAS SALMAN SYAM          | 13-Nov-2026 07:02
+70239     | LUKMAN                         | 13-Nov-2026 06:41
+70552     | CANDRA FACHRIZAL               | 13-Nov-2026 08:49
+70594     | BRIMA THEOCANDRA ZALVIAHENDRI  | 13-Nov-2026 00:55
+70625     | IMAM KHOLIQ HABLULLOH          | 13-Nov-2026 08:42
+70629     | TRIANA                         | 13-Nov-2026 07:56
+70656     | INDRA LASMANA                  | 13-Nov-2026 00:55
+70658     | RAPAEL                         | 13-Nov-2026 08:53
+70727     | M RIZKY FEBRIANTO              | 13-Nov-2026 08:52
+70731     | ALDIAN NURDINSAH               | 13-Nov-2026 07:51
+70838     | IQBAL ALAMSYAH                 | 13-Nov-2026 14:05
+70839     | MUHAMAD RIAN PERMANA           | 13-Nov-2026 08:53
+70929     | ABDUL DUDUNG                   | 13-Nov-2026 06:58
+======================================================================
+
+Cost Center : WAREHOUSE - RM
+Sub-Total   : 18 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+10001024  | DANDAN UNDAYANA                | 13-Nov-2026 07:51
+10001558  | AGUNG SUJASAPUTRA              | 13-Nov-2026 06:39
+10001782  | AEP YUDI NURDIANA              | 13-Nov-2026 07:23
+10001794  | R.CHEPPY RAHADHIAN             | 13-Nov-2026 06:49
+10002516  | WAWAN TRINUGROHO               | 13-Nov-2026 12:07
+10002536  | MUHAMAD IRSOM FATONI           | 13-Nov-2026 06:37
+10002786  | HIKMAT FIRMANSYAH              | 13-Nov-2026 06:54
+10002944  | INAN SIMON KARMOMYANAN         | 13-Nov-2026 07:56
+10003388  | CHANDRA ABDULROHMAN            | 13-Nov-2026 07:21
+10012742  | FAJAR JANUAR RIPAI             | 13-Nov-2026 14:42
+10019544  | HASAN BASRI                    | 13-Nov-2026 06:51
+10020389  | MASBOS MANUEL VERIANTA         | 13-Nov-2026 06:46
+10022890  | AHMAD TEGAR FIRMANSYAH         | 13-Nov-2026 06:18
+10023576  | N.ROSLIANA MULYAWATI           | 13-Nov-2026 07:42
+10023755  | WINDRIYA RACHMASARI            | 13-Nov-2026 07:23
+10024164  | SAUMI NUR ROCHMANI             | 13-Nov-2026 07:24
+69499     | AFIF YULIAN                    | 13-Nov-2026 12:56
+70791     | YUSRIL LIZAM MALIKA            | 13-Nov-2026 12:56
+======================================================================
+
+Cost Center : WAREHOUSE - TEKNIK
+Sub-Total   : 1 Orang
+----------------------------------------------------------------------
+NRP       | NAMA KARYAWAN                  | CLOCK IN
+----------------------------------------------------------------------
+69503     | FADHLY NUR RAMADHAN            | 13-Nov-2026 07:24
+======================================================================
+
