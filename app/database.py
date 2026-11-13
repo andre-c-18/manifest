@@ -232,15 +232,16 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                     clean_name = "UNASSIGNED"
 
                 group_key = clean_name
-                final_id = raw_cc if raw_cc and raw_cc != clean_name else ""
+                final_id = group_key
                 final_name = clean_name
 
                 c_in_str = tap_time.strftime('%d-%b-%Y %H:%M') if isinstance(tap_time, datetime) else str(tap_time)
 
                 if group_key not in grouped:
                     grouped[group_key] = {
-                        'cost_center_id': final_id, 
-                        'cost_center_name': final_name, 
+                        'cost_center_id': final_id,
+                        'cost_center_code': raw_cc,
+                        'cost_center_name': final_name,
                         'employees': []
                     }
                 
@@ -254,7 +255,7 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
             for cc in grouped.values():
                 cc['employees'].sort(key=lambda x: x['id'])
 
-            sorted_grouped_list = sorted(list(grouped.values()), key=lambda x: x['cost_center_id'])
+            sorted_grouped_list = sorted(list(grouped.values()), key=lambda x: x['cost_center_name'])
 
             return {'data': sorted_grouped_list, 'source': 'database', 'error': None, 'date': target_date}
 

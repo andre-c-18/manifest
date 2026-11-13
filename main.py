@@ -45,7 +45,7 @@ app.add_middleware(
     SessionMiddleware,
     secret_key=SECRET_KEY,
     session_cookie="manifest_session",
-    max_age=7200  # 4 jam sesi aktif
+    max_age=28800  # 8 jam sesi aktif
 )
 
 def check_html_auth(request: Request):
@@ -66,21 +66,31 @@ def require_api_auth(request: Request):
 def filter_manifest_memory(data_list: list, cc_id: str = None, search: str = None) -> list:
     if not cc_id and not search:
         return data_list
+
     filtered_result = []
-    search_query = search.lower() if search else ""
+    search_query = search.strip().lower() if search else ""
+    safe_cc_id = str(cc_id).strip().upper() if cc_id else ""
+
     for group in data_list:
-        if cc_id and group["cost_center_id"] != cc_id: continue
+        group_cc_id = str(group.get("cost_center_id") or "").strip().upper()
+        if safe_cc_id and group_cc_id != safe_cc_id:
+            continue
+
         if search_query:
             matched_employees = [
                 emp for emp in group["employees"]
-                if search_query in emp["name"].lower() or search_query in emp["id"] or search_query in emp["department"].lower()
+                if search_query in emp["name"].lower()
+                or search_query in emp["id"].lower()
+                or search_query in emp["department"].lower()
             ]
-            if not matched_employees: continue
+            if not matched_employees:
+                continue
             filtered_group = group.copy()
             filtered_group["employees"] = matched_employees
             filtered_result.append(filtered_group)
         else:
             filtered_result.append(group)
+
     return filtered_result
 
 # ============================================================================
@@ -130,7 +140,7 @@ def index(request: Request, tag: str = Query("manifest"), date: str = Query(None
         "current_date": datetime.now().strftime("%Y%m%d"),
         "now_formatted": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "username": request.session.get("username", "Admin"),
-        "refresh_interval_seconds": UPDATE_INTERVAL_MINUTES
+        "refresh_interval_seconds": UPDATE_INTERVAL_MINUTES * 60
     })
 
 # ============================================================================

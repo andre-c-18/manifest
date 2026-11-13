@@ -340,7 +340,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    const refreshIntervalSeconds = parseInt("{{ refresh_interval_seconds }}") || 900;
+    const refreshIntervalSeconds = parseInt("{{ refresh_interval_seconds }}") || 10800;
     const refreshIntervalMs = refreshIntervalSeconds * 1000;
     let autoRefreshTimer = null;
     let currentManifestData = JSON.parse('{{ result.data | tojson | safe }}');
@@ -366,8 +366,12 @@
       let totalEmployeesCount = 0;
       let visibleGroups = 0;
 
+      const safeSelectedCC = selectedCostCenter ? String(selectedCostCenter).trim().toUpperCase() : "";
+
       currentManifestData.forEach(group => {
-        if (selectedCostCenter && group.cost_center_id !== selectedCostCenter) {
+        const safeGroupCC = String(group.cost_center_id || "").trim().toUpperCase();
+
+        if (safeSelectedCC !== "" && safeGroupCC !== safeSelectedCC) {
           return;
         }
 
@@ -375,7 +379,7 @@
           const q = filterKeyword.toLowerCase();
           return (
             emp.name.toLowerCase().includes(q) ||
-            emp.id.includes(q) ||
+            emp.id.toLowerCase().includes(q) ||
             emp.department.toLowerCase().includes(q)
           );
         });
@@ -430,7 +434,7 @@
         $container.append(groupCard);
       });
 
-      if (filterKeyword === "" && !selectedCostCenter) {
+      if (filterKeyword === "" && !safeSelectedCC) {
         $("#statTotalEmployees").text(totalEmployeesCount);
       }
 
@@ -450,8 +454,11 @@
       
       $select.find('option:not(:first)').remove();
       currentManifestData.forEach(g => {
-        const label = g.cost_center_name || g.cost_center_id;
-        $select.append(`<option value="${g.cost_center_id}">${label}</option>`);
+        const safeId = String(g.cost_center_id || "").trim();
+        const label = String(g.cost_center_name || safeId).trim();
+        if (!safeId) return;
+
+        $select.append($('<option></option>').val(safeId).text(label));
       });
 
       if (currentSelection) {
@@ -579,23 +586,28 @@
       });
 
       $("#btnPrintDirect").on("click", function() {
-        const filterKeyword = $("#searchInput").val().toLowerCase();
-        const selectedCostCenter = $("#costCenterFilter").val();
+        const filterKeyword = $("#searchInput").val().trim().toLowerCase();
+        const selectedCostCenter = $("#costCenterFilter").val();        
+        const safeSelectedCC = selectedCostCenter ? String(selectedCostCenter).trim().toUpperCase() : "";
         let filteredGroups = [];
         let grandTotal = 0;
 
         currentManifestData.forEach(group => {
-          if (selectedCostCenter && group.cost_center_id !== selectedCostCenter) return;
+          const safeGroupCC = String(group.cost_center_id || "").trim().toUpperCase();
+          if (safeSelectedCC !== "" && safeGroupCC !== safeSelectedCC) return;
+
           const filteredEmps = group.employees.filter(emp => {
             return (
               emp.name.toLowerCase().includes(filterKeyword) ||
-              emp.id.includes(filterKeyword) ||
+              String(emp.id).toLowerCase().includes(filterKeyword) ||
               emp.department.toLowerCase().includes(filterKeyword)
             );
           });
+
           if (filteredEmps.length > 0) {
             filteredGroups.push({
               cost_center_id: group.cost_center_id,
+              cost_center_code: group.cost_center_code || "",
               cost_center_name: group.cost_center_name,
               employees: filteredEmps
             });
@@ -622,6 +634,7 @@
           while (currentIndex < totalEmps) {
             pages.push({
               cost_center_id: group.cost_center_id,
+              cost_center_code: group.cost_center_code,
               cost_center_name: group.cost_center_name,
               sub_total: totalEmps,
               employees: emps.slice(currentIndex, currentIndex + MAX_ROWS_PER_PAGE)
@@ -685,6 +698,10 @@
 
         pages.forEach((pageData, index) => {
           const currentPageNum = index + 1;
+
+          const ccTitle = (pageData.cost_center_code && pageData.cost_center_code !== pageData.cost_center_name)
+            ? `${pageData.cost_center_code} - ${pageData.cost_center_name}`
+            : pageData.cost_center_name;
           
           htmlContent += `
           <div class="print-page">
@@ -695,7 +712,7 @@
             
             <div class="print-content">
               <pre>`;
-          htmlContent += `Cost Center : ${pageData.cost_center_id} - ${pageData.cost_center_name}\n`;
+          htmlContent += `Cost Center : ${ccTitle}\n`; // <--- DIUBAH: Gunakan ccTitle
           htmlContent += `Sub-Total   : ${pageData.sub_total} Orang\n`;
           htmlContent += `======================================================================\n`;
           htmlContent += `NRP       | NAMA KARYAWAN                  | CLOCK IN\n`;
