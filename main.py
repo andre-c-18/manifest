@@ -26,15 +26,16 @@ async def lifespan(app: FastAPI):
     logger.info(f"Menyalakan Scheduler (Interval: {interval_mins} menit)...")
     
     scheduler.add_job(
-        # generate_and_save_manifest_job,
-        # trigger="interval",
-        # minutes=interval_mins,
-        # next_run_time=datetime.now(),
-        # coalesce=True,
-        # misfire_grace_time=300,
-        # id="auto_manifest_job",
-        # replace_existing=True
+        generate_and_save_manifest_job,
+        trigger="interval",
+        minutes=interval_mins,
+        next_run_time=datetime.now(),
+        coalesce=True,
+        misfire_grace_time=300,
+        id="auto_manifest_job",
+        replace_existing=True
     )
+    
     scheduler.start()
     yield
     logger.info("Mematikan Scheduler...")

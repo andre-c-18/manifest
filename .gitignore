@@ -27,7 +27,7 @@ __pycache__
 *.sln
 *.sw?
 
-static/uploads/*
-!static/uploads/.gitkeep
+storage/manifests/*
+!storage/manifests/.gitkeep
 
 dist
