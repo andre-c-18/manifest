@@ -6,73 +6,107 @@ import logging
 
 logger = logging.getLogger("ManifestAPI.Database")
 
+
 def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -> Dict[str, Any]:
     if not target_date:
         target_date = datetime.now().strftime("%Y-%m-%d")
 
     try:
+        # ZERO-ZOMBIE CONNECTION POLICY: Satu koneksi singkat via Context Manager
         with engine.connect() as conn:
-            target_date_obj = datetime.strptime(target_date, '%Y-%m-%d')    
+            target_date_obj = datetime.strptime(target_date, '%Y-%m-%d')
             start_dt = target_date_obj.strftime('%Y-%m-%d 00:00:00')
             end_dt = (target_date_obj + timedelta(days=1)).strftime('%Y-%m-%d 08:59:59')
 
             # =========================================================================
-            # TAHAP 1: AMBIL DATA TERMINAL DULU
+            # TAHAP 1: PRE-SELECTION TERMINAL MASTER (HYBRID FILTERING)
             # =========================================================================
             q_term = text("""
-                SELECT node_id, UPPER(TRIM(COALESCE(direction, ''))) AS direction
+                SELECT 
+                    TRIM(COALESCE(server_loc, '')) AS server_loc,
+                    TRIM(COALESCE(node_id, '')) AS node_id,
+                    UPPER(TRIM(COALESCE(direction, ''))) AS direction
                 FROM `db-hr`.`terminal_master`
                 WHERE company_id = '1111' 
                   AND tags LIKE '%manifest%' COLLATE utf8mb4_general_ci
+                ORDER BY id ASC
             """)
             term_result = conn.execute(q_term).mappings().fetchall()
-            
+
             if not term_result:
                 return {'data': [], 'source': 'database', 'error': None, 'date': target_date}
-                
-            term_map = {str(r['node_id']).strip(): r['direction'] for r in term_result if r.get('node_id')}
+
+            term_map = {}
+            for r in term_result:
+                srv = str(r.get('server_loc') or '').strip()
+                n_id = str(r.get('node_id') or '').strip()
+                if not n_id:
+                    continue
+
+                full_node_id = f"{srv}-{n_id}" if srv else n_id
+
+                if full_node_id not in term_map:
+                    term_map[full_node_id] = r['direction']
+
+            if not term_map:
+                return {'data': [], 'source': 'database', 'error': None, 'date': target_date}
+
             term_in_clause = ", ".join(f"'{k}'" for k in term_map.keys())
 
             # =========================================================================
-            # TAHAP 2: AMBIL PURE TBL_TACTIVITIES
+            # TAHAP 2: AMBIL DATA DARI TBL_TACTIVITIES_STAGING_NON_ATTENDANCE
             # =========================================================================
             q_trans = text(f"""
                 SELECT 
-                    CARD_ID AS card_id,
-                    CLOCKING_DATE AS clock_in_time,
-                    TERMINAL_ID AS terminal_id
-                FROM `db-worksync`.`TBL_TACTIVITIES`
-                WHERE CLOCKING_DATE >= :start_dt 
-                  AND CLOCKING_DATE <= :end_dt
-                  AND TERMINAL_ID IN ({term_in_clause})
+                    card_id,
+                    employee_id,
+                    clocking_time AS clock_in_time,
+                    node_id,
+                    TRIM(COALESCE(direction, '')) AS raw_direction,
+                    TRIM(COALESCE(clocking_type, '')) AS clocking_type
+                FROM `db-webapps`.`TBL_TACTIVITIES_STAGING_NON_ATTENDANCE`
+                WHERE company_id = 1111
+                  AND clocking_time >= :start_dt 
+                  AND clocking_time <= :end_dt
+                  AND node_id IN ({term_in_clause})
             """)
 
             trans_result = conn.execute(q_trans, {
-                "start_dt": start_dt, 
+                "start_dt": start_dt,
                 "end_dt": end_dt
             }).mappings().fetchall()
-            
+
             if not trans_result:
                 return {'data': [], 'source': 'database', 'error': None, 'date': target_date}
 
             # =========================================================================
-            # LOGIKA SHIFT MALAM DI PYTHON
+            # LOGIKA SHIFT MALAM & RESOLUSI ARAH (IN / OUT) DI PYTHON
             # =========================================================================
             valid_taps = []
             card_set = set()
-            
+
             for row in trans_result:
-                term_id = str(row['terminal_id']).strip()
-                direction = term_map.get(term_id, '')
+                node_str = str(row['node_id']).strip()
+                # Prioritaskan arah dari terminal_master; fallback ke kolom direction ('0'=IN, '1'=OUT)
+                direction = term_map.get(node_str, '')
+                if not direction:
+                    raw_dir = str(row.get('raw_direction') or '').strip()
+                    direction = 'IN' if raw_dir == '0' else ('OUT' if raw_dir == '1' else '')
+
                 tap_time = row['clock_in_time']
-                
+                if not isinstance(tap_time, datetime):
+                    continue
+
+                # Tap OUT pukul 00:00 - 08:59 masuk ke perhitungan shift hari sebelumnya
                 if direction == 'OUT' and tap_time.hour <= 8:
                     calc_date = (tap_time - timedelta(days=1)).strftime('%Y-%m-%d')
                 else:
                     calc_date = tap_time.strftime('%Y-%m-%d')
-                    
+
                 if calc_date == target_date:
-                    card_str = str(row['card_id']).strip()
+                    card_str = str(row.get('card_id') or '').strip()
+                    if not card_str:
+                        continue
                     card_set.add(card_str)
                     valid_taps.append({
                         'card_id': card_str,
@@ -80,15 +114,14 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                         'direction': direction
                     })
 
-            if not valid_taps:
+            if not valid_taps or not card_set:
                 return {'data': [], 'source': 'database', 'error': None, 'date': target_date}
 
             card_in_clause = ", ".join(f"'{c}'" for c in card_set)
 
             # =========================================================================
-            # TAHAP 3: AMBIL MASTER KARYAWAN (GABUNGAN TETAP & OS)
+            # TAHAP 3: AMBIL MASTER COST CENTER & KARYAWAN (TETAP + OS)
             # =========================================================================
-            # 1. Ambil Master org_cost_center (Di-cache ke memori)
             q_occ = text("""
                 SELECT id, cost_center, org_name 
                 FROM `db-hr`.`org_cost_center`
@@ -96,7 +129,6 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
             """)
             occ_rows = conn.execute(q_occ).mappings().fetchall()
 
-            # Mapping O(1) di Python
             cc_by_id = {}
             cc_by_code = {}
 
@@ -107,12 +139,9 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
 
                 if r_id and r_name:
                     cc_by_id[r_id] = r_name
-
-                # Hanya ambil nilai pertama jika ada kode cost_center yang kembar
                 if r_code and r_code not in cc_by_code and r_name:
                     cc_by_code[r_code] = r_name
 
-            # 2. Ambil Master Karyawan Tetap
             q_tetap = text(f"""
                 SELECT 
                     card_no, 
@@ -126,7 +155,6 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
             """)
             tetap_rows = conn.execute(q_tetap).mappings().fetchall()
 
-            # 3. Ambil Master Karyawan OS (Ambil org_cc_id dan cost_center_id)
             q_os = text(f"""
                 SELECT 
                     card_number AS card_no, 
@@ -145,7 +173,7 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
             for r in tetap_rows:
                 if r.get('card_no'):
                     emp_map[str(r['card_no']).strip()] = dict(r)
-                    
+
             for r in os_rows:
                 if r.get('card_no'):
                     emp_map[str(r['card_no']).strip()] = dict(r)
@@ -153,7 +181,6 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
             # =========================================================================
             # TAHAP 4: FILTER ON-SITE (IN > OUT), RESOLUSI CC, & GROUPING
             # =========================================================================
-            # 1. Kumpulkan histori tap per karyawan
             emp_taps: Dict[str, Dict[str, Any]] = {}
 
             for tap in valid_taps:
@@ -161,7 +188,7 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                 emp_data = emp_map.get(c_id)
                 if not emp_data:
                     continue
-                
+
                 emp_id = str(emp_data.get('employee_id') or c_id).strip()
                 tap_time = tap['clock_in_time']
                 direction = tap.get('direction', '')
@@ -177,7 +204,6 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                 if direction == 'IN':
                     if emp_taps[emp_id]['min_in'] is None or tap_time < emp_taps[emp_id]['min_in']:
                         emp_taps[emp_id]['min_in'] = tap_time
-                    
                     if emp_taps[emp_id]['max_in'] is None or tap_time > emp_taps[emp_id]['max_in']:
                         emp_taps[emp_id]['max_in'] = tap_time
 
@@ -199,14 +225,13 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                             'clock_in_time': min_in
                         }
 
-            # 3. Format struktur grouping dengan nama dari org_cost_center
             grouped: Dict[str, Dict[str, Any]] = {}
 
             for emp_id, data in emp_active_on_site.items():
                 emp_data = data['emp_data']
                 tap_time = data['clock_in_time']
                 worker_type = emp_data.get('worker_category', 'TETAP')
-                
+
                 raw_cc = str(emp_data.get('cost_center') or '').strip()
                 raw_org_cc_id = str(emp_data.get('org_cc_id') or '').strip()
                 sub_company = str(emp_data.get('sub_company_name') or '').strip()
@@ -244,7 +269,7 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                         'cost_center_name': final_name,
                         'employees': []
                     }
-                
+
                 grouped[group_key]['employees'].append({
                     'department': final_name,
                     'id': emp_id,
@@ -260,7 +285,5 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
             return {'data': sorted_grouped_list, 'source': 'database', 'error': None, 'date': target_date}
 
     except Exception as e:
-        logger.error(f"DB Fetch Error: {str(e)}")
-        import traceback
-        traceback.print_exc()
+        logger.error(f"DB Fetch Error: {str(e)}", exc_info=True)
         return {'data': [], 'source': 'database_error', 'error': str(e), 'date': target_date}
