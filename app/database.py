@@ -1,28 +1,68 @@
-from sqlalchemy import text
-from typing import Dict, Any
-from app.config import engine
-from datetime import datetime
+import os
 import logging
+from logging.handlers import RotatingFileHandler
+from datetime import datetime, timedelta
+from typing import Dict, Any
+from sqlalchemy import text
+from app.config import engine
 
+# ============================================================================
+# 1. SETUP LOGGER & DEDICATED LOG FILE (OPSI A)
+# ============================================================================
 logger = logging.getLogger("ManifestAPI.Database")
 
-# Mapping alias node_id di tabel staging -> kode standar di terminal_master
+LOG_DIR = "logs"
+os.makedirs(LOG_DIR, exist_ok=True)
+
+auto_expire_logger = logging.getLogger("ManifestAPI.AutoExpire")
+auto_expire_logger.setLevel(logging.WARNING)
+
+if not auto_expire_logger.handlers:
+    log_file_path = os.path.join(LOG_DIR, "auto_expired.log")
+    rf_handler = RotatingFileHandler(
+        log_file_path, 
+        maxBytes=5 * 1024 * 1024, 
+        backupCount=5, 
+        encoding="utf-8"
+    )
+    formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
+    rf_handler.setFormatter(formatter)
+    auto_expire_logger.addHandler(rf_handler)
+
+_logged_auto_expired_cache = set()
+
 STAGING_NODE_ALIASES: Dict[str, str] = {
     "SY-112": "FING-112",
     "SY-113": "FING-113",
     "SY-114": "CRS-114",
 }
 
+MAX_STAY_HOURS = 14.0
 
+
+# ============================================================================
+# 2. FUNGSI UTAMA PENARIKAN DATA MANIFEST
+# ============================================================================
 def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -> Dict[str, Any]:
+    now_dt = datetime.now()
+    today_str = now_dt.strftime("%Y-%m-%d")
+
     if not target_date:
-        target_date = datetime.now().strftime("%Y-%m-%d")
+        target_date = today_str
+
+    is_today = (target_date == today_str)
 
     try:
-        # ZERO-ZOMBIE CONNECTION POLICY: Satu koneksi singkat via Context Manager
+        current_dt = datetime.strptime(target_date, "%Y-%m-%d")
+        prev_date = (current_dt - timedelta(days=1)).strftime("%Y-%m-%d")
+        
+        # Jendela Shift 3 hanya aktif jika melihat HARI INI dan masih dini hari (00:00 - 08:30)
+        include_prev_shift3 = is_today and (now_dt.hour < 8 or (now_dt.hour == 8 and now_dt.minute <= 30))
+        shift3_start_threshold = f"{prev_date} 20:00:00"
+
         with engine.connect() as conn:
             # =========================================================================
-            # TAHAP 1: PRE-SELECTION TERMINAL MASTER (SUMBER TUNGGAL DIRECTION IN/OUT)
+            # TAHAP 1: PRE-SELECTION TERMINAL MASTER
             # =========================================================================
             q_term = text("""
                 SELECT 
@@ -56,7 +96,6 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
             if not term_map:
                 return {'data': [], 'source': 'database', 'error': None, 'date': target_date}
 
-            # Sertakan alias Soyal ke klausa IN (...) jika kode masternya aktif bertag manifest
             query_nodes = set(term_map.keys())
             for staging_alias, master_node in STAGING_NODE_ALIASES.items():
                 if master_node in term_map:
@@ -65,8 +104,16 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
             term_in_clause = ", ".join(f"'{k.replace(chr(39), chr(39)*2)}'" for k in sorted(query_nodes))
 
             # =========================================================================
-            # TAHAP 2: AMBIL DATA TRANSAKSI (TANPA MEMBACA KOLOM DIRECTION STAGING)
+            # TAHAP 2: AMBIL TRANSAKSI (MENDUKUNG HARI INI & BACKDATE)
             # =========================================================================
+            if include_prev_shift3:
+                date_filter_sql = """
+                    (clocking_date = :target_date 
+                     OR (clocking_date = :prev_date AND clocking_time >= :shift3_threshold))
+                """
+            else:
+                date_filter_sql = "clocking_date = :target_date"
+
             q_trans = text(f"""
                 SELECT 
                     card_id,
@@ -75,19 +122,22 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                     node_id
                 FROM `db-webapps`.`TBL_TACTIVITIES_STAGING_NON_ATTENDANCE`
                 WHERE company_id = 1111
-                  AND clocking_date = :target_date
+                  AND {date_filter_sql}
                   AND node_id IN ({term_in_clause})
+                ORDER BY clocking_time ASC
             """)
 
             trans_result = conn.execute(q_trans, {
-                "target_date": target_date
+                "target_date": target_date,
+                "prev_date": prev_date,
+                "shift3_threshold": shift3_start_threshold
             }).mappings().fetchall()
 
             if not trans_result:
                 return {'data': [], 'source': 'database', 'error': None, 'date': target_date}
 
             # =========================================================================
-            # RESOLUSI ARAH 100% DARI TERMINAL_MASTER DI MEMORI PYTHON
+            # RESOLUSI ARAH DARI MEMORI PYTHON
             # =========================================================================
             valid_taps = []
             card_set = set()
@@ -96,7 +146,6 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                 raw_node = str(row.get('node_id') or '').strip().upper()
                 node_str = STAGING_NODE_ALIASES.get(raw_node, raw_node)
 
-                # Ambil direction murni dari term_map (tanpa fallback ke tabel transaksi)
                 direction = term_map.get(node_str)
                 if direction not in ('IN', 'OUT'):
                     continue
@@ -186,7 +235,7 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                     emp_map[str(r['card_no']).strip()] = dict(r)
 
             # =========================================================================
-            # TAHAP 4: FILTER ON-SITE (IN > OUT), RESOLUSI CC, & GROUPING
+            # TAHAP 4: FILTER KEHADIRAN (HARI INI VS BACKDATE)
             # =========================================================================
             emp_taps: Dict[str, Dict[str, Any]] = {}
 
@@ -220,18 +269,60 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
 
             emp_active_on_site: Dict[str, Dict[str, Any]] = {}
 
-            for emp_id, data in emp_taps.items():
-                min_in = data['min_in']
-                latest_in = data['max_in']
-                latest_out = data['max_out']
+            if is_today:
+                # -------------------------------------------------------------
+                # 🌟 KONDISI A: HARI INI (LIVE REAL-TIME ON-SITE)
+                # -------------------------------------------------------------
+                for emp_id, data in emp_taps.items():
+                    min_in = data['min_in']
+                    latest_in = data['max_in']
+                    latest_out = data['max_out']
 
-                if latest_in is not None:
-                    if latest_out is None or latest_in > latest_out:
+                    # Syarat On-Site Hari Ini:
+                    # 1. Pernah clock-in dan status terakhir BUKAN clock-out
+                    # 2. Tidak melampaui MAX_STAY_HOURS (14 jam)
+                    if latest_in is not None and (latest_out is None or latest_in > latest_out):
+                        duration_hours = (now_dt - latest_in).total_seconds() / 3600.0
+
+                        if duration_hours <= MAX_STAY_HOURS:
+                            emp_active_on_site[emp_id] = {
+                                'emp_data': data['emp_data'],
+                                'clock_in_time': min_in
+                            }
+                        else:
+                            # Catat overstay hari ini ke file logs/auto_expired.log
+                            cache_key = f"{target_date}_{emp_id}_{latest_in.strftime('%Y%m%d%H%M%S')}"
+                            if cache_key not in _logged_auto_expired_cache:
+                                _logged_auto_expired_cache.add(cache_key)
+                                emp_name = data['emp_data'].get('employee_name', 'UNKNOWN')
+                                cc_name = data['emp_data'].get('cost_center', '-')
+                                worker_cat = data['emp_data'].get('worker_category', '-')
+
+                                auto_expire_logger.warning(
+                                    f"ACTION=AUTO_EXPIRE | NRP={emp_id} | Name={emp_name} | "
+                                    f"Type={worker_cat} | CC={cc_name} | Last_Clock_In={latest_in.strftime('%Y-%m-%d %H:%M:%S')} | "
+                                    f"Stay_Duration={duration_hours:.2f}h | Reason=No Tap-Out > {MAX_STAY_HOURS}h"
+                                )
+            else:
+                # -------------------------------------------------------------
+                # 🌙 KONDISI B: BACKDATE (ON-SITE AKHIR HARI / EOD 23:59:59)
+                # -------------------------------------------------------------
+                # Hanya mengambil karyawan yang status tapping terakhirnya pada tanggal
+                # tersebut adalah IN (belum pernah tapping OUT hingga hari berganti)
+                for emp_id, data in emp_taps.items():
+                    min_in = data['min_in']
+                    latest_in = data['max_in']
+                    latest_out = data['max_out']
+
+                    if latest_in is not None and (latest_out is None or latest_in > latest_out):
                         emp_active_on_site[emp_id] = {
                             'emp_data': data['emp_data'],
                             'clock_in_time': min_in
                         }
 
+            # =========================================================================
+            # TAHAP 5: GROUPING PER COST CENTER
+            # =========================================================================
             grouped: Dict[str, Dict[str, Any]] = {}
 
             for emp_id, data in emp_active_on_site.items():

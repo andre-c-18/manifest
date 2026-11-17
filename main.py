@@ -9,7 +9,7 @@ import uvicorn
 import logging
 import os
 
-from app.config import (APP_HOST, APP_PORT, SECRET_KEY, ADMIN_USER, ADMIN_USER_HASH,UPDATE_INTERVAL_MINUTES)
+from app.config import (APP_HOST, APP_PORT, SECRET_KEY, ADMIN_USER, ADMIN_USER_HASH, UPDATE_INTERVAL_MINUTES)
 from app.database import fetch_active_clocking_data
 from app.generator import build_txt_manifest_content
 from app.tasks import generate_and_save_manifest_job, STORAGE_DIR 
@@ -22,23 +22,25 @@ scheduler = BackgroundScheduler()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    interval_mins = int(UPDATE_INTERVAL_MINUTES)
-    logger.info(f"Menyalakan Scheduler (Interval: {interval_mins} menit)...")
+    logger.info("Menyalakan Enterprise Task Scheduler...")
     
     scheduler.add_job(
         generate_and_save_manifest_job,
-        trigger="interval",
-        minutes=interval_mins,
-        next_run_time=datetime.now(),
-        coalesce=True,
+        trigger="cron",
+        hour="*",          # Setiap jam
+        minute=0,          # Tepat di menit ke-0
+        coalesce=True,     # Gabungkan eksekusi jika ada keterlambatan sistem
         misfire_grace_time=300,
-        id="auto_manifest_job",
+        id="auto_manifest_job_cron",
         replace_existing=True
     )
     
+    # Catatan: Jika di kemudian hari Anda ingin mengembalikan ke dinamis per 'n' menit 
+    # berdasarkan file .env, Anda bisa menggunakan trigger="cron" dengan minute=f"*/{UPDATE_INTERVAL_MINUTES}"
+    
     scheduler.start()
     yield
-    logger.info("Mematikan Scheduler...")
+    logger.info("Mematikan Task Scheduler dengan aman...")
     scheduler.shutdown(wait=False)
 
 app = FastAPI(title="Live Clocking Manifest", lifespan=lifespan)
@@ -54,17 +56,13 @@ app.add_middleware(
     max_age=28800  # 8 jam sesi aktif
 )
 
-def check_html_auth(request: Request):
+def check_html_auth(request: Request) -> bool:
     """Helper untuk proteksi halaman HTML (Redirect jika belum login)"""
-    if not request.session.get("authenticated"):
-        return False
-    return True
+    return bool(request.session.get("authenticated"))
 
-def require_api_auth(request: Request):
+def require_api_auth(request: Request) -> bool:
     """Dependency untuk proteksi Endpoint API (Return 401 jika belum login)"""
-    if not request.session.get("authenticated"):
-        return False
-    return True
+    return bool(request.session.get("authenticated"))
 
 # ============================================================================
 # HELPER: In-Memory Filtering 
@@ -84,10 +82,10 @@ def filter_manifest_memory(data_list: list, cc_id: str = None, search: str = Non
 
         if search_query:
             matched_employees = [
-                emp for emp in group["employees"]
-                if search_query in emp["name"].lower()
-                or search_query in emp["id"].lower()
-                or search_query in emp["department"].lower()
+                emp for emp in group.get("employees", [])
+                if search_query in emp.get("name", "").lower()
+                or search_query in str(emp.get("id", "")).lower()
+                or search_query in emp.get("department", "").lower()
             ]
             if not matched_employees:
                 continue
@@ -104,14 +102,12 @@ def filter_manifest_memory(data_list: list, cc_id: str = None, search: str = Non
 # ============================================================================
 @app.get("/login", response_class=HTMLResponse)
 def login_page(request: Request):
-    """Menampilkan Halaman Login"""
-    if request.session.get("authenticated"):
+    if check_html_auth(request):
         return RedirectResponse(url="/", status_code=status.HTTP_302_FOUND)
     return templates.TemplateResponse("login.html", {"request": request})
 
 @app.post("/login")
 def login_submit(request: Request, username: str = Form(...), password: str = Form(...)):
-    
     if username == ADMIN_USER and ADMIN_USER_HASH and verify_password(password, ADMIN_USER_HASH):        
         request.session.clear()         
         request.session["authenticated"] = True
@@ -130,13 +126,12 @@ def logout(request: Request):
 
 @app.get("/", response_class=HTMLResponse)
 def index(request: Request, tag: str = Query("manifest"), date: str = Query(None)):
-    # 🌟 PROTEKSI HALAMAN
     if not check_html_auth(request):
         return RedirectResponse(url="/login", status_code=status.HTTP_302_FOUND)
 
     result = fetch_active_clocking_data(tag=tag, target_date=date)
     selected_date = result.get("date")
-    safe_date_display = datetime.strptime(selected_date, "%Y-%m-%d").strftime("%d %b %Y")
+    safe_date_display = datetime.strptime(selected_date, "%Y-%m-%d").strftime("%d %b %Y") if selected_date else ""
     
     return templates.TemplateResponse("index.html", {
         "request": request,
@@ -154,23 +149,27 @@ def index(request: Request, tag: str = Query("manifest"), date: str = Query(None
 # ============================================================================
 @app.get("/api/data")
 def api_data(request: Request, tag: str = Query("manifest"), date: str = Query(None)):
-    if not require_api_auth(request): return JSONResponse(status_code=401, content={"error": "Unauthorized"})
+    if not require_api_auth(request): 
+        return JSONResponse(status_code=401, content={"error": "Unauthorized"})
     
     result = fetch_active_clocking_data(tag=tag, target_date=date)
-    http_status = status.HTTP_200_OK if not result["error"] else status.HTTP_206_PARTIAL_CONTENT
+    http_status = status.HTTP_200_OK if not result.get("error") else status.HTTP_206_PARTIAL_CONTENT
     return JSONResponse(status_code=http_status, content={
-        "status": http_status, "source": result["source"],
-        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "data": result["data"]
+        "status": http_status, 
+        "source": result.get("source"),
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 
+        "data": result.get("data")
     })
 
 @app.get("/download_txt")
 def download_txt(request: Request, tag: str = Query("manifest"), date: str = Query(None), cc_id: str = Query(None), search: str = Query(None)):
-    if not require_api_auth(request): return HTMLResponse("Unauthorized", status_code=401)
+    if not require_api_auth(request): 
+        return HTMLResponse("Unauthorized", status_code=401)
     
     result = fetch_active_clocking_data(tag=tag, target_date=date)
-    filtered_data = filter_manifest_memory(result["data"], cc_id, search)
+    filtered_data = filter_manifest_memory(result.get("data", []), cc_id, search)
     txt_content = build_txt_manifest_content(filtered_data)
-    safe_date_file = result['date'].replace('-', '')
+    safe_date_file = result.get('date', '').replace('-', '')
     
     return Response(
         content=txt_content, media_type="text/plain; charset=utf-8",
@@ -179,10 +178,11 @@ def download_txt(request: Request, tag: str = Query("manifest"), date: str = Que
 
 @app.get("/raw_txt", response_class=PlainTextResponse)
 def raw_txt(request: Request, tag: str = Query("manifest"), date: str = Query(None), cc_id: str = Query(None), search: str = Query(None)):
-    if not require_api_auth(request): return PlainTextResponse("Unauthorized", status_code=401)
+    if not require_api_auth(request): 
+        return PlainTextResponse("Unauthorized", status_code=401)
     
     result = fetch_active_clocking_data(tag=tag, target_date=date)
-    filtered_data = filter_manifest_memory(result["data"], cc_id, search)
+    filtered_data = filter_manifest_memory(result.get("data", []), cc_id, search)
     return build_txt_manifest_content(filtered_data)
 
 # ============================================================================
@@ -190,30 +190,24 @@ def raw_txt(request: Request, tag: str = Query("manifest"), date: str = Query(No
 # ============================================================================
 @app.post("/api/trigger-manifest")
 def trigger_manifest_generation(request: Request, background_tasks: BackgroundTasks):
-    if not require_api_auth(request): return JSONResponse(status_code=401, content={"error": "Unauthorized"})
+    if not require_api_auth(request): 
+        return JSONResponse(status_code=401, content={"error": "Unauthorized"})
+    
     background_tasks.add_task(generate_and_save_manifest_job)
     return JSONResponse(status_code=202, content={"message": "Proses pembentukan manifest fisik berjalan di background."})
 
 @app.get("/api/download-arsip")
 def download_arsip(request: Request, date: str = Query(..., description="Format YYYY-MM-DD")):
-    if not require_api_auth(request): return HTMLResponse("Unauthorized", status_code=401)
+    if not require_api_auth(request): 
+        return HTMLResponse("Unauthorized", status_code=401)
     
     safe_date_file = date.replace('-', '')
     filename = f"manifest_karyawan_{safe_date_file}.txt"
     filepath = os.path.join(STORAGE_DIR, filename)
 
-    if os.path.exists(filepath): return FileResponse(path=filepath, filename=filename, media_type='text/plain')
+    if os.path.exists(filepath): 
+        return FileResponse(path=filepath, filename=filename, media_type='text/plain')
     return JSONResponse(status_code=404, content={"error": f"File {filename} belum dibentuk oleh sistem."})
-
-# ============================================================================
-# ENDPOINT MANAJEMEN BACKGROUND TASKS & ARSIP (Terlindungi)
-# ============================================================================
-@app.post("/api/trigger-manifest")
-def trigger_manifest_generation(request: Request, background_tasks: BackgroundTasks):
-    if not require_api_auth(request):
-        return JSONResponse(status_code=401, content={"error": "Unauthorized"})
-    background_tasks.add_task(generate_and_save_manifest_job)
-    return JSONResponse(status_code=202, content={"message": "Proses pembentukan manifest fisik berjalan di background."})
 
 @app.get("/api/arsip-list")
 def list_arsip_files(request: Request):
@@ -228,17 +222,14 @@ def list_arsip_files(request: Request):
         if fname.endswith(".txt") and fname.startswith("manifest_karyawan_"):
             fpath = os.path.join(STORAGE_DIR, fname)
             mtime = datetime.fromtimestamp(os.path.getmtime(fpath)).strftime("%Y-%m-%d %H:%M:%S")
-            
             raw_str = fname.replace("manifest_karyawan_", "").replace(".txt", "")
             parts = raw_str.split("_")
-            
             formatted_date = ""
             file_time = ""
             
             if len(parts) >= 1 and len(parts[0]) == 8:
                 d = parts[0]
                 formatted_date = f"{d[:4]}-{d[4:6]}-{d[6:8]}"
-            
             if len(parts) == 2 and len(parts[1]) == 4:
                 t = parts[1]
                 file_time = f"{t[:2]}:{t[2:]}"
@@ -257,7 +248,7 @@ def download_arsip_direct(request: Request, filename: str = Query(...)):
     """Mengunduh file arsip spesifik berdasarkan nama file (termasuk jam)"""
     if not require_api_auth(request):
         return HTMLResponse("Unauthorized", status_code=401)
-    
+        
     # Proteksi Path Traversal: hanya izinkan file .txt langsung di dalam STORAGE_DIR
     if not filename.endswith(".txt") or ".." in filename or "/" in filename or "\\" in filename:
         return JSONResponse(status_code=403, content={"error": "Akses dilarang. Nama file tidak valid."})
@@ -266,7 +257,6 @@ def download_arsip_direct(request: Request, filename: str = Query(...)):
 
     if os.path.exists(filepath):
         return FileResponse(path=filepath, filename=filename, media_type="text/plain")
-        
     return JSONResponse(status_code=404, content={"error": f"File {filename} tidak ditemukan di server."})
 
 if __name__ == "__main__":
