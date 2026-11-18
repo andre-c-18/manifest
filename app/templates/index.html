@@ -1,821 +1,1338 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Manifest Karyawan On-Site</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  
-  <style>
-    :root {
-      --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #0f4c81 100%);
-      --accent-color: #0284c7;
-    }
-    body {
-      background-color: #f1f5f9;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: #1e293b;
-      font-size: small;
-    }
-    .top-header {
-      background: var(--primary-gradient);
-      color: #ffffff;
-    }
-    .badge-onsite {
-      background-color: #10b981;
-      color: white;
-      font-weight: 500;
-    }
-    .nav-tabs .nav-link {
-      font-weight: 600;
-      color: #64748b;
-      border: none;
-      border-bottom: 3px solid transparent;
-      padding: 12px 20px;
-    }
-    .nav-tabs .nav-link.active {
-      color: var(--accent-color);
-      border-bottom: 3px solid var(--accent-color);
-      background: transparent;
-    }
-    .cost-center-header {
-      background-color: #f8fafc;
-      border-left: 4px solid var(--accent-color);
-    }
-    .table-hover tbody tr:hover {
-      background-color: #f8fafc;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Manifest Karyawan On-Site</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #0f4c81 100%);
+            --accent-color: #0284c7;
+        }
+        body {
+            background-color: #f1f5f9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            color: #1e293b;
+            font-size: small;
+        }
+        .top-header {
+            background: var(--primary-gradient);
+            color: #ffffff;
+        }
+        .badge-onsite {
+            background-color: #10b981;
+            color: white;
+            font-weight: 500;
+        }
+        .nav-tabs .nav-link {
+            font-weight: 600;
+            color: #64748b;
+            border: none;
+            border-bottom: 3px solid transparent;
+            padding: 12px 20px;
+        }
+        .nav-tabs .nav-link.active {
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+            background: transparent;
+        }
+        .cost-center-header {
+            background-color: #f8fafc;
+            border-left: 4px solid var(--accent-color);
+        }
+        .table-hover tbody tr:hover {
+            background-color: #f8fafc;
+        }
+        
+        /* Gaya khusus Baris Checklist Evakuasi */
+        .evac-row-missing {
+            background-color: #fef2f2 !important;
+            border-left: 4px solid #ef4444;
+            transition: all 0.2s ease;
+        }
+        .evac-row-safe {
+            background-color: #f0fdf4 !important;
+            border-left: 4px solid #22c55e;
+            transition: all 0.2s ease;
+        }
+        .evac-row-away {
+            background-color: #f8fafc !important;
+            border-left: 4px solid #64748b;
+            color: #64748b;
+            opacity: 0.8;
+            transition: all 0.2s ease;
+        }
+        
+        .evac-checkbox {
+            width: 1.5rem;
+            height: 1.5rem;
+            cursor: pointer;
+        }
 
-    @media print {
-      .top-header, 
-      .nav-tabs, 
-      .input-group, 
-      #target_date, 
-      #costCenterFilter,
-      #btnRefresh, 
-      #btnDownloadDirect, 
-      #btnPrintDirect, 
-      #actionToast,
-      .card-header:not(.cost-center-header),
-      .col-md-3 > .card {
-        display: none !important;
-      }
-
-      body {
-        background-color: #ffffff !important;
-        font-size: 11pt !important;
-      }
-      .container-fluid {
-        padding: 0 !important;
-      }
-
-      .card {
-        border: none !important;
-        box-shadow: none !important;
-        margin-bottom: 2rem !important;
-        page-break-inside: avoid !important;
-      }
-
-      * {
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-      }
-
-      #table-view::before {
-        content: "LIVE MANIFEST KARYAWAN ON-SITE";
-        display: block;
-        text-align: center;
-        font-size: 18pt;
-        font-weight: bold;
-        margin-bottom: 20px;
-        color: #000;
-        border-bottom: 2px solid #000;
-        padding-bottom: 10px;
-      }
-    }
-
-    #btnJumpToTop {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      z-index: 1050;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: var(--primary-gradient);
-      color: #ffffff;
-      border: none;
-      box-shadow: 0 4px 10px rgba(15, 76, 129, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-
-    #btnJumpToTop.show {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    #btnJumpToTop:hover {
-      background: var(--accent-color);
-      transform: translateY(-3px);
-    }
-
-    @media (max-width: 768px) {
-      body {
-        font-size: 12px;
-      }
-      .top-header h1 {
-        font-size: 1.25rem;
-      }
-      .card-body {
-        padding: 1rem;
-      }
-      .card-body h3 {
-        font-size: 1.5rem;
-      }
-      .tab-pane .row.g-3 {
-        margin-bottom: 1rem !important;
-      }
-      .table-responsive {
-        border: 0;
-      }
-      .table th:nth-child(1), .table td:nth-child(1) {
-        max-width: 120px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-      .dropdown-toggle, .btn {
-        padding: 8px 12px;
-      }
-    }
-  </style>
+        @media print {
+            .top-header, 
+            .nav-tabs, 
+            .input-group, 
+            #target_date, 
+            #costCenterFilter,
+            #btnRefresh, 
+            #btnDownloadDirect, 
+            #btnPrintDirect, 
+            #actionToast,
+            .card-header:not(.cost-center-header),
+            .col-md-3 > .card {
+                display: none !important;
+            }
+            
+            body {
+                background-color: #ffffff !important;
+                font-size: 11pt !important;
+            }
+            .container-fluid {
+                padding: 0 !important;
+            }
+            
+            .card {
+                border: none !important;
+                box-shadow: none !important;
+                margin-bottom: 2rem !important;
+                page-break-inside: avoid !important;
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            #table-view::before {
+                content: "LIVE MANIFEST KARYAWAN ON-SITE";
+                display: block;
+                text-align: center;
+                font-size: 18pt;
+                font-weight: bold;
+                margin-bottom: 20px;
+                color: #000;
+                border-bottom: 2px solid #000;
+                padding-bottom: 10px;
+            }
+        }
+        
+        #btnJumpToTop {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1050;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 10px rgba(15, 76, 129, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        #btnJumpToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        #btnJumpToTop:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                font-size: 12px;
+            }
+            .top-header h1 {
+                font-size: 1.25rem;
+            }
+            .card-body {
+                padding: 1rem;
+            }
+            .card-body h3 {
+                font-size: 1.5rem;
+            }
+            .tab-pane .row.g-3 {
+                margin-bottom: 1rem !important;
+            }
+            .table-responsive {
+                border: 0;
+            }
+            .table th:nth-child(1), .table td:nth-child(1) {
+                max-width: 120px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .dropdown-toggle, .btn {
+                padding: 8px 12px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <header class="top-header py-3 px-4 shadow-sm mb-4">
-    <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center">
-      <div class="d-flex align-items-center gap-3">
-        <i class="bi bi-clock-history fs-2 text-warning"></i>
-        <div>
-          <h1 class="h4 mb-0 fw-bold">Manifest Karyawan</h1>
-          <small class="opacity-75">Sistem Monitoring Karyawan On-Site</small>
-        </div>
-      </div>
-      <!-- DIUBAH: Hapus duplikasi id="currentClock" -->
-      <div class="d-flex align-items-center gap-3 mt-2 mt-md-0">
-        <span class="text-white-50 small" id="currentClock"></span>
-        <div class="dropdown">
-          <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
-            <i class="bi bi-person-circle me-1"></i> {{ username }}
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
-            <li><a class="dropdown-item text-danger fw-semibold" href="/logout"><i class="bi bi-box-arrow-right me-2"></i>Keluar</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>    
-  </header>
-
-  <div class="container-fluid px-4 pb-5">
-    <div class="row g-3 mb-4">
-      <div class="col-md-3">
-        <div class="card border-0 shadow-sm rounded-3">
-          <div class="card-body d-flex justify-content-between align-items-center">
-            <div>
-              <p class="text-muted text-uppercase mb-1 small fw-semibold">Total Karyawan On-Site</p>
-              <h3 class="fw-bold mb-0 text-primary" id="statTotalEmployees">0</h3>
-            </div>
-            <div class="p-3 bg-primary-subtle text-primary rounded-circle">
-              <i class="bi bi-people-fill fs-4"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card border-0 shadow-sm rounded-3">
-          <div class="card-body d-flex justify-content-between align-items-center">
-            <div>
-              <p class="text-muted text-uppercase mb-1 small fw-semibold">Jumlah Cost Center</p>
-              <h3 class="fw-bold mb-0 text-info" id="statCostCenters">{{ result.data|length }}</h3>
-            </div>
-            <div class="p-3 bg-info-subtle text-info rounded-circle">
-              <i class="bi bi-building fs-4"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card border-0 shadow-sm rounded-3">
-          <div class="card-body d-flex justify-content-between align-items-center">
-            <div>
-              <p class="text-muted text-uppercase mb-1 small fw-semibold">Manifest Hari Ini</p>
-              <h6 class="fw-bold mb-0 text-secondary" id="uiFileName">manifest_karyawan_{{ current_date }}.txt</h6>
-            </div>
-            <div class="p-3 bg-light rounded-circle">
-              <i class="bi bi-file-earmark-text fs-4 text-secondary"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card border-0 shadow-sm rounded-3">
-      <div class="card-header bg-white border-bottom pt-2 pb-0 px-4">
-        <ul class="nav nav-tabs border-0" id="mainTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="table-tab" data-bs-toggle="tab" data-bs-target="#table-view" type="button" role="tab">
-              <i class="bi bi-table me-2"></i>Tabel
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="manifest-tab" data-bs-toggle="tab" data-bs-target="#manifest-view" type="button" role="tab">
-              <i class="bi bi-folder2-open me-2"></i>Arsip File
-            </button>
-          </li>
-        </ul>
-      </div>
-
-      <div class="card-body p-4">
-        <div class="tab-content" id="mainTabContent">
-
-          <!-- TAB 1: INTERACTIVE TABLE VIEW -->
-          <div class="tab-pane fade show active" id="table-view" role="tabpanel">
-            <div class="row g-3 mb-4 align-items-center">
-              <div class="col-md-3">
-                <div class="input-group">
-                  <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
-                  <input type="text" id="searchInput" class="form-control border-start-0 ps-0" placeholder="Cari Nama atau NRP...">
+  
+    <header class="top-header py-3 px-4 shadow-sm mb-4">
+        <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-clock-history fs-2 text-warning"></i>
+                <div>
+                    <h1 class="h4 mb-0 fw-bold">Manifest Karyawan</h1>
+                    <small class="opacity-75">Sistem Monitoring Karyawan On-Site</small>
                 </div>
-              </div>
-              <div class="col-md-3">
-                <!-- DIUBAH: Sinkronisasi tanggal awal dari server -->
-                <input type="date" id="target_date" class="form-control" value="{{ selected_date }}">
-              </div>
-              <div class="col-md-3">
-                <select id="costCenterFilter" class="form-select">
-                  <option value="">Semua Cost Center</option>
-                </select>
-              </div>
-              <div class="col-md-3 d-flex gap-2 justify-content-md-end">
-                <button class="btn btn-outline-secondary d-flex align-items-center gap-2" id="btnRefresh">
-                  <i class="bi bi-arrow-clockwise"></i> Refresh
-                </button>
-                <button class="btn btn-success d-flex align-items-center gap-2 shadow-sm" id="btnPrintDirect">
-                  <i class="bi bi-printer"></i> Print Table
-                </button>
-              </div>
             </div>
-
-            <div id="costCenterGroupsContainer"></div>
-          </div>
-
-          <!-- TAB 2: ARSIP FILE OTOMATIS (PER 3 JAM) -->
-          <div class="tab-pane fade" id="manifest-view" role="tabpanel"> 
-            <div class="table-responsive">
-              <table class="table table-hover align-middle">
-                <thead class="table-light">
-                  <tr>
-                    <th scope="col" style="width: 55%;">Nama File Arsip</th>
-                    <th scope="col">Waktu Terbentuk</th>
-                    <th scope="col" class="text-end">Aksi</th>
-                  </tr>
-                </thead>
-                <!-- DIUBAH: Diisi otomatis oleh loadArchiveFiles() dari /api/arsip-list -->
-                <tbody id="fileIndexTableBody">
-                  <tr>
-                    <td colspan="3" class="text-center py-4 text-muted">
-                      <span class="spinner-border spinner-border-sm me-2"></span>Memuat daftar file arsip...
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="d-flex align-items-center gap-3 mt-2 mt-md-0">
+                <span class="text-white-50 small" id="currentClock"></span>
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle me-1"></i> {{ username }}
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
+                        <li><a class="dropdown-item text-danger fw-semibold" href="/logout"><i class="bi bi-box-arrow-right me-2"></i>Keluar</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-
+        </div>    
+    </header>
+  
+    <div class="container-fluid px-4 pb-5">
+        <div class="row g-3 mb-4">
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm rounded-3">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="text-muted text-uppercase mb-1 small fw-semibold">Total Karyawan On-Site</p>
+                            <h3 class="fw-bold mb-0 text-primary" id="statTotalEmployees">0</h3>
+                        </div>
+                        <div class="p-3 bg-primary-subtle text-primary rounded-circle">
+                            <i class="bi bi-people-fill fs-4"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm rounded-3">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="text-muted text-uppercase mb-1 small fw-semibold">Jumlah Cost Center</p>
+                            <h3 class="fw-bold mb-0 text-info" id="statCostCenters">{{ result.data|length }}</h3>
+                        </div>
+                        <div class="p-3 bg-info-subtle text-info rounded-circle">
+                            <i class="bi bi-building fs-4"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm rounded-3">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="text-muted text-uppercase mb-1 small fw-semibold">Manifest Hari Ini</p>
+                            <h6 class="fw-bold mb-0 text-secondary" id="uiFileName">manifest_karyawan_{{ current_date }}.txt</h6>
+                        </div>
+                        <div class="p-3 bg-light rounded-circle">
+                            <i class="bi bi-file-earmark-text fs-4 text-secondary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast Notification -->
-  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
-    <div id="actionToast" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body" id="toastMessage">Pesan notifikasi</div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const refreshIntervalSeconds = parseInt("{{ refresh_interval_seconds }}") || 10800;
-    const refreshIntervalMs = refreshIntervalSeconds * 1000;
-    let autoRefreshTimer = null;
-    let currentManifestData = JSON.parse('{{ result.data | tojson | safe }}');
-
-    function showNotification(msg) {
-      $('#toastMessage').text(msg);
-      const toast = new bootstrap.Toast(document.getElementById('actionToast'));
-      toast.show();
-    }
-
-    function updateLiveClock() {
-      const now = new Date();
-      const opts = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-      $('#currentClock').text(now.toLocaleDateString('id-ID', opts));
-    }
-
-    setInterval(updateLiveClock, 1000);
-    updateLiveClock();
-
-    function renderTableGroups(filterKeyword = "", selectedCostCenter = "") {
-      const $container = $("#costCenterGroupsContainer");
-      $container.empty();
-      let totalEmployeesCount = 0;
-      let visibleGroups = 0;
-
-      const safeSelectedCC = selectedCostCenter ? String(selectedCostCenter).trim().toUpperCase() : "";
-
-      currentManifestData.forEach(group => {
-        const safeGroupCC = String(group.cost_center_id || "").trim().toUpperCase();
-
-        if (safeSelectedCC !== "" && safeGroupCC !== safeSelectedCC) {
-          return;
-        }
-
-        const filtered = group.employees.filter(emp => {
-          const q = filterKeyword.toLowerCase();
-          return (
-            emp.name.toLowerCase().includes(q) ||
-            String(emp.id).toLowerCase().includes(q) ||
-            emp.department.toLowerCase().includes(q)
-          );
-        });
-
-        if (filtered.length === 0 && filterKeyword !== "") {
-          return;
-        }
-
-        visibleGroups++;
-        totalEmployeesCount += filtered.length;
-
-        let rowsHtml = "";
-        filtered.forEach(emp => {
-          rowsHtml += `
-            <tr>
-              <td class="fw-medium text-dark">${emp.department}</td>
-              <td><span class="badge bg-light text-dark font-monospace border">${emp.id}</span></td>
-              <td class="fw-semibold">${emp.name}</td>
-              <td><span class="text-success fw-semibold"><i class="bi bi-box-arrow-in-right me-1"></i>${emp.clock_in}</span></td>
-              <td class="text-end"><span class="badge badge-onsite px-2 py-1"><i class="bi bi-geo-alt-fill me-1"></i>On-Site</span></td>
-            </tr>
-          `;
-        });
-
-        const groupCard = `
-          <div class="card border mb-4 shadow-sm rounded-3 overflow-hidden">
-            <div class="card-header cost-center-header py-3 d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center gap-2">
-                <i class="bi bi-diagram-3-fill text-primary"></i>
-                <span class="fw-bold text-dark">Cost Center : ${group.cost_center_name}</span>
-              </div>
-              <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 fw-bold">${filtered.length} Karyawan</span>
+  
+        <div class="card border-0 shadow-sm rounded-3">
+            <div class="card-header bg-white border-bottom pt-2 pb-0 px-4">
+                <ul class="nav nav-tabs border-0" id="mainTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="table-tab" data-bs-toggle="tab" data-bs-target="#table-view" type="button" role="tab">
+                            <i class="bi bi-table me-2"></i>Tabel
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="manifest-tab" data-bs-toggle="tab" data-bs-target="#manifest-view" type="button" role="tab">
+                            <i class="bi bi-folder2-open me-2"></i>Arsip File
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link text-danger fw-bold" id="evacuation-tab" data-bs-toggle="tab" data-bs-target="#evacuation-view" type="button" role="tab">
+                            <i class="bi bi-shield-exclamation me-2"></i>Ceklist Evakuasi
+                        </button>
+                    </li>
+                </ul>
             </div>
-            <div class="table-responsive">
-              <table class="table table-hover align-middle mb-0">
-                <thead class="table-light small text-uppercase text-secondary">
-                  <tr>
-                    <th style="width: 25%;">DEPARTMENT</th>
-                    <th style="width: 15%;">EMPLOYEE ID</th>
-                    <th style="width: 30%;">NAMA KARYAWAN</th>
-                    <th style="width: 20%;">CLOCKING IN</th>
-                    <th style="width: 10%;" class="text-end">STATUS</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  ${rowsHtml.length > 0 ? rowsHtml : '<tr><td colspan="5" class="text-center text-muted py-3">Tidak ada data</td></tr>'}
-                </tbody>
-              </table>
+  
+            <div class="card-body p-4">
+                <div class="tab-content" id="mainTabContent">
+  
+                    <!-- TAB 1: INTERACTIVE TABLE VIEW -->
+                    <div class="tab-pane fade show active" id="table-view" role="tabpanel">
+                        <div class="row g-3 mb-4 align-items-center">
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+                                    <input type="text" id="searchInput" class="form-control border-start-0 ps-0" placeholder="Cari Nama atau NRP...">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="date" id="target_date" class="form-control" value="{{ selected_date }}">
+                            </div>
+                            <div class="col-md-3">
+                                <select id="costCenterFilter" class="form-select">
+                                    <option value="">Semua Cost Center</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 d-flex gap-2 justify-content-md-end">
+                                <button class="btn btn-outline-secondary d-flex align-items-center gap-2" id="btnRefresh">
+                                    <i class="bi bi-arrow-clockwise"></i> Refresh
+                                </button>
+                                <button class="btn btn-success d-flex align-items-center gap-2 shadow-sm" id="btnPrintDirect">
+                                    <i class="bi bi-printer"></i> Print Table
+                                </button>
+                            </div>
+                        </div>
+                        <div id="costCenterGroupsContainer"></div>
+                    </div>
+  
+                    <!-- TAB 2: ARSIP FILE OTOMATIS -->
+                    <div class="tab-pane fade" id="manifest-view" role="tabpanel"> 
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col" style="width: 55%;">Nama File Arsip</th>
+                                        <th scope="col">Waktu Terbentuk</th>
+                                        <th scope="col" class="text-end">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="fileIndexTableBody">
+                                    <tr>
+                                        <td colspan="3" class="text-center py-4 text-muted">
+                                            <span class="spinner-border spinner-border-sm me-2"></span>Memuat daftar file arsip...
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+  
+                    <!-- TAB 3: CEKLIST & SUMMARY EVAKUASI (MASS CHECKBOX & INSTANT SEARCH) -->
+                    <div class="tab-pane fade" id="evacuation-view" role="tabpanel">
+                        
+                        <!-- BARIS 1: PANEL STOPWATCH & LIVE SUMMARY COUNTERS -->
+                        <div class="row g-3 mb-4">
+                            <!-- PANEL LIVE SUMMARY COUNTERS -->
+                            <div class="col-md-6 col-lg-8">
+                                <div class="card border-0 bg-light shadow-sm h-100 rounded-3">
+                                    <div class="card-body p-3">
+                                        <span class="small text-uppercase text-muted fw-bold d-block mb-3">📊 Live Summary Sesi Ini</span>
+                                        <div class="row g-2 text-center">
+                                            <div class="col-4">
+                                                <div class="p-2 bg-white rounded shadow-xs">
+                                                    <h4 class="mb-0 fw-bold text-success" id="liveCountSafe">0</h4>
+                                                    <span class="text-muted" style="font-size: 0.75rem;">✅ DIEVAKUASI</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="p-2 bg-white rounded shadow-xs border border-danger-subtle">
+                                                    <h4 class="mb-0 fw-bold text-danger" id="liveCountMissing">0</h4>
+                                                    <span class="text-muted" style="font-size: 0.75rem;">❌ HILANG</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="p-2 bg-white rounded shadow-xs">
+                                                    <h4 class="mb-0 fw-bold text-secondary" id="liveCountAway">0</h4>
+                                                    <span class="text-muted" style="font-size: 0.75rem;">🏠 PULANG/IZIN</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- PANEL STOPWATCH -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card bg-dark text-white border-0 shadow-sm h-100 rounded-3">
+                                    <div class="card-body p-3 d-flex flex-column justify-content-between">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="small text-uppercase text-secondary fw-bold">⏱️ Durasi Evakuasi</span>
+                                            <span id="evacStatusBadge" class="badge bg-danger">Belum Dimulai</span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="font-monospace fs-2 fw-bold text-warning" id="stopwatchDisplay">00:00:00</div>
+                                            <div class="d-flex flex-column gap-1">
+                                                <button class="btn btn-primary btn-sm px-3" id="btnStartStopwatch">
+                                                    <i class="bi bi-play-fill"></i> Mulai
+                                                </button>
+                                                <button class="btn btn-success btn-sm px-3" id="btnSaveEvacuation" disabled>
+                                                    <i class="bi bi-check-circle-fill"></i> Simpan
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+  
+                        <!-- BARIS 2: TABEL ABSENSI CHECKLIST DENGAN PENCARIAN INSTAN -->
+                        <div class="card border shadow-sm rounded-3 mb-4">
+                            <div class="card-header bg-white py-3 d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                <div class="d-flex align-items-center gap-2">
+                                    <h6 class="mb-0 fw-bold text-dark">
+                                        <i class="bi bi-people-fill text-danger me-2"></i>Daftar Absensi Evakuasi Aktif
+                                    </h6>
+                                    <span class="badge bg-secondary" id="totalEvacTarget">0 Orang On-Site</span>
+                                </div>
+                                <!-- INSTANT SEARCH BAR -->
+                                <div class="input-group input-group-sm" style="max-width: 320px;">
+                                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-search"></i></span>
+                                    <input type="text" id="evacInstantSearch" class="form-control border-start-0" placeholder="Ketik Nama, NRP, atau Dept..." disabled>
+                                </div>
+                            </div>
+                            
+                            <div class="table-responsive" style="max-height: 450px; overflow-y: auto;">
+                                <table class="table align-middle mb-0">
+                                    <thead class="table-light small text-uppercase position-sticky top-0" style="z-index: 10;">
+                                        <tr>
+                                            <th style="width: 5%;" class="text-center">No</th>
+                                            <th style="width: 10%;" class="text-center">Status</th>
+                                            <th style="width: 15%;">NRP / ID</th>
+                                            <th style="width: 40%;">Nama Personil</th>
+                                            <th style="width: 20%;">Dept / Cost Center</th>
+                                            <th style="width: 10%;" class="text-center">Opsi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="evacChecklistTableBody">
+                                        <tr>
+                                            <td colspan="6" class="text-center text-muted py-5">
+                                                <i class="bi bi-shield-fill-exclamation fs-1 text-danger d-block mb-3"></i>
+                                                Silakan klik tombol <strong>"Mulai"</strong> di atas untuk mengambil data On-Site terbaru dan memulai pencatatan evakuasi.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+  
+                        <!-- BARIS 3: RIWAYAT / ARSIP SUMMARY KEJADIAN SEBELUMNYA -->
+                        <div class="card border shadow-sm rounded-3">
+                            <div class="card-header bg-white py-3">
+                                <h6 class="mb-0 fw-bold text-dark">
+                                    <i class="bi bi-clock-history me-2 text-primary"></i>Riwayat Simulasi & Evakuasi Terakhir
+                                </h6>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0 text-center">
+                                    <thead class="table-light small text-uppercase">
+                                        <tr>
+                                            <th style="width: 5%;">No</th>
+                                            <th style="width: 20%;">Tanggal Kejadian</th>
+                                            <th style="width: 15%;">Waktu Tempuh</th>
+                                            <th style="width: 15%;">Total Target</th>
+                                            <th style="width: 15%;" class="text-success">Selamat</th>
+                                            <th style="width: 15%;" class="text-danger">Belum Ditemukan</th>
+                                            <th style="width: 15%;" class="text-secondary">Pulang/Izin</th>
+                                            <th style="width: 15%;">Petugas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="evacHistoryTableBody">
+                                        <tr>
+                                            <td colspan="8" class="text-muted py-3">Tidak ada riwayat evakuasi.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- AKHIR TAB 3 -->
+  
+                </div>
             </div>
-          </div>
-        `;
-        $container.append(groupCard);
-      });
+        </div>
+    </div>
+  
+    <!-- Toast Notification -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
+        <div id="actionToast" class="toast align-items-center text-bg-dark border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="toastMessage">Pesan notifikasi</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+  
+    <button id="btnJumpToTop" title="Kembali ke Atas">
+        <i class="bi bi-arrow-up-short"></i>
+    </button>
 
-      if (filterKeyword === "" && !safeSelectedCC) {
-        $("#statTotalEmployees").text(totalEmployeesCount);
-      }
-
-      if (visibleGroups === 0) {
-        $container.html(`
-          <div class="text-center py-5">
-            <i class="bi bi-person-x fs-1 text-muted"></i>
-            <h5 class="text-muted mt-2">Tidak ada data karyawan yang cocok dengan kriteria.</h5>
-          </div>
-        `);
-      }
-    }
-
-    function populateCostCenterDropdown() {
-      const $select = $("#costCenterFilter");
-      const currentSelection = $select.val();
-      
-      $select.find('option:not(:first)').remove();
-      currentManifestData.forEach(g => {
-        const safeId = String(g.cost_center_id || "").trim();
-        const label = String(g.cost_center_name || safeId).trim();
-        if (!safeId) return;
-
-        $select.append($('<option></option>').val(safeId).text(label));
-      });
-
-      if (currentSelection) {
-        $select.val(currentSelection);
-      }
-    }
-
-    // =======================================================================
-    // BARU: PEMUAT DAFTAR FILE ARSIP DARI /api/arsip-list
-    // =======================================================================
-    function loadArchiveFiles() {
-      $.getJSON("/api/arsip-list")
-        .done(function(res) {
-          const $tbody = $("#fileIndexTableBody");
-          if (!res.files || res.files.length === 0) {
-            $tbody.html('<tr><td colspan="3" class="text-center py-4 text-muted">Belum ada file arsip yang terbentuk di server.</td></tr>');
-            return;
-          }
-
-          $tbody.empty();
-          res.files.forEach((file, idx) => {
-            const statusBadge = idx === 0
-              ? '<span class="badge bg-success-subtle text-success"><i class="bi bi-star-fill me-1"></i>Terbaru</span>'
-              : '<span class="badge bg-secondary-subtle text-secondary">Arsip</span>';
-
-            const timeBadge = file.time
-              ? `<span class="badge bg-info-subtle text-info border border-info-subtle ms-1"><i class="bi bi-clock me-1"></i>Pukul ${file.time}</span>`
-              : "";
-
-            const downloadUrl = `/api/download-arsip-direct?filename=${encodeURIComponent(file.filename)}`;
-
-            $tbody.append(`
-              <tr>
-                <td>
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="bi bi-file-earmark-text fs-4 text-primary"></i>
-                    <div>
-                      <a href="${downloadUrl}" class="fw-bold text-decoration-none text-dark">
-                        ${file.filename}
-                      </a>
-                      <div class="mt-1">
-                        ${statusBadge}
-                        ${timeBadge}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const refreshIntervalSeconds = parseInt("{{ refresh_interval_seconds }}") || 10800;
+        const refreshIntervalMs = refreshIntervalSeconds * 1000;
+        let autoRefreshTimer = null;
+        let currentManifestData = JSON.parse('{{ result.data | tojson | safe }}');
+        
+        // State Variabel Evakuasi
+        let isEvacRunning = false;
+        let stopwatchTimer = null;
+        let stopwatchSeconds = 0;
+        let evacPersonilList = []; // Menyimpan data personil aktif evakuasi
+  
+        function showNotification(msg) {
+            $('#toastMessage').text(msg);
+            const toast = new bootstrap.Toast(document.getElementById('actionToast'));
+            toast.show();
+        }
+  
+        function updateLiveClock() {
+            const now = new Date();
+            const opts = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            $('#currentClock').text(now.toLocaleDateString('id-ID', opts));
+        }
+  
+        setInterval(updateLiveClock, 1000);
+        updateLiveClock();
+  
+        function renderTableGroups(filterKeyword = "", selectedCostCenter = "") {
+            const $container = $("#costCenterGroupsContainer");
+            $container.empty();
+            let totalEmployeesCount = 0;
+            let visibleGroups = 0;
+  
+            const safeSelectedCC = selectedCostCenter ? String(selectedCostCenter).trim().toUpperCase() : "";
+  
+            currentManifestData.forEach(group => {
+                const safeGroupCC = String(group.cost_center_id || "").trim().toUpperCase();
+  
+                if (safeSelectedCC !== "" && safeGroupCC !== safeSelectedCC) {
+                    return;
+                }
+  
+                const filtered = group.employees.filter(emp => {
+                    const q = filterKeyword.toLowerCase();
+                    return (
+                        emp.name.toLowerCase().includes(q) ||
+                        String(emp.id).toLowerCase().includes(q) ||
+                        emp.department.toLowerCase().includes(q)
+                    );
+                });
+  
+                if (filtered.length === 0 && filterKeyword !== "") {
+                    return;
+                }
+  
+                visibleGroups++;
+                totalEmployeesCount += filtered.length;
+  
+                let rowsHtml = "";
+                filtered.forEach(emp => {
+                    rowsHtml += `
+                        <tr>
+                          <td class="fw-medium text-dark">${emp.department}</td>
+                          <td><span class="badge bg-light text-dark font-monospace border">${emp.id}</span></td>
+                          <td class="fw-semibold">${emp.name}</td>
+                          <td><span class="text-success fw-semibold"><i class="bi bi-box-arrow-in-right me-1"></i>${emp.clock_in}</span></td>
+                          <td class="text-end"><span class="badge badge-onsite px-2 py-1"><i class="bi bi-geo-alt-fill me-1"></i>On-Site</span></td>
+                        </tr>
+                    `;
+                });
+  
+                const groupCard = `
+                  <div class="card border mb-4 shadow-sm rounded-3 overflow-hidden">
+                    <div class="card-header cost-center-header py-3 d-flex justify-content-between align-items-center">
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-diagram-3-fill text-primary"></i>
+                        <span class="fw-bold text-dark">Cost Center : ${group.cost_center_name}</span>
                       </div>
+                      <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 fw-bold">${filtered.length} Karyawan</span>
+                    </div>
+                    <div class="table-responsive">
+                      <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light small text-uppercase text-secondary">
+                          <tr>
+                            <th style="width: 25%;">DEPARTMENT</th>
+                            <th style="width: 15%;">EMPLOYEE ID</th>
+                            <th style="width: 30%;">NAMA KARYAWAN</th>
+                            <th style="width: 20%;">CLOCKING IN</th>
+                            <th style="width: 10%;" class="text-end">STATUS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          ${rowsHtml.length > 0 ? rowsHtml : '<tr><td colspan="5" class="text-center text-muted py-3">Tidak ada data</td></tr>'}
+                        </tbody>
+                      </table>
                     </div>
                   </div>
-                </td>
-                <td class="font-monospace text-muted small">${file.last_modified}</td>
-                <td class="text-end">
-                  <a href="${downloadUrl}" class="btn btn-outline-primary btn-sm rounded-pill fw-semibold px-3 shadow-sm">
-                    <i class="bi bi-download me-1"></i> Unduh
-                  </a>
-                </td>
-              </tr>
-            `);
-          });
-        })
-        .fail(function(xhr) {
-          if (xhr.status === 401) {
-            window.location.href = '/login';
-          }
-        });
-    }
-
-    function fetchApiData(isAutoRefresh = false) {
-      const $btn = $("#btnRefresh");
-      const selectedDate = $("#target_date").val();
-      const currentSearch = $("#searchInput").val();
-      const currentCC = $("#costCenterFilter").val();
-      
-      if (!isAutoRefresh) {
-          $btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Loading...');
-      }
-
-      let apiUrl = "/api/data?tag=manifest";
-      if (selectedDate) {
-          apiUrl += `&date=${selectedDate}`;
-      }
-
-      $.getJSON(apiUrl)
-        .done(function(res) {
-          if (res.status === 200 || res.status === 206) {
-            currentManifestData = res.data;
-            
-            $("#statCostCenters").text(currentManifestData.length);            
-            populateCostCenterDropdown();            
-            renderTableGroups(currentSearch, currentCC);
-            updateDownloadLink();
-            loadArchiveFiles(); // Sinkronisasi daftar arsip saat refresh / auto-refresh
-
-            const safeDate = selectedDate ? selectedDate.replace(/-/g, '') : "{{ current_date }}";
-            $("#uiFileName").text(`manifest_karyawan_${safeDate}.txt`);
-
+                `;
+                $container.append(groupCard);
+            });
+  
+            if (filterKeyword === "" && !safeSelectedCC) {
+                $("#statTotalEmployees").text(totalEmployeesCount);
+            }
+  
+            if (visibleGroups === 0) {
+                $container.html(`
+                  <div class="text-center py-5">
+                    <i class="bi bi-person-x fs-1 text-muted"></i>
+                    <h5 class="text-muted mt-2">Tidak ada data karyawan yang cocok dengan kriteria.</h5>
+                  </div>
+                `);
+            }
+        }
+  
+        function populateCostCenterDropdown() {
+            const $select = $("#costCenterFilter");
+            const currentSelection = $select.val();
+            $select.find('option:not(:first)').remove();
+            currentManifestData.forEach(g => {
+                const safeId = String(g.cost_center_id || "").trim();
+                const label = String(g.cost_center_name || safeId).trim();
+                if (!safeId) return;
+  
+                $select.append($('<option></option>').val(safeId).text(label));
+            });
+  
+            if (currentSelection) {
+                $select.val(currentSelection);
+            }
+        }
+  
+        function loadArchiveFiles() {
+            $.getJSON("/api/arsip-list")
+                .done(function(res) {
+                    const $tbody = $("#fileIndexTableBody");
+                    if (!res.files || res.files.length === 0) {
+                        $tbody.html('<tr><td colspan="3" class="text-center py-4 text-muted">Belum ada file arsip yang terbentuk di server.</td></tr>');
+                        return;
+                    }
+  
+                    $tbody.empty();
+                    res.files.forEach((file, idx) => {
+                        const statusBadge = idx === 0
+                            ? '<span class="badge bg-success-subtle text-success"><i class="bi bi-star-fill me-1"></i>Terbaru</span>'
+                            : '<span class="badge bg-secondary-subtle text-secondary">Arsip</span>';
+  
+                        const timeBadge = file.time
+                            ? `<span class="badge bg-info-subtle text-info border border-info-subtle ms-1"><i class="bi bi-clock me-1"></i>Pukul ${file.time}</span>`
+                            : "";
+  
+                        const downloadUrl = `/api/download-arsip-direct?filename=${encodeURIComponent(file.filename)}`;
+  
+                        $tbody.append(`
+                            <tr>
+                              <td>
+                                <div class="d-flex align-items-center gap-2">
+                                  <i class="bi bi-file-earmark-text fs-4 text-primary"></i>
+                                  <div>
+                                    <a href="${downloadUrl}" class="fw-bold text-decoration-none text-dark">
+                                      ${file.filename}
+                                    </a>
+                                    <div class="mt-1">
+                                      ${statusBadge}
+                                      ${timeBadge}
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="font-monospace text-muted small">${file.last_modified}</td>
+                              <td class="text-end">
+                                <a href="${downloadUrl}" class="btn btn-outline-primary btn-sm rounded-pill fw-semibold px-3 shadow-sm">
+                                  <i class="bi bi-download me-1"></i> Unduh
+                                </a>
+                              </td>
+                            </tr>
+                        `);
+                    });
+                })
+                .fail(function(xhr) {
+                    if (xhr.status === 401) {
+                        window.location.href = '/login';
+                    }
+                });
+        }
+  
+        function fetchApiData(isAutoRefresh = false) {
+            const $btn = $("#btnRefresh");
+            const selectedDate = $("#target_date").val();
+            const currentSearch = $("#searchInput").val();
+            const currentCC = $("#costCenterFilter").val();
             if (!isAutoRefresh) {
-                showNotification(`Data manifest ${selectedDate ? 'tanggal ' + selectedDate : ''} berhasil dimuat.`);
-            } else {
-                console.log("Auto-Refresh sukses pada:", new Date().toLocaleTimeString());
+                $btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Loading...');
             }
-          }
-        })
-        .fail(function(xhr) {
-          if (xhr.status === 401) {
-              window.location.href = '/login';
-          }
-          if (!isAutoRefresh) {
-              showNotification("Gagal menghubungi endpoint API.");
-          }
-        })
-        .always(function() {
-          if (!isAutoRefresh) {
-              $btn.prop("disabled", false).html('<i class="bi bi-arrow-clockwise"></i> Refresh');
-          }
-        });
-    }
-
-    function buildFilterParams() {
-      const date = $("#target_date").val();
-      const search = $("#searchInput").val();
-      const cc_id = $("#costCenterFilter").val();
-      
-      let params = `tag=manifest`;
-      if (date) params += `&date=${date}`;
-      if (search) params += `&search=${encodeURIComponent(search)}`;
-      if (cc_id) params += `&cc_id=${encodeURIComponent(cc_id)}`;
-      
-      return params;
-    }
-
-    function updateDownloadLink() {
-      $("#btnDownloadDirect").attr("href", `/download_txt?${buildFilterParams()}`);
-    }
-
-    function startAutoRefresh() {
-        stopAutoRefresh();
-        if (refreshIntervalMs > 0) {
-            autoRefreshTimer = setInterval(function() {
-                fetchApiData(true);
-            }, refreshIntervalMs);
-            console.log(`Auto-refresh aktif setiap ${refreshIntervalSeconds} detik.`);
-        }
-    }
-
-    function stopAutoRefresh() {
-        if (autoRefreshTimer) {
-            clearInterval(autoRefreshTimer);
-            autoRefreshTimer = null;
-        }
-    }
-
-    $(document).ready(function() {
-      populateCostCenterDropdown();
-      renderTableGroups();
-      updateDownloadLink();
-      loadArchiveFiles(); // Muat daftar arsip saat halaman pertama dibuka
-      startAutoRefresh();
-
-      // Segarkan daftar arsip setiap kali tab "Arsip File" diklik
-      $('#manifest-tab').on('shown.bs.tab', function() {
-        loadArchiveFiles();
-      });
-
-      $("#searchInput").on("keyup", function() {
-        renderTableGroups($(this).val(), $("#costCenterFilter").val());
-        updateDownloadLink();
-      });
-
-      $("#costCenterFilter").on("change", function() {
-        renderTableGroups($("#searchInput").val(), $(this).val());
-        updateDownloadLink();
-      });
-
-      $("#target_date").on("change", function() {
-        $("#searchInput").val("");
-        $("#costCenterFilter").val("");
-        fetchApiData();
-        startAutoRefresh();
-      });
-
-      $("#btnRefresh").on("click", function() {
-        $("#searchInput").val("");
-        $("#costCenterFilter").val("");
-        fetchApiData();
-        startAutoRefresh();
-      });
-
-      $("#btnPrintDirect").on("click", function() {
-        const filterKeyword = $("#searchInput").val().trim().toLowerCase();
-        const selectedCostCenter = $("#costCenterFilter").val();        
-        const safeSelectedCC = selectedCostCenter ? String(selectedCostCenter).trim().toUpperCase() : "";
-        let filteredGroups = [];
-        let grandTotal = 0;
-
-        currentManifestData.forEach(group => {
-          const safeGroupCC = String(group.cost_center_id || "").trim().toUpperCase();
-          if (safeSelectedCC !== "" && safeGroupCC !== safeSelectedCC) return;
-
-          const filteredEmps = group.employees.filter(emp => {
-            return (
-              emp.name.toLowerCase().includes(filterKeyword) ||
-              String(emp.id).toLowerCase().includes(filterKeyword) ||
-              emp.department.toLowerCase().includes(filterKeyword)
-            );
-          });
-
-          if (filteredEmps.length > 0) {
-            filteredGroups.push({
-              cost_center_id: group.cost_center_id,
-              cost_center_code: group.cost_center_code || "",
-              cost_center_name: group.cost_center_name,
-              employees: filteredEmps
-            });
-            grandTotal += filteredEmps.length;
-          }
-        });
-
-        if (filteredGroups.length === 0) {
-           showNotification("Tidak ada data manifest yang bisa dicetak berdasarkan filter saat ini.");
-           return;
-        }
-
-        const $btn = $(this);
-        const originalHtml = $btn.html();
-        $btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Menyiapkan...');
-
-        const MAX_ROWS_PER_PAGE = 45; 
-        let pages = [];
-        filteredGroups.forEach(group => {
-          let emps = group.employees;
-          let totalEmps = emps.length;
-          let currentIndex = 0;
-
-          while (currentIndex < totalEmps) {
-            pages.push({
-              cost_center_id: group.cost_center_id,
-              cost_center_code: group.cost_center_code,
-              cost_center_name: group.cost_center_name,
-              sub_total: totalEmps,
-              employees: emps.slice(currentIndex, currentIndex + MAX_ROWS_PER_PAGE)
-            });
-            currentIndex += MAX_ROWS_PER_PAGE;
-          }
-        });
-
-        const totalPages = pages.length;
-        const printDate = new Date().toLocaleString('id-ID');
-
-        let htmlContent = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <title>Print Manifest</title>
-          <style>
-            @media print {
-              @page { margin: 1cm; size: A4 portrait; }
-              body { 
-                font-family: "Courier New", Courier, monospace !important; 
-                font-size: 10pt; 
-                color: #000;
-                margin: 0;
-              }
-              .print-page {
-                page-break-after: always; 
-                display: flex;
-                flex-direction: column;
-                min-height: 27cm;
-              }
-              .print-page:last-child {
-                page-break-after: auto; 
-              }
-              .print-header {
-                text-align: center; 
-                margin-bottom: 20px; 
-                border-bottom: 2px dashed #000; 
-                padding-bottom: 10px;
-              }
-              .print-content {
-                flex-grow: 1;
-              }
-              pre {
-                white-space: pre-wrap; 
-                margin: 0;
-                line-height: 1.2;
-              }
-              .print-footer {
-                text-align: right;
-                font-size: 9pt;
-                border-top: 1px dashed #000;
-                padding-top: 5px;
-                margin-top: 10px;
-              }
+  
+            let apiUrl = "/api/data?tag=manifest";
+            if (selectedDate) {
+                apiUrl += `&date=${selectedDate}`;
             }
-          </style>
-        </head>
-        <body>
-        `;
-
-        pages.forEach((pageData, index) => {
-          const currentPageNum = index + 1;
-
-          const ccTitle = (pageData.cost_center_code && pageData.cost_center_code !== pageData.cost_center_name)
-            ? `${pageData.cost_center_code} - ${pageData.cost_center_name}`
-            : pageData.cost_center_name;
-          
-          htmlContent += `
-          <div class="print-page">
-            <div class="print-header">
-              <h3 style="margin: 0;">MANIFEST KARYAWAN ON-SITE</h3>
-              <span>Tanggal Cetak: ${printDate} | Total Keseluruhan: <strong>${grandTotal} Orang</strong></span>
-            </div>
-            
-            <div class="print-content">
-              <pre>`;
-          htmlContent += `Cost Center : ${ccTitle}\n`;
-          htmlContent += `Sub-Total   : ${pageData.sub_total} Orang\n`;
-          htmlContent += `======================================================================\n`;
-          htmlContent += `NRP       | NAMA KARYAWAN                  | CLOCK IN\n`;
-          htmlContent += `----------------------------------------------------------------------\n`;
-          pageData.employees.forEach(emp => {
-            let idPad = String(emp.id).padEnd(9, ' ');
-            let namePad = String(emp.name).padEnd(30, ' ').substring(0, 30);
-            htmlContent += `${idPad} | ${namePad} | ${emp.clock_in}\n`;
-          });
-          htmlContent += `======================================================================\n`;
-          htmlContent += `</pre>
-            </div>
-            
-            <div class="print-footer">
-              Halaman ${currentPageNum} dari ${totalPages}
-            </div>
-          </div>
-          `;
-        });
-
-        htmlContent += `
-        </body>
-        </html>
-        `;
-
-        const iframe = document.createElement('iframe');
-        iframe.style.visibility = 'hidden';
-        iframe.style.position = 'absolute';
-        iframe.style.width = '0';
-        iframe.style.height = '0';
-        iframe.style.border = 'none';
-        document.body.appendChild(iframe);
-        const iframeDoc = iframe.contentWindow.document;
-        iframeDoc.open();
-        iframeDoc.write(htmlContent);
-        iframeDoc.close();
-        setTimeout(function() {
-          iframe.contentWindow.focus();
-          iframe.contentWindow.print();
-          
-          setTimeout(function() {
-            document.body.removeChild(iframe);
-            $btn.prop("disabled", false).html(originalHtml);
-          }, 1000);
-        }, 300);
-      });
-
-      const $jumpBtn = $('#btnJumpToTop');
-      $(window).on('scroll', function() {
-        if ($(this).scrollTop() > 300) {
-          $jumpBtn.addClass('show');
-        } else {
-          $jumpBtn.removeClass('show');
+  
+            $.getJSON(apiUrl)
+                .done(function(res) {
+                    if (res.status === 200 || res.status === 206) {
+                        currentManifestData = res.data;
+                        $("#statCostCenters").text(currentManifestData.length);            
+                        populateCostCenterDropdown();            
+                        renderTableGroups(currentSearch, currentCC);
+                        updateDownloadLink();
+                        loadArchiveFiles();
+  
+                        const safeDate = selectedDate ? selectedDate.replace(/-/g, '') : "{{ current_date }}";
+                        $("#uiFileName").text(`manifest_karyawan_${safeDate}.txt`);
+  
+                        if (!isAutoRefresh) {
+                            showNotification(`Data manifest ${selectedDate ? 'tanggal ' + selectedDate : ''} berhasil dimuat.`);
+                        } else {
+                            console.log("Auto-Refresh sukses pada:", new Date().toLocaleTimeString());
+                        }
+                    }
+                })
+                .fail(function(xhr) {
+                    if (xhr.status === 401) {
+                        window.location.href = '/login';
+                    }
+                    if (!isAutoRefresh) {
+                        showNotification("Gagal menghubungi endpoint API.");
+                    }
+                })
+                .always(function() {
+                    if (!isAutoRefresh) {
+                        $btn.prop("disabled", false).html('<i class="bi bi-arrow-clockwise"></i> Refresh');
+                    }
+                });
         }
-      });
-      $jumpBtn.on('click', function() {
-        $('html, body').animate({ scrollTop: 0 }, 'smooth');
-        return false;
-      });
+  
+        function buildFilterParams() {
+            const date = $("#target_date").val();
+            const search = $("#searchInput").val();
+            const cc_id = $("#costCenterFilter").val();
+            let params = `tag=manifest`;
+            if (date) params += `&date=${date}`;
+            if (search) params += `&search=${encodeURIComponent(search)}`;
+            if (cc_id) params += `&cc_id=${encodeURIComponent(cc_id)}`;
+            return params;
+        }
+  
+        function updateDownloadLink() {
+            $("#btnDownloadDirect").attr("href", `/download_txt?${buildFilterParams()}`);
+        }
+  
+        function startAutoRefresh() {
+            stopAutoRefresh();
+            if (refreshIntervalMs > 0) {
+                autoRefreshTimer = setInterval(function() {
+                    fetchApiData(true);
+                }, refreshIntervalMs);
+                console.log(`Auto-refresh aktif setiap ${refreshIntervalSeconds} detik.`);
+            }
+        }
+  
+        function stopAutoRefresh() {
+            if (autoRefreshTimer) {
+                clearInterval(autoRefreshTimer);
+                autoRefreshTimer = null;
+            }
+        }
 
-    });
-  </script>
+        // =======================================================================
+        // 🌟 LOGIKA FITUR CEKLIST EVAKUASI (TAB 3) 🌟
+        // =======================================================================
 
-  <button id="btnJumpToTop" title="Kembali ke Atas">
-    <i class="bi bi-arrow-up-short"></i>
-  </button>
+        function formatStopwatch(totalSeconds) {
+            const hrs = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+            const mins = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+            const secs = String(totalSeconds % 60).padStart(2, '0');
+            return `${hrs}:${mins}:${secs}`;
+        }
 
+        function renderEvacChecklist(searchQuery = "") {
+            const $tbody = $("#evacChecklistTableBody");
+            $tbody.empty();
+
+            const q = searchQuery.toLowerCase().trim();
+
+            // 1. Kelompokkan data personil berdasarkan Department/Cost Center
+            const groupedEvac = {};
+            evacPersonilList.forEach(item => {
+                // Filter pencarian instan (mencakup Nama, NRP, atau Nama Departemen)
+                const isMatched = item.name.toLowerCase().includes(q) ||
+                                  String(item.id).toLowerCase().includes(q) ||
+                                  item.department.toLowerCase().includes(q);
+                if (!isMatched) return;
+
+                if (!groupedEvac[item.department]) {
+                    groupedEvac[item.department] = [];
+                }
+                groupedEvac[item.department].push(item);
+            });
+
+            const departments = Object.keys(groupedEvac).sort();
+
+            if (departments.length === 0) {
+                $tbody.html('<tr><td colspan="6" class="text-center text-muted py-5">Tidak ada data personil yang cocok.</td></tr>');
+                return;
+            }
+
+            let globalIndex = 1;
+
+            // 2. Loop per Departemen untuk membentuk Header Kelompok dan Baris Anggota
+            departments.forEach(deptName => {
+                const members = groupedEvac[deptName];
+                const totalDept = members.length;
+                const safeDept = members.filter(m => m.status === "DIEVAKUASI").length;
+                const awayDept = members.filter(m => m.status === "PULANG").length;
+                const missingDept = totalDept - safeDept - awayDept;
+
+                // Tentukan warna badge status departemen
+                let deptBadgeClass = "bg-danger";
+                if (missingDept === 0) {
+                    deptBadgeClass = "bg-success";
+                } else if (safeDept > 0) {
+                    deptBadgeClass = "bg-warning text-dark";
+                }
+
+                // Append BARIS HEADER DEPARTEMEN (Sama seperti gaya Tab 1)
+                $tbody.append(`
+                    <tr class="table-light border-bottom-2" style="position: sticky; top: 40px; z-index: 5;">
+                        <td colspan="6" class="py-2 px-3 cost-center-header fw-bold">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                <div>
+                                    <i class="bi bi-diagram-3-fill text-primary me-2"></i>
+                                    <span class="text-dark">${deptName.toUpperCase()}</span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <span class="badge bg-secondary-subtle text-secondary font-monospace">Target: ${totalDept}</span>
+                                    <span class="badge bg-success-subtle text-success">Aman: ${safeDept}</span>
+                                    <span class="badge ${deptBadgeClass}">Hilang: ${missingDept}</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                `);
+
+                // Append baris Karyawan/Tamu di dalam departemen ini
+                members.forEach(item => {
+                    let rowClass = "evac-row-missing";
+                    let isChecked = "";
+
+                    if (item.status === "DIEVAKUASI") {
+                        rowClass = "evac-row-safe";
+                        isChecked = "checked";
+                    } else if (item.status === "PULANG") {
+                        rowClass = "evac-row-away";
+                    }
+
+                    const optButton = item.status === "PULANG"
+                      ? `<button class="btn btn-xs btn-outline-danger py-0 px-2" style="font-size: 10px;" onclick="setEvacPersonilStatus('${item.id}', 'HILANG', this)"><i class="bi bi-arrow-counterclockwise"></i> Reset</button>`
+                      : `<button class="btn btn-xs btn-outline-secondary py-0 px-2" style="font-size: 10px;" onclick="setEvacPersonilStatus('${item.id}', 'PULANG', this)"><i class="bi bi-house-door"></i> Pulang</button>`;
+
+                  $tbody.append(`
+                      <tr class="${rowClass}">
+                          <td class="text-center fw-bold text-muted" style="font-size: 11px;">${globalIndex++}</td>
+                          <td class="text-center">
+                              <input type="checkbox" class="form-check-input evac-checkbox" ${isChecked}
+                                    onchange="toggleEvacPersonilCheck('${item.id}', this.checked, this)"
+                                    ${item.status === "PULANG" ? "disabled" : ""}>
+                          </td>
+                          <td><span class="badge bg-light text-dark font-monospace border">${item.id}</span></td>
+                          <td class="fw-semibold text-uppercase">${item.name}</td>
+                          <td class="small fw-semibold text-secondary">${item.department}</td>
+                          <td class="text-center">${optButton}</td>
+                      </tr>
+                  `);
+                });
+            });
+
+            updateLiveSummaryCounters();
+        }
+
+        function updateLiveSummaryCounters() {
+            const total = evacPersonilList.length;
+            const safe = evacPersonilList.filter(i => i.status === "DIEVAKUASI").length;
+            const away = evacPersonilList.filter(i => i.status === "PULANG").length;
+            const missing = total - safe - away;
+
+            $("#totalEvacTarget").text(`${total} Orang On-Site`);
+            $("#liveCountSafe").text(safe);
+            $("#liveCountMissing").text(missing);
+            $("#liveCountAway").text(away);
+        }
+
+        function toggleEvacPersonilCheck(id, isChecked, element) {
+            const person = evacPersonilList.find(i => i.id === id);
+            if (person) {
+                person.status = isChecked ? "DIEVAKUASI" : "HILANG";
+                
+                const $row = $(element).closest("tr");
+                
+                if (isChecked) {
+                    $row.removeClass("evac-row-missing evac-row-away").addClass("evac-row-safe");
+                } else {
+                    $row.removeClass("evac-row-safe evac-row-away").addClass("evac-row-missing");
+                }
+                
+                updateDeptHeaderCounters(person.department);
+                updateLiveSummaryCounters();
+            }
+        }
+
+        function setEvacPersonilStatus(id, newStatus, btnElement) {
+            const person = evacPersonilList.find(i => i.id === id);
+            if (person) {
+                person.status = newStatus;
+                
+                const $row = $(btnElement).closest("tr");
+                const $checkbox = $row.find(".evac-checkbox");
+                
+                if (newStatus === "PULANG") {
+                    $row.removeClass("evac-row-missing evac-row-safe").addClass("evac-row-away");
+                    $checkbox.prop("checked", false).prop("disabled", true);
+                    $(btnElement).html('<i class="bi bi-arrow-counterclockwise"></i> Reset')
+                                 .removeClass("btn-outline-secondary")
+                                 .addClass("btn-outline-danger")
+                                 .attr("onclick", `setEvacPersonilStatus('${id}', 'HILANG', this)`);
+                } else {
+                    $row.removeClass("evac-row-away evac-row-safe").addClass("evac-row-missing");
+                    $checkbox.prop("disabled", false);
+                    $(btnElement).html('<i class="bi bi-house-door"></i> Pulang')
+                                 .removeClass("btn-outline-danger")
+                                 .addClass("btn-outline-secondary")
+                                 .attr("onclick", `setEvacPersonilStatus('${id}', 'PULANG', this)`);
+                }
+                
+                updateDeptHeaderCounters(person.department);
+                updateLiveSummaryCounters();
+            }
+        }
+
+        function updateDeptHeaderCounters(deptName) {
+            const members = evacPersonilList.filter(m => m.department === deptName);
+            const totalDept = members.length;
+            const safeDept = members.filter(m => m.status === "DIEVAKUASI").length;
+            const awayDept = members.filter(m => m.status === "PULANG").length;
+            const missingDept = totalDept - safeDept - awayDept;
+
+            const $header = $(`.cost-center-header:contains("${deptName.toUpperCase()}")`);
+            if ($header.length) {
+                $header.find(".bg-success-subtle").text(`Aman: ${safeDept}`);
+                
+                const $missingBadge = $header.find(".badge").last();
+                $missingBadge.text(`Hilang: ${missingDept}`);
+                
+                if (missingDept === 0) {
+                    $missingBadge.removeClass("bg-danger bg-warning text-dark").addClass("bg-success");
+                } else if (safeDept > 0) {
+                    $missingBadge.removeClass("bg-danger bg-success").addClass("bg-warning text-dark");
+                } else {
+                    $missingBadge.removeClass("bg-success bg-warning text-dark").addClass("bg-danger");
+                }
+            }
+        }
+
+
+        // Jalankan & Tarik Log Riwayat Evakuasi
+        function loadEvacHistory() {
+            $.getJSON("/api/evacuation/history")
+                .done(function(res) {
+                    const $tbody = $("#evacHistoryTableBody");
+                    $tbody.empty();
+                    if (!res.history || res.history.length === 0) {
+                        $tbody.html('<tr><td colspan="8" class="text-muted py-3">Belum ada riwayat simulasi/evakuasi.</td></tr>');
+                        return;
+                    }
+                    res.history.forEach((h, idx) => {
+                        $tbody.append(`
+                            <tr>
+                                <td>${idx + 1}</td>
+                                <td class="fw-bold">${h.date}</td>
+                                <td><span class="badge bg-dark text-warning font-monospace">${h.duration}</span></td>
+                                <td class="fw-bold">${h.total_target}</td>
+                                <td class="text-success fw-bold">${h.total_safe}</td>
+                                <td class="text-danger fw-bold">${h.total_missing}</td>
+                                <td class="text-secondary fw-bold">${h.total_away}</td>
+                                <td class="small">${h.officer}</td>
+                            </tr>
+                        `);
+                    });
+                })
+                .fail(function() {
+                    console.error("Gagal memuat riwayat evakuasi.");
+                });
+        }
+
+        $(document).ready(function() {
+            populateCostCenterDropdown();
+            renderTableGroups();
+            updateDownloadLink();
+            loadArchiveFiles();
+            startAutoRefresh();
+            loadEvacHistory();
+  
+            // Sinkronisasi tab klik
+            $('#manifest-tab').on('shown.bs.tab', function() {
+                loadArchiveFiles();
+            });
+            $('#evacuation-tab').on('shown.bs.tab', function() {
+                loadEvacHistory();
+            });
+  
+            $("#searchInput").on("keyup", function() {
+                renderTableGroups($(this).val(), $("#costCenterFilter").val());
+                updateDownloadLink();
+            });
+  
+            $("#costCenterFilter").on("change", function() {
+                renderTableGroups($("#searchInput").val(), $(this).val());
+                updateDownloadLink();
+            });
+  
+            $("#target_date").on("change", function() {
+                $("#searchInput").val("");
+                $("#costCenterFilter").val("");
+                fetchApiData();
+                startAutoRefresh();
+            });
+  
+            $("#btnRefresh").on("click", function() {
+                $("#searchInput").val("");
+                $("#costCenterFilter").val("");
+                fetchApiData();
+                startAutoRefresh();
+            });
+
+            // --- EVENT HANDLING TAB 3: EVAKUASI ---
+            
+            // 1. Tombol Mulai Sesi Evakuasi
+            $("#btnStartStopwatch").on("click", function() {
+                if (!isEvacRunning) {
+                    // Mulai Sesi Baru
+                    isEvacRunning = true;
+                    stopwatchSeconds = 0;
+                    $("#stopwatchDisplay").text("00:00:00");
+                    $("#btnStartStopwatch").html('<i class="bi bi-stop-fill"></i> Batalkan Sesi').removeClass("btn-primary").addClass("btn-outline-danger");
+                    $("#btnSaveEvacuation").prop("disabled", false);
+                    $("#evacInstantSearch").prop("disabled", false).val("").focus();
+                    $("#evacStatusBadge").text("Sesi Sedang Berjalan").removeClass("bg-danger").addClass("bg-warning text-dark");
+
+                    // Ambil Snapshot Data On-Site Detik Ini dari currentManifestData
+                    evacPersonilList = [];
+                    currentManifestData.forEach(group => {
+                        group.employees.forEach(emp => {
+                            evacPersonilList.push({
+                                id: String(emp.id),
+                                name: emp.name,
+                                department: group.cost_center_name,
+                                status: "HILANG" // default awal
+                            });
+                        });
+                    });
+
+                    // Render daftar checklist massal
+                    renderEvacChecklist();
+                    stopAutoRefresh(); // Kunci auto-refresh agar web tidak mereset checklist di tengah kepanikan
+
+                    // Mulai Timer Stopwatch
+                    stopwatchTimer = setInterval(() => {
+                        stopwatchSeconds++;
+                        $("#stopwatchDisplay").text(formatStopwatch(stopwatchSeconds));
+                    }, 1000);
+
+                    showNotification("Sesi evakuasi dimulai! Data snapshot on-site berhasil dikunci.");
+                } else {
+                    // Batalkan Sesi (Reset)
+                    if (confirm("Apakah Anda yakin ingin membatalkan sesi evakuasi aktif ini? Semua data checklist sementara akan hilang.")) {
+                        isEvacRunning = false;
+                        clearInterval(stopwatchTimer);
+                        stopwatchTimer = null;
+                        stopwatchSeconds = 0;
+                        evacPersonilList = [];
+
+                        $("#stopwatchDisplay").text("00:00:00");
+                        $("#btnStartStopwatch").html('<i class="bi bi-play-fill"></i> Mulai').removeClass("btn-outline-danger").addClass("btn-primary");
+                        $("#btnSaveEvacuation").prop("disabled", true);
+                        $("#evacInstantSearch").prop("disabled", true).val("");
+                        $("#evacStatusBadge").text("Sesi Belum Dimulai").removeClass("bg-warning text-dark").addClass("bg-danger");
+
+                        // Kembalikan ke Tampilan Kosong Default
+                        $("#evacChecklistTableBody").html(`
+                            <tr>
+                                <td colspan="6" class="text-center text-muted py-5">
+                                    <i class="bi bi-shield-fill-exclamation fs-1 text-danger d-block mb-3"></i>
+                                    Silakan klik tombol <strong>"Mulai"</strong> di atas untuk mengambil data On-Site terbaru dan memulai pencatatan evakuasi.
+                                </td>
+                            </tr>
+                        `);
+                        
+                        updateLiveSummaryCounters();
+                        startAutoRefresh(); // Aktifkan kembali auto-refresh
+                        showNotification("Sesi evakuasi aktif berhasil dibatalkan.");
+                    }
+                }
+            });
+
+            // 2. Kolom Pencarian Instan
+            $("#evacInstantSearch").on("keyup", function() {
+                renderEvacChecklist($(this).val());
+            });
+
+            // 3. Tombol Selesai & Simpan Hasil ke Database
+            $("#btnSaveEvacuation").on("click", function() {
+                if (evacPersonilList.length === 0) {
+                    showNotification("Tidak ada personil untuk disimpan!");
+                    return;
+                }
+
+                if (!confirm("Apakah proses evakuasi telah selesai dan Anda ingin menyimpan rekapitulasi data ini ke database?")) {
+                    return;
+                }
+
+                const durationStr = formatStopwatch(stopwatchSeconds);
+                const payload = {
+                    duration: durationStr,
+                    duration_seconds: stopwatchSeconds,
+                    details: evacPersonilList.map(p => [p.id, p.name, p.department, p.status])
+                };
+
+                const $btn = $(this);
+                $btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Menyimpan...');
+
+                $.ajax({
+                    url: "/api/evacuation/save",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(payload),
+                    success: function(res) {
+                        showNotification("Selesai! Laporan hasil evakuasi berhasil disimpan.");
+
+                        // Reset Sesi Evakuasi di UI
+                        isEvacRunning = false;
+                        clearInterval(stopwatchTimer);
+                        stopwatchTimer = null;
+                        stopwatchSeconds = 0;
+                        evacPersonilList = [];
+
+                        $("#stopwatchDisplay").text("00:00:00");
+                        $("#btnStartStopwatch").html('<i class="bi bi-play-fill"></i> Mulai').removeClass("btn-outline-danger").addClass("btn-primary");
+                        $("#btnSaveEvacuation").prop("disabled", true);
+                        $("#evacInstantSearch").prop("disabled", true).val("");
+                        $("#evacStatusBadge").text("Sesi Selesai").removeClass("bg-warning text-dark").addClass("bg-success text-white");
+
+                        $("#evacChecklistTableBody").html(`
+                            <tr>
+                                <td colspan="6" class="text-center text-muted py-5">
+                                    <i class="bi bi-check-circle-fill fs-1 text-success d-block mb-3"></i>
+                                    Sesi evakuasi sebelumnya berhasil disimpan. Silakan klik tombol <strong>"Mulai"</strong> untuk memulai sesi baru.
+                                </td>
+                            </tr>
+                        `);
+
+                        updateLiveSummaryCounters();
+                        loadEvacHistory();
+                        startAutoRefresh(); // Aktifkan kembali auto-refresh harian
+                    },
+                    error: function(xhr) {
+                        showNotification("Gagal menyimpan data evakuasi ke database: " + xhr.responseText);
+                    }
+                }).always(function() {
+                    $btn.prop("disabled", false).html('<i class="bi bi-check-circle-fill"></i> Simpan');
+                });
+            });
+
+            // PRINT TABLE LOGIC (Tab 1)
+            $("#btnPrintDirect").on("click", function() {
+                const filterKeyword = $("#searchInput").val().trim().toLowerCase();
+                const selectedCostCenter = $("#costCenterFilter").val();        
+                const safeSelectedCC = selectedCostCenter ? String(selectedCostCenter).trim().toUpperCase() : "";
+                let filteredGroups = [];
+                let grandTotal = 0;
+  
+                currentManifestData.forEach(group => {
+                    const safeGroupCC = String(group.cost_center_id || "").trim().toUpperCase();
+                    if (safeSelectedCC !== "" && safeGroupCC !== safeSelectedCC) return;
+  
+                    const filteredEmps = group.employees.filter(emp => {
+                        return (
+                            emp.name.toLowerCase().includes(filterKeyword) ||
+                            String(emp.id).toLowerCase().includes(filterKeyword) ||
+                            emp.department.toLowerCase().includes(filterKeyword)
+                        );
+                    });
+  
+                    if (filteredEmps.length > 0) {
+                        filteredGroups.push({
+                            cost_center_id: group.cost_center_id,
+                            cost_center_code: group.cost_center_code || "",
+                            cost_center_name: group.cost_center_name,
+                            employees: filteredEmps
+                        });
+                        grandTotal += filteredEmps.length;
+                    }
+                });
+  
+                if (filteredGroups.length === 0) {
+                    showNotification("Tidak ada data manifest yang bisa dicetak berdasarkan filter saat ini.");
+                    return;
+                }
+  
+                const $btn = $(this);
+                const originalHtml = $btn.html();
+                $btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Menyiapkan...');
+  
+                const MAX_ROWS_PER_PAGE = 45; 
+                let pages = [];
+                filteredGroups.forEach(group => {
+                    let emps = group.employees;
+                    let totalEmps = emps.length;
+                    let currentIndex = 0;
+  
+                    while (currentIndex < totalEmps) {
+                        pages.push({
+                            cost_center_id: group.cost_center_id,
+                            cost_center_code: group.cost_center_code,
+                            cost_center_name: group.cost_center_name,
+                            sub_total: totalEmps,
+                            employees: emps.slice(currentIndex, currentIndex + MAX_ROWS_PER_PAGE)
+                        });
+                        currentIndex += MAX_ROWS_PER_PAGE;
+                    }
+                });
+  
+                const totalPages = pages.length;
+                const printDate = new Date().toLocaleString('id-ID');
+  
+                let htmlContent = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                  <title>Print Manifest</title>
+                  <style>
+                    @media print {
+                      @page { margin: 1cm; size: A4 portrait; }
+                      body { 
+                        font-family: "Courier New", Courier, monospace !important; 
+                        font-size: 10pt; 
+                        color: #000;
+                        margin: 0;
+                      }
+                      .print-page {
+                        page-break-after: always; 
+                        display: flex;
+                        flex-direction: column;
+                        min-height: 27cm;
+                      }
+                      .print-page:last-child {
+                        page-break-after: auto; 
+                      }
+                      .print-header {
+                        text-align: center; 
+                        margin-bottom: 20px; 
+                        border-bottom: 2px dashed #000; 
+                        padding-bottom: 10px;
+                      }
+                      .print-content {
+                        flex-grow: 1;
+                      }
+                      pre {
+                        white-space: pre-wrap; 
+                        margin: 0;
+                        line-height: 1.2;
+                      }
+                      .print-footer {
+                        text-align: right;
+                        font-size: 9pt;
+                        border-top: 1px dashed #000;
+                        padding-top: 5px;
+                        margin-top: 10px;
+                      }
+                    }
+                  </style>
+                </head>
+                <body>
+                `;
+  
+                pages.forEach((pageData, index) => {
+                    const currentPageNum = index + 1;
+                    const ccTitle = (pageData.cost_center_code && pageData.cost_center_code !== pageData.cost_center_name)
+                        ? `${pageData.cost_center_code} - ${pageData.cost_center_name}`
+                        : pageData.cost_center_name;
+                    htmlContent += `
+                      <div class="print-page">
+                        <div class="print-header">
+                          <h3 style="margin: 0;">MANIFEST KARYAWAN ON-SITE</h3>
+                          <span>Tanggal Cetak: ${printDate} | Total Keseluruhan: <strong>${grandTotal} Orang</strong></span>
+                        </div>
+                        <div class="print-content">
+                          <pre>`;
+                    htmlContent += `Cost Center : ${ccTitle}\n`;
+                    htmlContent += `Sub-Total   : ${pageData.sub_total} Orang\n`;
+                    htmlContent += `======================================================================\n`;
+                    htmlContent += `NRP       | NAMA KARYAWAN                  | CLOCK IN\n`;
+                    htmlContent += `----------------------------------------------------------------------\n`;
+                    pageData.employees.forEach(emp => {
+                        let idPad = String(emp.id).padEnd(9, ' ');
+                        let namePad = String(emp.name).padEnd(30, ' ').substring(0, 30);
+                        htmlContent += `${idPad} | ${namePad} | ${emp.clock_in}\n`;
+                    });
+                    htmlContent += `======================================================================\n`;
+                    htmlContent += `</pre>
+                        </div>
+                        <div class="print-footer">
+                          Halaman ${currentPageNum} dari ${totalPages}
+                        </div>
+                      </div>
+                    `;
+                });
+  
+                htmlContent += `
+                </body>
+                </html>
+                `;
+  
+                const iframe = document.createElement('iframe');
+                iframe.style.visibility = 'hidden';
+                iframe.style.position = 'absolute';
+                iframe.style.width = '0';
+                iframe.style.height = '0';
+                iframe.style.border = 'none';
+                document.body.appendChild(iframe);
+                const iframeDoc = iframe.contentWindow.document;
+                iframeDoc.open();
+                iframeDoc.write(htmlContent);
+                iframeDoc.close();
+                setTimeout(function() {
+                    iframe.contentWindow.focus();
+                    iframe.contentWindow.print();
+                    setTimeout(function() {
+                        document.body.removeChild(iframe);
+                        $btn.prop("disabled", false).html(originalHtml);
+                    }, 1000);
+                }, 300);
+            });
+  
+            const $jumpBtn = $('#btnJumpToTop');
+            $(window).on('scroll', function() {
+                if ($(this).scrollTop() > 300) {
+                    $jumpBtn.addClass('show');
+                } else {
+                    $jumpBtn.removeClass('show');
+                }
+            });
+            $jumpBtn.on('click', function() {
+                $('html, body').animate({ scrollTop: 0 }, 'smooth');
+                return false;
+            });
+        });
+    </script>
 </body>
 </html>

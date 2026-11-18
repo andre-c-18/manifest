@@ -1,10 +1,13 @@
+# app/database.py
 import os
 import logging
 from logging.handlers import RotatingFileHandler
 from datetime import datetime, timedelta
 from typing import Dict, Any
 from sqlalchemy import text
-from app.config import engine
+from sqlalchemy.pool import NullPool  # 🌟 WAJIB: Mencegah koneksi Sleep/Zombie di MySQL
+
+from app.config import engine  # Pastikan engine diimpor dari config Anda
 from app.tamu import fetch_active_tamu_from_csv
 
 # ============================================================================
@@ -42,7 +45,7 @@ MAX_STAY_HOURS = 14.0
 
 
 # ============================================================================
-# 2. FUNGSI UTAMA PENARIKAN DATA MANIFEST
+# 2. FUNGSI UTAMA PENARIKAN DATA MANIFEST (HIT-AND-RUN)
 # ============================================================================
 def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -> Dict[str, Any]:
     now_dt = datetime.now()
@@ -61,7 +64,10 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
         include_prev_shift3 = is_today and (now_dt.hour < 8 or (now_dt.hour == 8 and now_dt.minute <= 30))
         shift3_start_threshold = f"{prev_date} 20:00:00"
 
+        # 🌟 Menggunakan Context Manager (with engine.connect() as conn)
+        # Menjamin koneksi diambil dari NullPool dan ditutup fisik setelah blok selesai
         with engine.connect() as conn:
+            
             # =========================================================================
             # TAHAP 1: PRE-SELECTION TERMINAL MASTER
             # =========================================================================
@@ -76,6 +82,8 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                   AND UPPER(TRIM(COALESCE(direction, ''))) IN ('IN', 'OUT')
                 ORDER BY id ASC
             """)
+            
+            # Eksekusi kueri dan langsung petakan ke memori Python
             term_result = conn.execute(q_term).mappings().fetchall()
 
             if not term_result:
@@ -308,8 +316,6 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                 # -------------------------------------------------------------
                 # 🌙 KONDISI B: BACKDATE (ON-SITE AKHIR HARI / EOD 23:59:59)
                 # -------------------------------------------------------------
-                # Hanya mengambil karyawan yang status tapping terakhirnya pada tanggal
-                # tersebut adalah IN (belum pernah tapping OUT hingga hari berganti)
                 for emp_id, data in emp_taps.items():
                     min_in = data['min_in']
                     latest_in = data['max_in']
@@ -392,7 +398,6 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
             sorted_grouped_list = sorted(list(grouped.values()), key=lambda x: x['cost_center_name'])
 
             return {'data': sorted_grouped_list, 'source': 'database+gsheet_tamu', 'error': None, 'date': target_date}
-
 
     except Exception as e:
         logger.error(f"DB Fetch Error: {str(e)}", exc_info=True)
