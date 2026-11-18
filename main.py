@@ -301,4 +301,4 @@ async def api_get_evacuation_history(request: Request):
 
 if __name__ == "__main__":
     # Gunakan reload=False agar background scheduler 3 jam tidak ter-reset
-    uvicorn.run("main:app", host=APP_HOST, port=APP_PORT, reload=True)
+    uvicorn.run("main:app", host=APP_HOST, port=APP_PORT, reload=False)
