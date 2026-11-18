@@ -25,6 +25,8 @@ ADMIN_USER_HASH = os.getenv("ADMIN_USER_HASH")
 
 DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
+GOOGLE_SHEET_TAMU_CSV_URL = os.getenv("GOOGLE_SHEET_TAMU_CSV_URL")
+
 engine = create_engine(
     DATABASE_URL,
     poolclass=NullPool,

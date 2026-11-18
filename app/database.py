@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from typing import Dict, Any
 from sqlalchemy import text
 from app.config import engine
+from app.tamu import fetch_active_tamu_from_csv
 
 # ============================================================================
 # 1. SETUP LOGGER & DEDICATED LOG FILE (OPSI A)
@@ -321,7 +322,7 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                         }
 
             # =========================================================================
-            # TAHAP 5: GROUPING PER COST CENTER
+            # TAHAP 5: GROUPING PER COST CENTER (KARYAWAN TETAP + OS)
             # =========================================================================
             grouped: Dict[str, Dict[str, Any]] = {}
 
@@ -372,12 +373,26 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                     'clock_in': c_in_str
                 })
 
+            # =========================================================================
+            # TAHAP 5B: GABUNGKAN DATA TAMU DARI GOOGLE SHEET CSV (COST CENTER: TAMU)
+            # =========================================================================
+            tamu_list = fetch_active_tamu_from_csv(target_date=target_date)
+
+            if tamu_list:
+                grouped['TAMU'] = {
+                    'cost_center_id': 'TAMU',
+                    'cost_center_code': 'TAMU',
+                    'cost_center_name': 'TAMU',
+                    'employees': tamu_list
+                }
+
             for cc in grouped.values():
-                cc['employees'].sort(key=lambda x: x['id'])
+                cc['employees'].sort(key=lambda x: str(x['id']))
 
             sorted_grouped_list = sorted(list(grouped.values()), key=lambda x: x['cost_center_name'])
 
-            return {'data': sorted_grouped_list, 'source': 'database', 'error': None, 'date': target_date}
+            return {'data': sorted_grouped_list, 'source': 'database+gsheet_tamu', 'error': None, 'date': target_date}
+
 
     except Exception as e:
         logger.error(f"DB Fetch Error: {str(e)}", exc_info=True)
