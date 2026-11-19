@@ -292,6 +292,9 @@
                                 </select>
                             </div>
                             <div class="col-md-3 d-flex gap-2 justify-content-md-end">
+                                <button class="btn btn-outline-danger d-flex align-items-center gap-2 shadow-sm" data-bs-toggle="modal" data-bs-target="#manualEntryModal">
+                                    <i class="bi bi-person-plus-fill"></i> + Input Manual
+                                </button>
                                 <button class="btn btn-outline-secondary d-flex align-items-center gap-2" id="btnRefresh">
                                     <i class="bi bi-arrow-clockwise"></i> Refresh
                                 </button>
@@ -398,6 +401,9 @@
                                     <span class="input-group-text bg-light border-end-0"><i class="bi bi-search"></i></span>
                                     <input type="text" id="evacInstantSearch" class="form-control border-start-0" placeholder="Ketik Nama, NRP, atau Dept..." disabled>
                                 </div>
+                                <button class="btn btn-sm btn-outline-danger d-flex align-items-center gap-1 shadow-sm" data-bs-toggle="modal" data-bs-target="#manualEntryModal">
+                                        <i class="bi bi-person-plus-fill"></i> + Input Manual
+                                    </button>
                             </div>
                             
                             <div class="table-responsive" style="max-height: 450px; overflow-y: auto;">
@@ -471,6 +477,55 @@
             </div>
         </div>
     </div>
+
+    <!-- MODAL INPUT MANUAL (KARTU KETINGGALAN / TIDAK TAP) -->
+    <div class="modal fade" id="manualEntryModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header bg-danger text-white py-3">
+            <h6 class="modal-title fw-bold"><i class="bi bi-person-plus-fill me-2"></i>Tambah Personil Manual (Hadir Tanpa Tap)</h6>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="alert alert-warning py-2 small mb-3">
+              <i class="bi bi-clock-history me-1"></i> Data yang diinput otomatis aktif di manifes selama <strong>8 jam</strong>.
+            </div>
+            <form id="formManualEntry">
+              <div class="mb-3">
+                <label class="form-label small fw-bold">NRP / ID Karyawan / No. KTP</label>
+                <input type="text" id="manualEmpId" class="form-control form-control-sm" placeholder="Contoh: 012345 / KTP-..." required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-bold">Nama Lengkap</label>
+                <input type="text" id="manualEmpName" class="form-control form-control-sm" placeholder="Contoh: BUDI SANTOSO" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-bold">Departemen / Cost Center</label>
+                <select id="manualDeptSelect" class="form-select form-select-sm" required>
+                    <option value="">Pilih Departemen...</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-bold">Alasan Tidak Tap</label>
+                <select id="manualReason" class="form-select form-select-sm">
+                  <option value="Kartu Ketinggalan">Kartu Ketinggalan</option>
+                  <option value="Kartu Rusak / Tidak Terbaca">Kartu Rusak / Tidak Terbaca</option>
+                  <option value="Tamu / Vendor Khusus">Tamu / Vendor Khusus</option>
+                  <option value="Lupa Tap Gate">Lupa Tap Gate</option>
+                </select>
+              </div>
+              <div class="d-flex justify-content-end gap-2 mt-4">
+                <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-sm btn-danger px-3" id="btnSubmitManual">
+                  <i class="bi bi-check-circle-fill me-1"></i> Simpan ke Manifes
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
   
     <button id="btnJumpToTop" title="Kembali ke Atas">
         <i class="bi bi-arrow-up-short"></i>
@@ -595,18 +650,27 @@
   
         function populateCostCenterDropdown() {
             const $select = $("#costCenterFilter");
+            const $manualSelect = $("#manualDeptSelect");
             const currentSelection = $select.val();
+            const currentManualSelection = $manualSelect.val();
+
             $select.find('option:not(:first)').remove();
+            $manualSelect.find('option:not(:first)').remove();
+
             currentManifestData.forEach(g => {
                 const safeId = String(g.cost_center_id || "").trim();
                 const label = String(g.cost_center_name || safeId).trim();
                 if (!safeId) return;
-  
+
                 $select.append($('<option></option>').val(safeId).text(label));
+                $manualSelect.append($('<option></option>').val(safeId).text(label));
             });
-  
+
             if (currentSelection) {
                 $select.val(currentSelection);
+            }
+            if (currentManualSelection) {
+                $manualSelect.val(currentManualSelection);
             }
         }
   
@@ -869,7 +933,7 @@
             $("#liveCountAway").text(away);
         }
 
-        function toggleEvacPersonilCheck(id, isChecked, element) {
+                function toggleEvacPersonilCheck(id, isChecked, element) {
             const person = evacPersonilList.find(i => i.id === id);
             if (person) {
                 person.status = isChecked ? "DIEVAKUASI" : "HILANG";
@@ -939,7 +1003,6 @@
                 }
             }
         }
-
 
         // Jalankan & Tarik Log Riwayat Evakuasi
         function loadEvacHistory() {
@@ -1146,6 +1209,57 @@
                     }
                 }).always(function() {
                     $btn.prop("disabled", false).html('<i class="bi bi-check-circle-fill"></i> Simpan');
+                });
+            });
+
+            // --- HANDLER SUBMIT INPUT MANUAL ATTENDANCE (8 JAM EXPIRED) ---
+                        // --- HANDLER SUBMIT INPUT MANUAL ATTENDANCE (8 JAM EXPIRED) ---
+            $("#formManualEntry").on("submit", function(e) {
+                e.preventDefault();
+                const $btn = $("#btnSubmitManual");
+                $btn.prop("disabled", true).html('<span class="spinner-border spinner-border-sm me-1"></span> Menyimpan...');
+
+                const payload = {
+                    id: $("#manualEmpId").val().trim(),
+                    name: $("#manualEmpName").val().trim(),
+                    department: $("#manualDeptSelect").val(),
+                    reason: $("#manualReason").val()
+                };
+
+                $.ajax({
+                    url: "/api/manifest/manual-entry",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(payload),
+                    success: function(res) {
+                        showNotification(res.message);
+                        $("#manualEntryModal").modal("hide");
+                        $("#formManualEntry")[0].reset();
+                        
+                        // 🌟 SINKRONISASI PINTAR:
+                        // 1. Jika sesi evakuasi (Tab 3) sedang aktif berjalan di layar:
+                        if (isEvacRunning) {
+                            // Cek jika ID belum ada di list evakuasi saat ini
+                            const isExist = evacPersonilList.some(p => p.id === String(payload.id));
+                            if (!isExist) {
+                                evacPersonilList.push({
+                                    id: String(payload.id),
+                                    name: payload.name.toUpperCase(),
+                                    department: payload.department,
+                                    status: "HILANG"
+                                });
+                            }
+                            renderEvacChecklist($("#evacInstantSearch").val());
+                        }
+                        
+                        // 2. Selalu segarkan data manifest utama di Tab 1 agar tabel langsung terupdate
+                        fetchApiData();
+                    },
+                    error: function(xhr) {
+                        showNotification("Gagal input manual: " + xhr.responseText);
+                    }
+                }).always(function() {
+                    $btn.prop("disabled", false).html('<i class="bi bi-check-circle-fill me-1"></i> Simpan ke Manifes');
                 });
             });
 

@@ -43,7 +43,6 @@ STAGING_NODE_ALIASES: Dict[str, str] = {
 
 MAX_STAY_HOURS = 14.0
 
-
 # ============================================================================
 # 2. FUNGSI UTAMA PENARIKAN DATA MANIFEST (HIT-AND-RUN)
 # ============================================================================
@@ -60,12 +59,9 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
         current_dt = datetime.strptime(target_date, "%Y-%m-%d")
         prev_date = (current_dt - timedelta(days=1)).strftime("%Y-%m-%d")
         
-        # Jendela Shift 3 hanya aktif jika melihat HARI INI dan masih dini hari (00:00 - 08:30)
         include_prev_shift3 = is_today and (now_dt.hour < 8 or (now_dt.hour == 8 and now_dt.minute <= 30))
         shift3_start_threshold = f"{prev_date} 20:00:00"
 
-        # 🌟 Menggunakan Context Manager (with engine.connect() as conn)
-        # Menjamin koneksi diambil dari NullPool dan ditutup fisik setelah blok selesai
         with engine.connect() as conn:
             
             # =========================================================================
@@ -81,9 +77,7 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                   AND tags LIKE '%manifest%' COLLATE utf8mb4_general_ci
                   AND UPPER(TRIM(COALESCE(direction, ''))) IN ('IN', 'OUT')
                 ORDER BY id ASC
-            """)
-            
-            # Eksekusi kueri dan langsung petakan ke memori Python
+            """)            
             term_result = conn.execute(q_term).mappings().fetchall()
 
             if not term_result:
@@ -135,7 +129,6 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                   AND node_id IN ({term_in_clause})
                 ORDER BY clocking_time ASC
             """)
-
             trans_result = conn.execute(q_trans, {
                 "target_date": target_date,
                 "prev_date": prev_date,
@@ -280,7 +273,7 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
 
             if is_today:
                 # -------------------------------------------------------------
-                # 🌟 KONDISI A: HARI INI (LIVE REAL-TIME ON-SITE)
+                # KONDISI A: HARI INI (LIVE REAL-TIME ON-SITE)
                 # -------------------------------------------------------------
                 for emp_id, data in emp_taps.items():
                     min_in = data['min_in']
@@ -299,7 +292,6 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                                 'clock_in_time': min_in
                             }
                         else:
-                            # Catat overstay hari ini ke file logs/auto_expired.log
                             cache_key = f"{target_date}_{emp_id}_{latest_in.strftime('%Y%m%d%H%M%S')}"
                             if cache_key not in _logged_auto_expired_cache:
                                 _logged_auto_expired_cache.add(cache_key)
@@ -314,7 +306,7 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                                 )
             else:
                 # -------------------------------------------------------------
-                # 🌙 KONDISI B: BACKDATE (ON-SITE AKHIR HARI / EOD 23:59:59)
+                # KONDISI B: BACKDATE (ON-SITE AKHIR HARI / EOD 23:59:59)
                 # -------------------------------------------------------------
                 for emp_id, data in emp_taps.items():
                     min_in = data['min_in']
@@ -392,6 +384,42 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
                     'employees': tamu_list
                 }
 
+            # =========================================================================
+            # TAHAP 5C: GABUNGKAN DATA MANUAL INPUT (BELUM EXPIRED 8 JAM)
+            # =========================================================================
+            if is_today:
+                q_manual = text("""
+                    SELECT employee_id, employee_name, department,
+                           DATE_FORMAT(created_at, '%d-%b-%Y %H:%M') AS clock_in_str
+                    FROM `manifest_manual_attendance`
+                    WHERE NOW() <= expired_at
+                """)
+                manual_rows = conn.execute(q_manual).mappings().fetchall()
+
+                for m in manual_rows:
+                    m_id = str(m['employee_id'])
+                    m_name = str(m['employee_name'])
+                    m_dept = str(m['department'])
+                    m_time = f"{m['clock_in_str']} (Manual)"
+
+                    if m_dept not in grouped:
+                        grouped[m_dept] = {
+                            'cost_center_id': m_dept,
+                            'cost_center_code': m_dept,
+                            'cost_center_name': m_dept,
+                            'employees': []
+                        }
+
+                    # Cek agar tidak duplikat jika orangnya ternyata sempat tapping
+                    existing_ids = {str(e['id']) for e in grouped[m_dept]['employees']}
+                    if m_id not in existing_ids:
+                        grouped[m_dept]['employees'].append({
+                            'department': m_dept,
+                            'id': m_id,
+                            'name': m_name,
+                            'clock_in': m_time
+                        })
+
             for cc in grouped.values():
                 cc['employees'].sort(key=lambda x: str(x['id']))
 
@@ -402,3 +430,39 @@ def fetch_active_clocking_data(tag: str = "manifest", target_date: str = None) -
     except Exception as e:
         logger.error(f"DB Fetch Error: {str(e)}", exc_info=True)
         return {'data': [], 'source': 'database_error', 'error': str(e), 'date': target_date}
+
+def add_manual_attendance(emp_id: str, name: str, dept: str, reason: str, officer: str) -> dict:
+    clean_emp_id = emp_id.strip()
+    clean_name = name.strip().upper()
+    clean_dept = dept.strip().upper()
+    clean_reason = reason.strip()
+
+    insert_sql = text("""
+        INSERT INTO `manifest_manual_attendance`
+        (employee_id, employee_name, department, reason, input_by, created_at, expired_at)
+        VALUES (:emp_id, :name, :dept, :reason, :officer, NOW(), DATE_ADD(NOW(), INTERVAL 8 HOUR))
+    """)
+
+    count_sql = text("""
+        SELECT COUNT(*) AS total_count
+        FROM `manifest_manual_attendance`
+        WHERE employee_id = :emp_id
+    """)
+
+    try:
+        with engine.begin() as conn:
+            conn.execute(insert_sql, {
+                "emp_id": clean_emp_id,
+                "name": clean_name,
+                "dept": clean_dept,
+                "reason": clean_reason,
+                "officer": officer
+            })
+            total_times = conn.execute(count_sql, {"emp_id": clean_emp_id}).scalar() or 1
+
+        logger.info(f"Manual entry: {clean_emp_id} - {clean_name} (Ke-{total_times}x) by {officer}")
+        return {"success": True, "times_count": total_times}
+    except Exception as e:
+        logger.error(f"Gagal menambah manual attendance: {e}", exc_info=True)
+        return {"success": False, "times_count": 0, "error": str(e)}
+

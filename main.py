@@ -10,7 +10,7 @@ import logging
 import os
 
 from app.config import (APP_HOST, APP_PORT, SECRET_KEY, ADMIN_USER, ADMIN_USER_HASH, UPDATE_INTERVAL_MINUTES)
-from app.database import fetch_active_clocking_data, engine
+from app.database import fetch_active_clocking_data, engine, add_manual_attendance
 from app.generator import build_txt_manifest_content
 from app.tasks import generate_and_save_manifest_job, STORAGE_DIR 
 from app.security import verify_password
@@ -253,7 +253,7 @@ def download_arsip_direct(request: Request, filename: str = Query(...)):
     return JSONResponse(status_code=404, content={"error": f"File {filename} tidak ditemukan di server."})
 
 # =========================================================================
-# 🌟 ENDPOINT API SIMPAN DATA EVAKUASI (SUPER FAST & ANTI-ZOMBIE)
+# ENDPOINT API SIMPAN DATA EVAKUASI (SUPER FAST & ANTI-ZOMBIE)
 # =========================================================================
 @app.post("/api/evacuation/save")
 async def api_save_evacuation(request: Request):
@@ -299,6 +299,33 @@ async def api_get_evacuation_history(request: Request):
     history_data = get_evacuation_history_list(limit=10)
     return {"status": 200, "history": history_data}
 
+# =========================================================================
+# ENDPOINT API BUAT ENTRI BARU MANIFEST
+# =========================================================================
+@app.post("/api/manifest/manual-entry")
+async def api_manual_entry(request: Request):
+    if not require_api_auth(request):
+        return JSONResponse(status_code=401, content={"error": "Unauthorized"})
+
+    officer = request.session.get("username") or "Admin"
+    try:
+        payload = await request.json()
+        emp_id = payload.get("id", "").strip()
+        name = payload.get("name", "").strip()
+        dept = payload.get("department", "").strip()
+        reason = payload.get("reason", "").strip()
+
+        if not emp_id or not name or not dept:
+            return JSONResponse(status_code=400, content={"error": "NRP, Nama, dan Departemen wajib diisi!"})
+
+        success = add_manual_attendance(emp_id, name, dept, reason, officer)
+        if success:
+            return {"status": 200, "message": f"{name} berhasil ditambahkan ke manifes (aktif 8 jam)."}
+        else:
+            return JSONResponse(status_code=500, content={"error": "Gagal menyimpan ke database."})
+    except Exception as e:
+        logger.error(f"Error api_manual_entry: {e}")
+        return JSONResponse(status_code=500, content={"error": str(e)})
+
 if __name__ == "__main__":
-    # Gunakan reload=False agar background scheduler 3 jam tidak ter-reset
     uvicorn.run("main:app", host=APP_HOST, port=APP_PORT, reload=False)
